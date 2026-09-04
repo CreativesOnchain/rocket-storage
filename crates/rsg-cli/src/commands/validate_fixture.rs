@@ -5,8 +5,7 @@ use std::path::Path;
 use anyhow::Result;
 use rsg_capture::load_frozen_trace;
 
-const EXPECTED_TX: &str =
-    "0x2fc10aad3c1b00bdfa9b6fddab79e0f2688609848f8f7a1a6449ab42da38530c";
+const EXPECTED_TX: &str = "0x2fc10aad3c1b00bdfa9b6fddab79e0f2688609848f8f7a1a6449ab42da38530c";
 const EXPECTED_BLOCK: u64 = 24_479_994;
 const EXPECTED_CHAIN: u64 = 1;
 

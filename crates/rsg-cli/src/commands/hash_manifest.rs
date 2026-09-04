@@ -1,7 +1,7 @@
 //! Handler for `rsg hash-manifest`.
 
-use std::path::Path;
 use anyhow::Result;
+use std::path::Path;
 
 /// Calculate and display SHA-256 digest of a manifest file.
 pub fn execute(path: &Path) -> Result<i32> {

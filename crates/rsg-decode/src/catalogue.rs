@@ -24,10 +24,7 @@ impl Default for KeyCatalogue {
 impl KeyCatalogue {
     /// Build the catalogue pre-populated with all well-known Rocket Pool protocol keys.
     pub fn build() -> Self {
-        let mut cat = Self {
-            table: HashMap::new(),
-            typed_table: HashMap::new(),
-        };
+        let mut cat = Self { table: HashMap::new(), typed_table: HashMap::new() };
 
         cat.register_singles();
         cat.register_contract_names();
@@ -130,7 +127,11 @@ impl KeyCatalogue {
 
     fn register_security_settings(&mut self) {
         for (ns, name) in SECURITY_ALLOWED_SETTINGS {
-            let k = keccak256_packed(&[b"dao.security.allowed.setting", ns.as_bytes(), name.as_bytes()]);
+            let k = keccak256_packed(&[
+                b"dao.security.allowed.setting",
+                ns.as_bytes(),
+                name.as_bytes(),
+            ]);
             self.insert(k, format!("dao.security.allowed.setting.{ns}.{name}"));
         }
     }
@@ -153,8 +154,16 @@ impl KeyCatalogue {
 
         // RocketMegapoolFactory delegate set: keccak256(abi.encodePacked("megapool.delegate.set"))
         let delegate_set_key = keccak256_packed(&[b"megapool.delegate.set"]);
-        self.insert_typed(delegate_set_key, StorageOp::SetAddress, "megapool.delegate.set.delegate.0".to_string());
-        self.insert_typed(delegate_set_key, StorageOp::SetUint, "megapool.delegate.set.meta".to_string());
+        self.insert_typed(
+            delegate_set_key,
+            StorageOp::SetAddress,
+            "megapool.delegate.set.delegate.0".to_string(),
+        );
+        self.insert_typed(
+            delegate_set_key,
+            StorageOp::SetUint,
+            "megapool.delegate.set.meta".to_string(),
+        );
         self.insert(delegate_set_key, "megapool.delegate.set".to_string());
 
         // RocketNetworkRevenues Universal Adjustable Revenue Split (UARS)
@@ -162,15 +171,16 @@ impl KeyCatalogue {
         let voter_share_key = keccak256_packed(&[b"network.revenue.voter.share"]);
         let pdao_share_key = keccak256_packed(&[b"network.revenue.pdao.share"]);
 
-        for (share_name, key_bytes) in [
-            ("node", &node_share_key),
-            ("voter", &voter_share_key),
-            ("pdao", &pdao_share_key),
-        ] {
+        for (share_name, key_bytes) in
+            [("node", &node_share_key), ("voter", &voter_share_key), ("pdao", &pdao_share_key)]
+        {
             self.insert(*key_bytes, format!("network.revenue.{share_name}.share.checkpoint.0"));
 
             let length_key = keccak256_packed(&[b"snapshot.time.length", key_bytes]);
-            self.insert(length_key, format!("snapshot.time.length.network.revenue.{share_name}.share"));
+            self.insert(
+                length_key,
+                format!("snapshot.time.length.network.revenue.{share_name}.share"),
+            );
 
             // Timestamped initial value: bytes32(uint256(key) + block.timestamp) at block 24,479,994 (timestamp 1771372799)
             let timestamp = 1771372799u128;

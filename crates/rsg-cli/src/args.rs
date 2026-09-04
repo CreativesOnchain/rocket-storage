@@ -1,7 +1,7 @@
 //! Command-line argument parser definitions using clap.
 
-use std::path::PathBuf;
 use clap::{Parser, Subcommand};
+use std::path::PathBuf;
 
 #[derive(Parser)]
 #[command(

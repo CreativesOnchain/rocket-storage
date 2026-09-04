@@ -1,8 +1,8 @@
 //! Cryptographic hashing utilities.
 
-use std::path::Path;
 use anyhow::Result;
 use sha2::{Digest, Sha256};
+use std::path::Path;
 
 /// Compute the lowercase hexadecimal SHA-256 digest of byte data.
 pub fn sha256_hex(data: &[u8]) -> String {

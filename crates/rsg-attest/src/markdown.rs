@@ -48,44 +48,20 @@ pub fn render_markdown(
     md.push_str("| Field | Value |\n|---|---|\n");
     md.push_str(&format!("| Chain ID | `{}` |\n", bundle.pinned.chain_id));
     md.push_str(&format!("| Pre-upgrade block | `{}` |\n", bundle.pinned.pre_block));
-    md.push_str(&format!(
-        "| Pre-block hash | `{}` |\n",
-        bundle.pinned.pre_block_hash
-    ));
-    md.push_str(&format!(
-        "| Upgrade transaction | `{}` |\n",
-        bundle.pinned.upgrade_tx
-    ));
+    md.push_str(&format!("| Pre-block hash | `{}` |\n", bundle.pinned.pre_block_hash));
+    md.push_str(&format!("| Upgrade transaction | `{}` |\n", bundle.pinned.upgrade_tx));
     md.push_str(&format!("| Exec block | `{}` |\n", bundle.pinned.exec_block));
-    md.push_str(&format!(
-        "| Upgrade contract | `{}` |\n",
-        bundle.pinned.upgrade_contract
-    ));
-    md.push_str(&format!(
-        "| RocketStorage | `{}` |\n",
-        bundle.pinned.rocket_storage
-    ));
-    md.push_str(&format!(
-        "| Source commit | `{}` |\n",
-        bundle.pinned.source_commit
-    ));
+    md.push_str(&format!("| Upgrade contract | `{}` |\n", bundle.pinned.upgrade_contract));
+    md.push_str(&format!("| RocketStorage | `{}` |\n", bundle.pinned.rocket_storage));
+    md.push_str(&format!("| Source commit | `{}` |\n", bundle.pinned.source_commit));
     md.push('\n');
 
     // ── Input hashes ──────────────────────────────────────────────────────────
     md.push_str("## Input Hashes\n\n");
     md.push_str("| Artifact | SHA-256 |\n|---|---|\n");
-    md.push_str(&format!(
-        "| Observed trace | `{}` |\n",
-        bundle.hashes.observed_trace_sha256
-    ));
-    md.push_str(&format!(
-        "| Manifest | `{}` |\n",
-        bundle.hashes.manifest_sha256
-    ));
-    md.push_str(&format!(
-        "| Review record | `{}` |\n",
-        bundle.hashes.review_record_sha256
-    ));
+    md.push_str(&format!("| Observed trace | `{}` |\n", bundle.hashes.observed_trace_sha256));
+    md.push_str(&format!("| Manifest | `{}` |\n", bundle.hashes.manifest_sha256));
+    md.push_str(&format!("| Review record | `{}` |\n", bundle.hashes.review_record_sha256));
     md.push_str(&format!("| Tool version | `{}` |\n", bundle.hashes.tool_version));
     md.push('\n');
 
@@ -94,14 +70,9 @@ pub fn render_markdown(
     if trace.effects.is_empty() {
         md.push_str("*No effects captured.*\n\n");
     } else {
-        md.push_str(
-            "| # | Op | Key | Old Value | New Value |\n|---|---|---|---|---|\n",
-        );
+        md.push_str("| # | Op | Key | Old Value | New Value |\n|---|---|---|---|---|\n");
         for eff in &trace.effects {
-            let path = eff
-                .semantic_path
-                .as_deref()
-                .unwrap_or(&eff.raw_key);
+            let path = eff.semantic_path.as_deref().unwrap_or(&eff.raw_key);
             let old_trunc = truncate(&eff.old_value, 42);
             let new_trunc = truncate(&eff.new_value, 42);
             md.push_str(&format!(

@@ -1,10 +1,6 @@
 //! Recursive CallFrame tree walker for EVM execution traces.
 
-use alloy::{
-    primitives::Address,
-    providers::Provider,
-    rpc::types::trace::geth::CallFrame,
-};
+use alloy::{primitives::Address, providers::Provider, rpc::types::trace::geth::CallFrame};
 use anyhow::Result;
 use rsg_decode::KeyCatalogue;
 use rsg_types::{ObservedEffect, ObservedExternalCall, StorageOp};
@@ -36,9 +32,7 @@ where
         if let Some(op) = StorageOp::from_selector(&sel) {
             match decode_mutator_call(provider, &op, input).await {
                 Ok((raw_key, old_val, new_val)) => {
-                    let semantic = catalogue
-                        .lookup_typed_hex(&raw_key, &op)
-                        .map(|s| s.to_string());
+                    let semantic = catalogue.lookup_typed_hex(&raw_key, &op).map(|s| s.to_string());
                     effects.push(ObservedEffect {
                         call_index: *call_index,
                         caller: format!("{from_addr:?}"),
@@ -60,10 +54,7 @@ where
         && from_addr == UPGRADE_CONTRACT
     {
         let selector = format!("0x{}", hex::encode(&input[0..4]));
-        let eth_value = frame
-            .value
-            .map(|v| v.to_string())
-            .unwrap_or_else(|| "0".into());
+        let eth_value = frame.value.map(|v| v.to_string()).unwrap_or_else(|| "0".into());
         external_calls.push(ObservedExternalCall {
             call_index: *call_index,
             from: format!("{from_addr:?}"),
@@ -77,15 +68,8 @@ where
     *call_index += 1;
 
     for child in &frame.calls {
-        Box::pin(walk_calls(
-            child,
-            provider,
-            catalogue,
-            effects,
-            external_calls,
-            call_index,
-        ))
-        .await?;
+        Box::pin(walk_calls(child, provider, catalogue, effects, external_calls, call_index))
+            .await?;
     }
 
     Ok(())

@@ -22,9 +22,7 @@ use alloy::{
     primitives::B256,
     providers::{ext::DebugApi, Provider, ProviderBuilder},
     rpc::types::{
-        trace::geth::{
-            CallConfig, GethDebugBuiltInTracerType, GethDebugTracingOptions, GethTrace,
-        },
+        trace::geth::{CallConfig, GethDebugBuiltInTracerType, GethDebugTracingOptions, GethTrace},
         BlockId, BlockNumberOrTag,
     },
 };
@@ -39,10 +37,7 @@ pub async fn capture_live(rpc_url: &str) -> Result<FrozenTrace> {
     let provider = ProviderBuilder::new().connect_http(rpc_url.parse()?);
 
     // Validate chain ID
-    let chain_id = provider
-        .get_chain_id()
-        .await
-        .context("failed to get chain ID")?;
+    let chain_id = provider.get_chain_id().await.context("failed to get chain ID")?;
     if chain_id != 1 {
         anyhow::bail!("expected Ethereum mainnet (chain_id=1), got {chain_id}");
     }
@@ -61,10 +56,7 @@ pub async fn capture_live(rpc_url: &str) -> Result<FrozenTrace> {
     // Call debug_traceTransaction with CallTracer
     let tx_hash = B256::from_str(UPGRADE_TX).context("invalid tx hash")?;
     let trace_opts = GethDebugTracingOptions::new_tracer(GethDebugBuiltInTracerType::CallTracer)
-        .with_call_config(CallConfig {
-            only_top_call: Some(false),
-            with_log: Some(false),
-        });
+        .with_call_config(CallConfig { only_top_call: Some(false), with_log: Some(false) });
 
     let trace = provider
         .debug_trace_transaction(tx_hash, trace_opts)
@@ -111,9 +103,5 @@ pub async fn capture_live(rpc_url: &str) -> Result<FrozenTrace> {
         replay_tool: format!("rsg-capture/{}", env!("CARGO_PKG_VERSION")),
     };
 
-    Ok(FrozenTrace {
-        pinned,
-        effects,
-        external_calls,
-    })
+    Ok(FrozenTrace { pinned, effects, external_calls })
 }

@@ -9,8 +9,7 @@ use rsg_types::FrozenTrace;
 pub fn load_frozen_trace(path: &Path) -> Result<FrozenTrace> {
     let data = std::fs::read_to_string(path)
         .with_context(|| format!("cannot read fixture: {}", path.display()))?;
-    serde_json::from_str(&data)
-        .with_context(|| format!("cannot parse fixture: {}", path.display()))
+    serde_json::from_str(&data).with_context(|| format!("cannot parse fixture: {}", path.display()))
 }
 
 /// Save a captured trace to a JSON file.

@@ -31,9 +31,7 @@ pub fn compare(trace: &FrozenTrace, manifest: &Manifest) -> Verdict {
     // If any unknowns exist at this point, fail-closed immediately:
     // we cannot safely assert correctness when unresolvable keys are present.
     if !unknown_reasons.is_empty() {
-        return Verdict::Unknown {
-            reasons: unknown_reasons,
-        };
+        return Verdict::Unknown { reasons: unknown_reasons };
     }
 
     // ── Phase 2: Check every REQUIRED manifest entry is observed ──────────────
@@ -50,9 +48,7 @@ pub fn compare(trace: &FrozenTrace, manifest: &Manifest) -> Verdict {
 
     // ── Produce final verdict ────────────────────────────────────────────────
     if !fail_reasons.is_empty() {
-        Verdict::Fail {
-            reasons: fail_reasons,
-        }
+        Verdict::Fail { reasons: fail_reasons }
     } else {
         Verdict::Pass
     }
@@ -71,11 +67,7 @@ mod tests {
     }
 
     fn make_trace(effects: Vec<ObservedEffect>) -> FrozenTrace {
-        FrozenTrace {
-            pinned: base_fixture(),
-            effects,
-            external_calls: vec![],
-        }
+        FrozenTrace { pinned: base_fixture(), effects, external_calls: vec![] }
     }
 
     fn make_manifest(effects: Vec<ManifestEffect>) -> Manifest {
@@ -245,9 +237,7 @@ mod tests {
         let verdict = compare(&trace, &manifest);
         match verdict {
             Verdict::Fail { reasons } => {
-                assert!(reasons
-                    .iter()
-                    .any(|r| matches!(r, FailReason::SwappedAddress { .. })));
+                assert!(reasons.iter().any(|r| matches!(r, FailReason::SwappedAddress { .. })));
             }
             _ => panic!("expected Fail with SwappedAddress, got {:?}", verdict),
         }

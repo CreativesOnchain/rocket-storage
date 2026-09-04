@@ -73,11 +73,8 @@ pub fn check_undeclared_writes(
     observed_counts: &HashMap<String, Vec<&ObservedEffect>>,
     fail_reasons: &mut Vec<FailReason>,
 ) {
-    let manifest_paths: HashMap<&str, &ManifestEffect> = manifest
-        .effects
-        .iter()
-        .map(|e| (e.semantic_path.as_str(), e))
-        .collect();
+    let manifest_paths: HashMap<&str, &ManifestEffect> =
+        manifest.effects.iter().map(|e| (e.semantic_path.as_str(), e)).collect();
 
     for (path, effects) in observed_counts {
         if !manifest_paths.contains_key(path.as_str()) {
@@ -134,8 +131,6 @@ pub fn check_effect_against_entry(
 
     // Omitted deletion check
     if entry.op.is_delete() && !is_valid_deletion_target(&obs.new_value) {
-        fails.push(FailReason::OmittedDeletion {
-            semantic_path: entry.semantic_path.clone(),
-        });
+        fails.push(FailReason::OmittedDeletion { semantic_path: entry.semantic_path.clone() });
     }
 }

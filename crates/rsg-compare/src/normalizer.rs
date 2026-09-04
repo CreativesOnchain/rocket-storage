@@ -31,10 +31,7 @@ mod tests {
     #[test]
     fn test_normalise_value() {
         assert_eq!(normalise_value("0xABCD"), "0xabcd");
-        assert_eq!(
-            normalise_value("0x0000000000000000000000000000000000000000"),
-            "0x0"
-        );
+        assert_eq!(normalise_value("0x0000000000000000000000000000000000000000"), "0x0");
         assert_eq!(normalise_value(" 42 "), "42");
     }
 
@@ -45,9 +42,7 @@ mod tests {
         assert!(is_valid_deletion_target(""));
         assert!(is_valid_deletion_target("\"\""));
         assert!(is_valid_deletion_target("0x"));
-        assert!(is_valid_deletion_target(
-            "0x0000000000000000000000000000000000000000"
-        ));
+        assert!(is_valid_deletion_target("0x0000000000000000000000000000000000000000"));
         assert!(is_valid_deletion_target(
             "0x0000000000000000000000000000000000000000000000000000000000000000"
         ));

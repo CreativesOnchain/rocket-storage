@@ -21,11 +21,7 @@ pub enum FailReason {
     /// Two contract addresses appear to be swapped.
     SwappedAddress { path_a: String, path_b: String },
     /// An external call target, selector, value, or multiplicity is wrong.
-    UnexpectedExternalCall {
-        to: String,
-        selector: String,
-        reason: String,
-    },
+    UnexpectedExternalCall { to: String, selector: String, reason: String },
 }
 
 /// A specific reason for an UNKNOWN verdict.

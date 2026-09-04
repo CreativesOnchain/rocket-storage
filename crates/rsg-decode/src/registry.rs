@@ -161,48 +161,52 @@ pub const SECURITY_ALLOWED_SETTINGS: &[(&str, &str)] = &[
 
 /// Protocol settings organized by namespace.
 pub const PROTOCOL_SETTINGS: &[(&str, &[&str])] = &[
-    ("deposit", &[
-        "deposit.assign.socialised.maximum",
-        "express.queue.rate",
-        "express.queue.tickets.base.provision",
-    ]),
-    ("network", &[
-        "network.node.commission.share",
-        "network.node.commission.share.security.council.adder",
-        "network.voter.share",
-        "network.pdao.share",
-        "network.max.node.commission.share.council.adder",
-        "network.max.reth.balance.delta",
-    ]),
-    ("node", &[
-        "reduced.bond",
-        "node.unstaking.period",
-        "node.withdrawal.cooldown",
-        "node.minimum.legacy.staked.rpl",
-        "node.per.minipool.stake.minimum",
-        "node.per.minipool.stake.maximum",
-        "node.deposit.enabled",
-    ]),
-    ("minipool", &[
-        "minipool.maximum.penalty.count",
-    ]),
-    ("security", &[
-        "upgrade.delay",
-        "upgradeveto.quorum",
-    ]),
-    ("proposals", &[
-        "proposal.quorum",
-        "proposal.veto.quorum",
-    ]),
-    ("megapool", &[
-        "megapool.time.before.dissolve",
-        "megapool.dissolve.penalty",
-        "maximum.megapool.eth.penalty",
-        "notify.threshold",
-        "late.notify.fine",
-        "user.distribute.delay",
-        "user.distribute.delay.shortfall",
-        "megapool.penalty.threshold",
-        "deployed",
-    ]),
+    (
+        "deposit",
+        &[
+            "deposit.assign.socialised.maximum",
+            "express.queue.rate",
+            "express.queue.tickets.base.provision",
+        ],
+    ),
+    (
+        "network",
+        &[
+            "network.node.commission.share",
+            "network.node.commission.share.security.council.adder",
+            "network.voter.share",
+            "network.pdao.share",
+            "network.max.node.commission.share.council.adder",
+            "network.max.reth.balance.delta",
+        ],
+    ),
+    (
+        "node",
+        &[
+            "reduced.bond",
+            "node.unstaking.period",
+            "node.withdrawal.cooldown",
+            "node.minimum.legacy.staked.rpl",
+            "node.per.minipool.stake.minimum",
+            "node.per.minipool.stake.maximum",
+            "node.deposit.enabled",
+        ],
+    ),
+    ("minipool", &["minipool.maximum.penalty.count"]),
+    ("security", &["upgrade.delay", "upgradeveto.quorum"]),
+    ("proposals", &["proposal.quorum", "proposal.veto.quorum"]),
+    (
+        "megapool",
+        &[
+            "megapool.time.before.dissolve",
+            "megapool.dissolve.penalty",
+            "maximum.megapool.eth.penalty",
+            "notify.threshold",
+            "late.notify.fine",
+            "user.distribute.delay",
+            "user.distribute.delay.shortfall",
+            "megapool.penalty.threshold",
+            "deployed",
+        ],
+    ),
 ];

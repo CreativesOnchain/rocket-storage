@@ -28,11 +28,7 @@ pub fn detect_swapped_addresses(
         .effects
         .iter()
         .filter(|e| e.op == StorageOp::SetAddress)
-        .filter_map(|e| {
-            e.semantic_path
-                .as_deref()
-                .map(|p| (p, e.new_value.as_str()))
-        })
+        .filter_map(|e| e.semantic_path.as_deref().map(|p| (p, e.new_value.as_str())))
         .collect();
 
     // For each pair of manifest paths, check if their observed values are transposed
@@ -43,14 +39,8 @@ pub fn detect_swapped_addresses(
             let path_b = paths[j];
             let exp_a = normalise_value(expected_addrs[path_a]);
             let exp_b = normalise_value(expected_addrs[path_b]);
-            let obs_a = observed_addrs
-                .get(path_a)
-                .map(|v| normalise_value(v))
-                .unwrap_or_default();
-            let obs_b = observed_addrs
-                .get(path_b)
-                .map(|v| normalise_value(v))
-                .unwrap_or_default();
+            let obs_a = observed_addrs.get(path_a).map(|v| normalise_value(v)).unwrap_or_default();
+            let obs_b = observed_addrs.get(path_b).map(|v| normalise_value(v)).unwrap_or_default();
 
             // Swap detected: obs_a == exp_b AND obs_b == exp_a
             if !exp_a.is_empty()

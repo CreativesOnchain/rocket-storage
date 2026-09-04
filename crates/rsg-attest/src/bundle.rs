@@ -4,15 +4,9 @@ use std::{fs::write, path::Path};
 
 use anyhow::Result;
 use indexmap::IndexMap;
-use rsg_types::{
-    AttestationBundle, AttestationHashes, FrozenTrace, Manifest, Verdict,
-};
+use rsg_types::{AttestationBundle, AttestationHashes, FrozenTrace, Manifest, Verdict};
 
-use crate::{
-    canonical::canonical_json,
-    hash::sha256_hex,
-    markdown::render_markdown,
-};
+use crate::{canonical::canonical_json, hash::sha256_hex, markdown::render_markdown};
 
 /// Build and write the complete proof bundle to `output_dir`.
 ///
@@ -33,12 +27,8 @@ pub fn write_bundle(
     std::fs::create_dir_all(output_dir)?;
 
     let trace_json = canonical_json(trace)?;
-    let (hashes, review_record_content) = compute_bundle_hashes(
-        trace,
-        &trace_json,
-        manifest_raw,
-        review_record_path,
-    )?;
+    let (hashes, review_record_content) =
+        compute_bundle_hashes(trace, &trace_json, manifest_raw, review_record_path)?;
 
     let effect_counts = count_effects_by_op(trace);
     let reasons = collect_verdict_reasons(verdict);
@@ -118,14 +108,12 @@ fn count_effects_by_op(trace: &FrozenTrace) -> IndexMap<String, usize> {
 fn collect_verdict_reasons(verdict: &Verdict) -> Vec<serde_json::Value> {
     match verdict {
         Verdict::Pass => vec![],
-        Verdict::Fail { reasons } => reasons
-            .iter()
-            .map(|r| serde_json::to_value(r).unwrap())
-            .collect(),
-        Verdict::Unknown { reasons } => reasons
-            .iter()
-            .map(|r| serde_json::to_value(r).unwrap())
-            .collect(),
+        Verdict::Fail { reasons } => {
+            reasons.iter().map(|r| serde_json::to_value(r).unwrap()).collect()
+        }
+        Verdict::Unknown { reasons } => {
+            reasons.iter().map(|r| serde_json::to_value(r).unwrap()).collect()
+        }
     }
 }
 

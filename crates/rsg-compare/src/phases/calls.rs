@@ -5,11 +5,7 @@ use std::collections::{HashMap, HashSet};
 use rsg_types::{FailReason, FrozenTrace, Manifest};
 
 /// Check observed external calls against manifest allowlist and multiplicity requirements.
-pub fn check_external_calls(
-    trace: &FrozenTrace,
-    manifest: &Manifest,
-    fails: &mut Vec<FailReason>,
-) {
+pub fn check_external_calls(trace: &FrozenTrace, manifest: &Manifest, fails: &mut Vec<FailReason>) {
     // Count observed external calls by (to, selector)
     let mut observed: HashMap<(String, String), usize> = HashMap::new();
     for call in &trace.external_calls {
@@ -19,10 +15,7 @@ pub fn check_external_calls(
 
     // Check each manifest external call entry
     for expected in &manifest.external_calls {
-        let key = (
-            expected.target.to_lowercase(),
-            expected.selector.to_lowercase(),
-        );
+        let key = (expected.target.to_lowercase(), expected.selector.to_lowercase());
         let count = observed.get(&key).copied().unwrap_or(0);
 
         if count != expected.multiplicity {

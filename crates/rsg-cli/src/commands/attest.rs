@@ -22,14 +22,7 @@ pub async fn execute(
     eprintln!("[rsg] Running comparator…");
     let verdict = compare(&trace, &manifest);
 
-    write_bundle(
-        &trace,
-        &manifest,
-        &manifest_raw,
-        review_record,
-        &verdict,
-        output_dir,
-    )?;
+    write_bundle(&trace, &manifest, &manifest_raw, review_record, &verdict, output_dir)?;
 
     let code = verdict.exit_code();
     print_verdict_summary(&verdict, trace.effects.len(), output_dir, code);
@@ -58,8 +51,7 @@ fn load_manifest(manifest_path: &Path) -> Result<(Manifest, String)> {
     eprintln!("[rsg] Loading manifest from {}…", manifest_path.display());
     let manifest_raw = std::fs::read_to_string(manifest_path)
         .with_context(|| format!("cannot read manifest: {}", manifest_path.display()))?;
-    let manifest: Manifest =
-        serde_yaml::from_str(&manifest_raw).context("manifest parse error")?;
+    let manifest: Manifest = serde_yaml::from_str(&manifest_raw).context("manifest parse error")?;
     Ok((manifest, manifest_raw))
 }
 

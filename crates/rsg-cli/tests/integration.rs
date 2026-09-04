@@ -5,8 +5,8 @@
 
 use rsg_compare::compare;
 use rsg_types::{
-    FrozenTrace, Manifest, ManifestEffect, ManifestExternalCall, ObservedEffect,
-    PinnedFixture, RequirementLevel, StorageOp, Verdict,
+    FrozenTrace, Manifest, ManifestEffect, ManifestExternalCall, ObservedEffect, PinnedFixture,
+    RequirementLevel, StorageOp, Verdict,
 };
 
 // ─── Helper builders ──────────────────────────────────────────────────────────
@@ -15,21 +15,18 @@ fn base_pinned() -> PinnedFixture {
     PinnedFixture::default()
 }
 
-fn make_trace(effects: Vec<ObservedEffect>, external_calls: Vec<rsg_types::ObservedExternalCall>) -> FrozenTrace {
-    FrozenTrace {
-        pinned: base_pinned(),
-        effects,
-        external_calls,
-    }
+fn make_trace(
+    effects: Vec<ObservedEffect>,
+    external_calls: Vec<rsg_types::ObservedExternalCall>,
+) -> FrozenTrace {
+    FrozenTrace { pinned: base_pinned(), effects, external_calls }
 }
 
-fn make_manifest(effects: Vec<ManifestEffect>, external_calls: Vec<ManifestExternalCall>) -> Manifest {
-    Manifest {
-        version: "1".into(),
-        fixture: base_pinned(),
-        effects,
-        external_calls,
-    }
+fn make_manifest(
+    effects: Vec<ManifestEffect>,
+    external_calls: Vec<ManifestExternalCall>,
+) -> Manifest {
+    Manifest { version: "1".into(), fixture: base_pinned(), effects, external_calls }
 }
 
 fn addr_effect(path: &str, old: &str, new: &str) -> ObservedEffect {
@@ -110,11 +107,7 @@ fn pass_on_exact_match() {
 #[test]
 fn fail_undeclared_write() {
     let trace = make_trace(
-        vec![addr_effect(
-            "contract.addressrocketMegapoolDelegate",
-            "0x0",
-            "0xaabbcc",
-        )],
+        vec![addr_effect("contract.addressrocketMegapoolDelegate", "0x0", "0xaabbcc")],
         vec![],
     );
     // Manifest has no entries → any write is undeclared
@@ -151,11 +144,7 @@ fn fail_wrong_new_value() {
 fn fail_missing_required_effect() {
     let trace = make_trace(vec![], vec![]); // empty trace
     let manifest = make_manifest(
-        vec![addr_entry(
-            "contract.addressrocketMegapoolDelegate",
-            "any",
-            "any",
-        )],
+        vec![addr_entry("contract.addressrocketMegapoolDelegate", "any", "any")],
         vec![],
     );
     let verdict = compare(&trace, &manifest);
@@ -169,20 +158,12 @@ fn fail_swapped_addresses() {
     let trace = make_trace(
         vec![
             {
-                let mut e = addr_effect(
-                    "contract.addressrocketMegapoolDelegate",
-                    "0x0",
-                    "0xbbbb",
-                );
+                let mut e = addr_effect("contract.addressrocketMegapoolDelegate", "0x0", "0xbbbb");
                 e.call_index = 0;
                 e
             },
             {
-                let mut e = addr_effect(
-                    "contract.addressrocketMegapoolBase",
-                    "0x0",
-                    "0xaaaa",
-                );
+                let mut e = addr_effect("contract.addressrocketMegapoolBase", "0x0", "0xaaaa");
                 e.raw_key = format!("0x{}", "ef".repeat(32));
                 e.call_index = 1;
                 e
@@ -235,11 +216,7 @@ fn fail_duplicate_mutation() {
     let trace = make_trace(vec![e1, e2], vec![]);
     // Manifest expects multiplicity = 1
     let manifest = make_manifest(
-        vec![bool_entry(
-            "contract.existsrocketMegapoolDelegate",
-            "false",
-            "true",
-        )],
+        vec![bool_entry("contract.existsrocketMegapoolDelegate", "false", "true")],
         vec![],
     );
     assert!(matches!(compare(&trace, &manifest), Verdict::Fail { .. }));
@@ -357,10 +334,9 @@ fn pass_reordered_effects() {
 
 #[test]
 fn test_all_adversarial_fixtures_deserialize() {
-    let dir = std::path::Path::new(env!("CARGO_MANIFEST_DIR"))
-        .join("../../tests/adversarial");
-    let entries = std::fs::read_dir(&dir)
-        .unwrap_or_else(|e| panic!("failed to read {:?}: {e}", dir));
+    let dir = std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("../../tests/adversarial");
+    let entries =
+        std::fs::read_dir(&dir).unwrap_or_else(|e| panic!("failed to read {:?}: {e}", dir));
 
     let mut count = 0;
     for entry in entries {
@@ -369,11 +345,7 @@ fn test_all_adversarial_fixtures_deserialize() {
             let content = std::fs::read_to_string(&path)
                 .unwrap_or_else(|e| panic!("failed to read {path:?}: {e}"));
             let trace: Result<FrozenTrace, _> = serde_json::from_str(&content);
-            assert!(
-                trace.is_ok(),
-                "failed to parse fixture {path:?}: {:?}",
-                trace.err()
-            );
+            assert!(trace.is_ok(), "failed to parse fixture {path:?}: {:?}", trace.err());
             count += 1;
         }
     }
