@@ -60,7 +60,7 @@ rocket_storage/
 
 ## Installation & Building
 
-Requirements: Rust toolchain (stable 2021 edition).
+Requirements: Rust toolchain (2024 edition, Rust 1.85+).
 
 ```bash
 # Build the workspace
@@ -85,7 +85,7 @@ rsg attest \
   --fixture fixtures/v1.4-mainnet/frozen-trace.json \
   --manifest manifests/v1.4-mainnet/manifest.yaml \
   --review-record manifests/v1.4-mainnet/review-record.json \
-  --output attestations/v1.4-mainnet/
+  --output-dir attestations/v1.4-mainnet/
 ```
 
 ### 2. Live Capture & Attest (Online Verification)
@@ -105,7 +105,7 @@ rsg attest \
   --rpc-url https://eth-mainnet.g.alchemy.com/v2/YOUR_KEY \
   --manifest manifests/v1.4-mainnet/manifest.yaml \
   --review-record manifests/v1.4-mainnet/review-record.json \
-  --output attestations/v1.4-mainnet/
+  --output-dir attestations/v1.4-mainnet/
 ```
 
 ### 3. Decode Raw Keys
