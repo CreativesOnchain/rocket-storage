@@ -24,7 +24,7 @@
 |---|---|
 | Observed trace | `6212d49dad9cab7c60132bcdfef43bc0a24629b0b61fef0d5ffa55dd6705c757` |
 | Manifest | `40e13752aca6517d61af48a66fe4567ab246c4fa3b23dbd8a3351d1ab3456063` |
-| Review record | `51f7621a03d7ad5be7034bb3c247d42b37a849752d998e28243ff8b47e93c27d` |
+| Review record | `50815876c5b5772a0d5e0c0c48e6f47ffff44d0df4af26606073ae05d439b312` |
 | Tool version | `rsg/0.1.0` |
 
 ## Observed RocketStorage Effects
@@ -293,4 +293,4 @@ This attestation covers only typed RocketStorage mutations and declared external
 > **Disclaimer:** PASS means only that the replayed payload conforms to the reviewed manifest within the documented observation boundary. This is not an audit, security certificate, or proof that the upgrade is safe or correct in its entirety.
 
 ---
-*Generated at: 2026-09-04T21:16:43.157210538+00:00*
+*Generated at: 2026-09-04T22:16:03.370574811+00:00*

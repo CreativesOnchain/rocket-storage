@@ -1,10 +1,10 @@
 {
   "version": "1",
-  "generated_at": "2026-09-04T21:16:43.157210538+00:00",
+  "generated_at": "2026-09-04T22:16:03.370574811+00:00",
   "hashes": {
     "observed_trace_sha256": "6212d49dad9cab7c60132bcdfef43bc0a24629b0b61fef0d5ffa55dd6705c757",
     "manifest_sha256": "40e13752aca6517d61af48a66fe4567ab246c4fa3b23dbd8a3351d1ab3456063",
-    "review_record_sha256": "51f7621a03d7ad5be7034bb3c247d42b37a849752d998e28243ff8b47e93c27d",
+    "review_record_sha256": "50815876c5b5772a0d5e0c0c48e6f47ffff44d0df4af26606073ae05d439b312",
     "upgrade_tx": "0x2fc10aad3c1b00bdfa9b6fddab79e0f2688609848f8f7a1a6449ab42da38530c",
     "source_commit": "fb7d9c428dc3dddc3fbd3e634e3cb365655df89e",
     "tool_version": "rsg/0.1.0"
