@@ -1,109 +1,54 @@
 //! Comparator and verdict engine.
 //!
-//! Implements all 10 failure checks described in the spec and returns a
-//! deterministic `Verdict` with machine-readable `FailReason` / `UnknownReason`
-//! variants.
+//! Implements all failure checks described in the specification and returns a
+//! deterministic `Verdict` with machine-readable `FailReason` and `UnknownReason` variants.
 
-use rsg_types::{
-    FailReason, FrozenTrace, Manifest, ManifestEffect, ObservedEffect, RequirementLevel,
-    StorageOp, UnknownReason, Verdict,
+pub mod normalizer;
+pub mod phases;
+
+pub use normalizer::normalise_value;
+pub use phases::{
+    check_effect_against_entry, check_external_calls, check_manifest_effects,
+    check_undeclared_writes, detect_swapped_addresses, scan_observed_effects, validate_pinned,
 };
-use std::collections::HashMap;
+
+use rsg_types::{FailReason, FrozenTrace, Manifest, UnknownReason, Verdict};
 
 /// Compare a `FrozenTrace` against a `Manifest` and return a verdict.
 ///
-/// This is the core function of the tool. It is deterministic — given the same
-/// inputs it always produces the same `Verdict`.
+/// This is the core verification function of the tool. It is completely deterministic:
+/// given the same inputs it always produces the same `Verdict`.
 pub fn compare(trace: &FrozenTrace, manifest: &Manifest) -> Verdict {
     let mut fail_reasons: Vec<FailReason> = Vec::new();
     let mut unknown_reasons: Vec<UnknownReason> = Vec::new();
 
-    // ── Check 0: Pinned fixture must match ───────────────────────────────────
+    // ── Check 0: Pinned fixture parameters must match ─────────────────────────
     validate_pinned(trace, manifest, &mut fail_reasons);
 
-    // ── Phase 1: Scan observed effects ───────────────────────────────────────
-    // Map semantic_path → count of how many times we observed it.
-    let mut observed_counts: HashMap<String, Vec<&ObservedEffect>> = HashMap::new();
+    // ── Phase 1: Scan observed effects & check for unresolvable keys ───────────
+    let observed_counts = scan_observed_effects(&trace.effects, &mut unknown_reasons);
 
-    for effect in &trace.effects {
-        // Check: unresolved key
-        if effect.semantic_path.is_none() {
-            unknown_reasons.push(UnknownReason::UndecodeableKey {
-                raw_key: effect.raw_key.clone(),
-                op: format!("{:?}", effect.op),
-            });
-            continue;
-        }
-
-        let path = effect.semantic_path.as_ref().unwrap().clone();
-        observed_counts.entry(path).or_default().push(effect);
-    }
-
-    // If any unknowns exist at this point, stop — return UNKNOWN immediately
-    // (fail-closed: we can't safely verify if we have unresolved keys)
+    // If any unknowns exist at this point, fail-closed immediately:
+    // we cannot safely assert correctness when unresolvable keys are present.
     if !unknown_reasons.is_empty() {
         return Verdict::Unknown {
             reasons: unknown_reasons,
         };
     }
 
-    // ── Phase 2: Check every REQUIRED manifest entry is observed ─────────────
-    for entry in &manifest.effects {
-        if entry.requirement == RequirementLevel::Required {
-            let observed = observed_counts.get(&entry.semantic_path);
+    // ── Phase 2: Check every REQUIRED manifest entry is observed ──────────────
+    check_manifest_effects(manifest, &observed_counts, &mut fail_reasons);
 
-            match observed {
-                None => {
-                    fail_reasons.push(FailReason::MissingRequiredEffect {
-                        semantic_path: entry.semantic_path.clone(),
-                    });
-                }
-                Some(effects) => {
-                    // Check multiplicity
-                    if effects.len() != entry.multiplicity {
-                        fail_reasons.push(FailReason::DuplicateMutation {
-                            semantic_path: entry.semantic_path.clone(),
-                            expected: entry.multiplicity,
-                            observed: effects.len(),
-                        });
-                    }
+    // ── Phase 3: Check for undeclared storage writes ──────────────────────────
+    check_undeclared_writes(manifest, &observed_counts, &mut fail_reasons);
 
-                    // Check each observed effect against the manifest entry
-                    for obs in effects {
-                        check_effect_against_entry(obs, entry, &mut fail_reasons);
-                    }
-                }
-            }
-        }
-    }
-
-    // ── Phase 3: Check for undeclared writes ─────────────────────────────────
-    // Build a set of all manifest semantic paths
-    let manifest_paths: HashMap<&str, &ManifestEffect> = manifest
-        .effects
-        .iter()
-        .map(|e| (e.semantic_path.as_str(), e))
-        .collect();
-
-    for (path, effects) in &observed_counts {
-        if !manifest_paths.contains_key(path.as_str()) {
-            // Observed a mutation that has no manifest entry
-            let first = effects[0];
-            fail_reasons.push(FailReason::UndeclaredWrite {
-                raw_key: first.raw_key.clone(),
-                op: format!("{:?}", first.op),
-                new_value: first.new_value.clone(),
-            });
-        }
-    }
-
-    // ── Phase 4: Check external calls ────────────────────────────────────────
+    // ── Phase 4: Check external calls against allowlist & multiplicity ────────
     check_external_calls(trace, manifest, &mut fail_reasons);
 
-    // ── Phase 5: Swapped address detection ───────────────────────────────────
+    // ── Phase 5: Swapped address detection ────────────────────────────────────
     detect_swapped_addresses(trace, manifest, &mut fail_reasons);
 
-    // ── Produce verdict ───────────────────────────────────────────────────────
+    // ── Produce final verdict ────────────────────────────────────────────────
     if !fail_reasons.is_empty() {
         Verdict::Fail {
             reasons: fail_reasons,
@@ -113,221 +58,13 @@ pub fn compare(trace: &FrozenTrace, manifest: &Manifest) -> Verdict {
     }
 }
 
-// ─── Helpers ──────────────────────────────────────────────────────────────────
-
-fn validate_pinned(trace: &FrozenTrace, manifest: &Manifest, fails: &mut Vec<FailReason>) {
-    if trace.pinned.chain_id != manifest.fixture.chain_id {
-        fails.push(FailReason::WrongValue {
-            semantic_path: "pinned.chain_id".to_string(),
-            field: "chain_id".to_string(),
-            expected: manifest.fixture.chain_id.to_string(),
-            observed: trace.pinned.chain_id.to_string(),
-        });
-    }
-    if trace.pinned.upgrade_tx.to_lowercase()
-        != manifest.fixture.upgrade_tx.to_lowercase()
-    {
-        fails.push(FailReason::WrongValue {
-            semantic_path: "pinned.upgrade_tx".to_string(),
-            field: "upgrade_tx".to_string(),
-            expected: manifest.fixture.upgrade_tx.clone(),
-            observed: trace.pinned.upgrade_tx.clone(),
-        });
-    }
-    if trace.pinned.source_commit != manifest.fixture.source_commit {
-        fails.push(FailReason::WrongValue {
-            semantic_path: "pinned.source_commit".to_string(),
-            field: "source_commit".to_string(),
-            expected: manifest.fixture.source_commit.clone(),
-            observed: trace.pinned.source_commit.clone(),
-        });
-    }
-}
-
-fn check_effect_against_entry(
-    obs: &ObservedEffect,
-    entry: &ManifestEffect,
-    fails: &mut Vec<FailReason>,
-) {
-    // Type check
-    let expected_op_str = format!("{:?}", entry.op);
-    let observed_op_str = format!("{:?}", obs.op);
-    if obs.op != entry.op {
-        fails.push(FailReason::TypeDrift {
-            raw_key: obs.raw_key.clone(),
-            expected_op: expected_op_str,
-            observed_op: observed_op_str,
-        });
-        return; // Don't check values if the type is wrong
-    }
-
-    // Old value check (skip if manifest says "any")
-    if entry.expected_old_value != "any"
-        && normalise_value(&obs.old_value) != normalise_value(&entry.expected_old_value)
-    {
-        fails.push(FailReason::WrongValue {
-            semantic_path: entry.semantic_path.clone(),
-            field: "old_value".to_string(),
-            expected: entry.expected_old_value.clone(),
-            observed: obs.old_value.clone(),
-        });
-    }
-
-    // New value check (skip if manifest says "any")
-    if entry.expected_new_value != "any"
-        && normalise_value(&obs.new_value) != normalise_value(&entry.expected_new_value)
-    {
-        fails.push(FailReason::WrongValue {
-            semantic_path: entry.semantic_path.clone(),
-            field: "new_value".to_string(),
-            expected: entry.expected_new_value.clone(),
-            observed: obs.new_value.clone(),
-        });
-    }
-
-    // Omitted deletion check
-    if entry.op.is_delete()
-        && obs.new_value != "0"
-        && obs.new_value != "false"
-        && obs.new_value != ""
-        && obs.new_value != "\"\""
-        && obs.new_value != "0x"
-        && obs.new_value != "0x0000000000000000000000000000000000000000"
-        && obs.new_value != "0x0000000000000000000000000000000000000000000000000000000000000000"
-    {
-        fails.push(FailReason::OmittedDeletion {
-            semantic_path: entry.semantic_path.clone(),
-        });
-    }
-}
-
-fn check_external_calls(
-    trace: &FrozenTrace,
-    manifest: &Manifest,
-    fails: &mut Vec<FailReason>,
-) {
-    // Count observed external calls by (to, selector)
-    let mut observed: HashMap<(String, String), usize> = HashMap::new();
-    for call in &trace.external_calls {
-        let key = (call.to.to_lowercase(), call.selector.to_lowercase());
-        *observed.entry(key).or_default() += 1;
-    }
-
-    // Check each manifest external call entry
-    for expected in &manifest.external_calls {
-        let key = (
-            expected.target.to_lowercase(),
-            expected.selector.to_lowercase(),
-        );
-        let count = observed.get(&key).copied().unwrap_or(0);
-
-        if count != expected.multiplicity {
-            fails.push(FailReason::UnexpectedExternalCall {
-                to: expected.target.clone(),
-                selector: expected.selector.clone(),
-                reason: format!(
-                    "expected {} call(s) to {}:{}, observed {}",
-                    expected.multiplicity,
-                    expected.target,
-                    expected.selector,
-                    count
-                ),
-            });
-        }
-    }
-
-    // Check for any call not in the manifest
-    let manifest_call_keys: std::collections::HashSet<(String, String)> = manifest
-        .external_calls
-        .iter()
-        .map(|e| (e.target.to_lowercase(), e.selector.to_lowercase()))
-        .collect();
-
-    for call in &trace.external_calls {
-        let key = (call.to.to_lowercase(), call.selector.to_lowercase());
-        if !manifest_call_keys.contains(&key) {
-            fails.push(FailReason::UnexpectedExternalCall {
-                to: call.to.clone(),
-                selector: call.selector.clone(),
-                reason: "call target+selector not in manifest allowlist".to_string(),
-            });
-        }
-    }
-}
-
-fn detect_swapped_addresses(
-    trace: &FrozenTrace,
-    manifest: &Manifest,
-    fails: &mut Vec<FailReason>,
-) {
-    // Build map of manifest expected new values for address setters
-    let expected_addrs: HashMap<&str, &str> = manifest
-        .effects
-        .iter()
-        .filter(|e| e.op == StorageOp::SetAddress)
-        .map(|e| (e.semantic_path.as_str(), e.expected_new_value.as_str()))
-        .collect();
-
-    // Build map of observed new values
-    let observed_addrs: HashMap<&str, &str> = trace
-        .effects
-        .iter()
-        .filter(|e| e.op == StorageOp::SetAddress)
-        .filter_map(|e| {
-            e.semantic_path
-                .as_deref()
-                .map(|p| (p, e.new_value.as_str()))
-        })
-        .collect();
-
-    // For each pair of manifest paths, check if their observed values are transposed
-    let paths: Vec<&str> = expected_addrs.keys().copied().collect();
-    for i in 0..paths.len() {
-        for j in (i + 1)..paths.len() {
-            let path_a = paths[i];
-            let path_b = paths[j];
-            let exp_a = normalise_value(expected_addrs[path_a]);
-            let exp_b = normalise_value(expected_addrs[path_b]);
-            let obs_a = observed_addrs
-                .get(path_a)
-                .map(|v| normalise_value(v))
-                .unwrap_or_default();
-            let obs_b = observed_addrs
-                .get(path_b)
-                .map(|v| normalise_value(v))
-                .unwrap_or_default();
-
-            // Swap detected: obs_a == exp_b AND obs_b == exp_a
-            if !exp_a.is_empty()
-                && !exp_b.is_empty()
-                && obs_a == exp_b
-                && obs_b == exp_a
-                && exp_a != exp_b
-            {
-                fails.push(FailReason::SwappedAddress {
-                    path_a: path_a.to_string(),
-                    path_b: path_b.to_string(),
-                });
-            }
-        }
-    }
-}
-
-/// Normalise a value string for comparison: lowercase, strip 0x prefix for hex.
-/// This makes "0xABCD" == "0xabcd" and "0x00..00" == "0".
-fn normalise_value(v: &str) -> String {
-    let v = v.trim().to_lowercase();
-    // For zero address
-    if v == "0x0000000000000000000000000000000000000000" {
-        return "0x0".to_string();
-    }
-    v
-}
-
 #[cfg(test)]
 mod tests {
     use super::*;
-    use rsg_types::PinnedFixture;
+    use rsg_types::{
+        ManifestEffect, ManifestExternalCall, ObservedEffect, ObservedExternalCall, PinnedFixture,
+        RequirementLevel, StorageOp,
+    };
 
     fn base_fixture() -> PinnedFixture {
         PinnedFixture::default()
@@ -417,7 +154,6 @@ mod tests {
             "3",
             "4",
         )]);
-        // Manifest has NO entries
         let manifest = make_manifest(vec![]);
         let verdict = compare(&trace, &manifest);
         assert!(matches!(verdict, Verdict::Fail { .. }));
@@ -432,7 +168,7 @@ mod tests {
                 caller: "0xdeadbeef".to_string(),
                 op: StorageOp::SetUint,
                 raw_key: "0x".to_string() + &"de".repeat(32),
-                semantic_path: None, // <-- undecodeable
+                semantic_path: None, // <-- undecodable
                 old_value: "0".to_string(),
                 new_value: "1".to_string(),
             }],
@@ -441,5 +177,130 @@ mod tests {
         let manifest = make_manifest(vec![]);
         let verdict = compare(&trace, &manifest);
         assert!(matches!(verdict, Verdict::Unknown { .. }));
+    }
+
+    #[test]
+    fn fail_on_swapped_addresses() {
+        let path_a = "contract.address[rocketVault]";
+        let path_b = "contract.address[rocketTokenRETH]";
+        let addr_a = "0x1111111111111111111111111111111111111111";
+        let addr_b = "0x2222222222222222222222222222222222222222";
+
+        // Swapped in trace
+        let trace = FrozenTrace {
+            pinned: base_fixture(),
+            effects: vec![
+                ObservedEffect {
+                    call_index: 0,
+                    caller: "0xcaller".to_string(),
+                    op: StorageOp::SetAddress,
+                    raw_key: "0xaa".to_string(),
+                    semantic_path: Some(path_a.to_string()),
+                    old_value: "0x0".to_string(),
+                    new_value: addr_b.to_string(), // swapped!
+                },
+                ObservedEffect {
+                    call_index: 1,
+                    caller: "0xcaller".to_string(),
+                    op: StorageOp::SetAddress,
+                    raw_key: "0xbb".to_string(),
+                    semantic_path: Some(path_b.to_string()),
+                    old_value: "0x0".to_string(),
+                    new_value: addr_a.to_string(), // swapped!
+                },
+            ],
+            external_calls: vec![],
+        };
+
+        let manifest = Manifest {
+            version: "1".to_string(),
+            fixture: base_fixture(),
+            effects: vec![
+                ManifestEffect {
+                    semantic_path: path_a.to_string(),
+                    raw_key: None,
+                    op: StorageOp::SetAddress,
+                    requirement: RequirementLevel::Required,
+                    multiplicity: 1,
+                    expected_old_value: "any".to_string(),
+                    expected_new_value: addr_a.to_string(),
+                    source_anchor: "test".to_string(),
+                    rationale: "test".to_string(),
+                },
+                ManifestEffect {
+                    semantic_path: path_b.to_string(),
+                    raw_key: None,
+                    op: StorageOp::SetAddress,
+                    requirement: RequirementLevel::Required,
+                    multiplicity: 1,
+                    expected_old_value: "any".to_string(),
+                    expected_new_value: addr_b.to_string(),
+                    source_anchor: "test".to_string(),
+                    rationale: "test".to_string(),
+                },
+            ],
+            external_calls: vec![],
+        };
+
+        let verdict = compare(&trace, &manifest);
+        match verdict {
+            Verdict::Fail { reasons } => {
+                assert!(reasons
+                    .iter()
+                    .any(|r| matches!(r, FailReason::SwappedAddress { .. })));
+            }
+            _ => panic!("expected Fail with SwappedAddress, got {:?}", verdict),
+        }
+    }
+
+    #[test]
+    fn fail_on_unexpected_external_call() {
+        let trace = FrozenTrace {
+            pinned: base_fixture(),
+            effects: vec![],
+            external_calls: vec![ObservedExternalCall {
+                call_index: 0,
+                from: "0xcaller".to_string(),
+                to: "0xrogue".to_string(),
+                selector: "0xdeadbeef".to_string(),
+                eth_value: "0".to_string(),
+                success: true,
+            }],
+        };
+        let manifest = make_manifest(vec![]);
+        let verdict = compare(&trace, &manifest);
+        match verdict {
+            Verdict::Fail { reasons } => {
+                assert!(reasons
+                    .iter()
+                    .any(|r| matches!(r, FailReason::UnexpectedExternalCall { .. })));
+            }
+            _ => panic!("expected Fail with UnexpectedExternalCall, got {:?}", verdict),
+        }
+    }
+
+    #[test]
+    fn pass_on_authorized_external_call() {
+        let trace = FrozenTrace {
+            pinned: base_fixture(),
+            effects: vec![],
+            external_calls: vec![ObservedExternalCall {
+                call_index: 0,
+                from: "0xcaller".to_string(),
+                to: "0xvault".to_string(),
+                selector: "0x12345678".to_string(),
+                eth_value: "0".to_string(),
+                success: true,
+            }],
+        };
+        let mut manifest = make_manifest(vec![]);
+        manifest.external_calls = vec![ManifestExternalCall {
+            target: "0xvault".to_string(),
+            selector: "0x12345678".to_string(),
+            eth_value: "0".to_string(),
+            multiplicity: 1,
+            rationale: "test".to_string(),
+        }];
+        assert_eq!(compare(&trace, &manifest), Verdict::Pass);
     }
 }
