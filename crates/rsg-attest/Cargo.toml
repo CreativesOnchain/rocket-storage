@@ -1,0 +1,15 @@
+[package]
+name = "rsg-attest"
+version.workspace = true
+edition.workspace = true
+description = "Proof bundle generator — JSON attestation and Markdown report"
+
+[dependencies]
+rsg-types  = { workspace = true }
+serde      = { workspace = true }
+serde_json = { workspace = true }
+anyhow     = { workspace = true }
+sha2       = { workspace = true }
+indexmap   = { workspace = true }
+chrono     = { workspace = true }
+hex        = { workspace = true }

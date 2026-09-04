@@ -1,0 +1,13 @@
+[package]
+name = "rsg-capture"
+version.workspace = true
+edition.workspace = true
+description = "Live trace capture engine — forks mainnet and extracts RocketStorage mutations"
+
+[dependencies]
+rsg-types  = { workspace = true }
+rsg-decode = { workspace = true }
+serde_json = { workspace = true }
+anyhow     = { workspace = true }
+hex        = { workspace = true }
+alloy      = { workspace = true }

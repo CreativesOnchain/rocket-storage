@@ -1,0 +1,8 @@
+[package]
+name = "rsg-compare"
+version.workspace = true
+edition.workspace = true
+description = "Comparator and verdict engine — checks observed effects against manifest"
+
+[dependencies]
+rsg-types  = { workspace = true }

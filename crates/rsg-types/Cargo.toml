@@ -1,0 +1,10 @@
+[package]
+name = "rsg-types"
+version.workspace = true
+edition.workspace = true
+description = "Shared types for rocket-storage-gate"
+
+[dependencies]
+serde       = { workspace = true }
+serde_json  = { workspace = true }
+indexmap    = { workspace = true }

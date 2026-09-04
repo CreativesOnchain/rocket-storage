@@ -1,0 +1,39 @@
+{
+  "version": "1",
+  "generated_at": "2026-09-04T21:16:43.157210538+00:00",
+  "hashes": {
+    "observed_trace_sha256": "6212d49dad9cab7c60132bcdfef43bc0a24629b0b61fef0d5ffa55dd6705c757",
+    "manifest_sha256": "40e13752aca6517d61af48a66fe4567ab246c4fa3b23dbd8a3351d1ab3456063",
+    "review_record_sha256": "51f7621a03d7ad5be7034bb3c247d42b37a849752d998e28243ff8b47e93c27d",
+    "upgrade_tx": "0x2fc10aad3c1b00bdfa9b6fddab79e0f2688609848f8f7a1a6449ab42da38530c",
+    "source_commit": "fb7d9c428dc3dddc3fbd3e634e3cb365655df89e",
+    "tool_version": "rsg/0.1.0"
+  },
+  "pinned": {
+    "chain_id": 1,
+    "pre_block": 24479993,
+    "pre_block_hash": "0x8c26a07a5b2c987c58afd5e3458115a5ce49e6e6e9cff72780d2dfa7b89f3bfd",
+    "upgrade_tx": "0x2fc10aad3c1b00bdfa9b6fddab79e0f2688609848f8f7a1a6449ab42da38530c",
+    "exec_block": 24479994,
+    "upgrade_contract": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+    "rocket_storage": "0x1d8f8f00cfa6758d7be78336684788fb0ee0fa46",
+    "source_commit": "fb7d9c428dc3dddc3fbd3e634e3cb365655df89e",
+    "replay_tool": "rsg-capture/0.1.0"
+  },
+  "verdict": {
+    "verdict": "PASS"
+  },
+  "reasons": [],
+  "effect_counts": {
+    "SetBool": 39,
+    "SetString": 71,
+    "SetAddress": 38,
+    "DeleteString": 24,
+    "DeleteBool": 24,
+    "SetUint": 33,
+    "DeleteUint": 2,
+    "SetBytes32": 3
+  },
+  "observation_boundary": "This attestation covers only typed RocketStorage mutations and declared external calls captured from the upgrade transaction replay. It does not cover state changes inside externally called contracts, events, or any other protocol invariants.",
+  "disclaimer": "PASS means only that the replayed payload conforms to the reviewed manifest within the documented observation boundary. This is not an audit, security certificate, or proof that the upgrade is safe or correct in its entirety."
+}

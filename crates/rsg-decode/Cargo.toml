@@ -1,0 +1,12 @@
+[package]
+name = "rsg-decode"
+version.workspace = true
+edition.workspace = true
+description = "Semantic key decoder for RocketStorage bytes32 keys"
+
+[dependencies]
+rsg-types  = { workspace = true }
+serde_json = { workspace = true }
+anyhow     = { workspace = true }
+hex        = { workspace = true }
+sha3       = { workspace = true }

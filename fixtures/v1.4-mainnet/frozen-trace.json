@@ -1,0 +1,2155 @@
+{
+  "pinned": {
+    "chain_id": 1,
+    "pre_block": 24479993,
+    "pre_block_hash": "0x8c26a07a5b2c987c58afd5e3458115a5ce49e6e6e9cff72780d2dfa7b89f3bfd",
+    "upgrade_tx": "0x2fc10aad3c1b00bdfa9b6fddab79e0f2688609848f8f7a1a6449ab42da38530c",
+    "exec_block": 24479994,
+    "upgrade_contract": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+    "rocket_storage": "0x1d8f8f00cfa6758d7be78336684788fb0ee0fa46",
+    "source_commit": "fb7d9c428dc3dddc3fbd3e634e3cb365655df89e",
+    "replay_tool": "rsg-capture/0.1.0"
+  },
+  "effects": [
+    {
+      "call_index": 5,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0x6847c4f92710ff8dd03022f7ad712ca46d7d35a8cc1bdfa41f352f336b618412",
+      "semantic_path": "contract.exists.rocketMegapoolDelegate",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 6,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x0cd591355a41ce5eaab3aefc84cabc015f8acd3ada2ee83812820c02c3c4326a",
+      "semantic_path": "contract.name.rocketMegapoolDelegate",
+      "old_value": "",
+      "new_value": "rocketMegapoolDelegate"
+    },
+    {
+      "call_index": 7,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetAddress",
+      "raw_key": "0x545ae0a88400bfdb684d4c4645ecafa0a1d9b7d552c288cde0014b9570fb26a3",
+      "semantic_path": "contract.address.rocketMegapoolDelegate",
+      "old_value": "0x0000000000000000000000000000000000000000",
+      "new_value": "0xca3dd4bee7c174903dbf66c3897c27e9adaaebdd"
+    },
+    {
+      "call_index": 8,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0xde5ae3a8a65fb70eb8cd0e3e9f55c0af37204c72f953be3e5dbb1f29c20c0770",
+      "semantic_path": "contract.abi.rocketMegapoolDelegate",
+      "old_value": "",
+      "new_value": "eJztWt1v2zgM/1cOfi7uYXe3h71lbTcE6Hpd2t49DEXA2EwqTJE8iU4aDPvfj4odf8ROYidO4Gv61lQU9SMpfoj0t5+eUGFE1vvwzf1JaBTIh0WI3gfP14oM+PTbQPvfke5JG5hg3xGNwUfvwlMwdYRDkyfoBYFBa3mZYj6Q/OPX04VnCQi/RAQjIQUteFVpFcICRhKzHXyyJRP5zND7dfHTAyZaTHXEMMcgLV4UUQf4gkFuqSBFxL/f/fU+QwvMSFF22IrAHdSUF4kpVnB6Sgm+4ARCreVHrYIBBpHPzFN6nCEDeR0CXuGI+so3CPY1i/iqbXiHzIUWvTCU4hAZ2XVrwJqBFAGwi/eDE8v5z+rknrVios5C1Cv8EWF0HqIKa7WcnYWs1+poZv3jXQ1JmehEgr4IOg+LsqBCTc5A0htXNZ6DSe8JzkPQRyUPtGkXy6MBzsEE9lICUx5fNqUD7LUo30zzepsMDdJzm/xCo0n7XF+DbpNtXbtyuUBGjKIN6WXz+7h04nDjtcwOBS6uF0mhzYQ6ooR97cfxOFI+Ca1qoMun8OHWHJ4DuKyJP0UqsLvx1QSXcfdB+pFkNqyCgNNcYoPCSbsV7Vwk21l5V2r4xEEc0kvb+/sgPs6ZNjOoVPpM4Hyv69D4sqbWejPTCc20j9f6zyAlqgm68rHNuJI7wuW/47AOMDToM6dORsQgfjp3E1vy1k1LsCMZKM2Rx+E/QeoxQU6OyyQ47Yg3eZ1V6mk/vywiS7pEjG3tFuyOG20GiwIo14zsCpbkydpF212/hMKAI3qIy8FOKOwGLKVlZ9ewLV9wXbTlLc5TWPE85UckDE6xDsDTKO/Wvd3S+dcWSJASlSBtH5ftBclpq0sq+rrsWXYJ1UHPkaOhGiATdSvvPFo0lxAKAtklSPGN6hiwjgTR1orNvEh9NdZrEvl6GmrF0bjWoZJzYFxZuQD+UGrWpJOFnVxcHkBLWYF2GJckLDVmwo8YbQXVBjHSWma77VqPeLm6cxeuTUXq7RLqa/KgabjtjhOTw9kcZuhS2qNtjjUoD/Pqq6YwR6m3bb2BvWmXs+v7P4vHfQQJyl8zPhPV2B4fW/YCt/up1OuMP45JvstZdeGTz29uYMFO+fu6o5bCCkUhv9A6GFV6KriLRt+x2B59Cy9v4eUtvHQ9vIj4VzHEVOhkQZh7+4Qrd6f8csdCU2VM2i5XexIVIP0r6DkwMAd5aTDg6CZA7niyLM+vLi9XS0edNYw46G2f7W3xmWFk8Tp28QfhrmQNpysaIrP3XfVVa8DhnlMKUGSwLpPCxUui+BUQDLSmajOsxie5fofXnebz7mgznK9uKKO5DrX/vE/MGhr0+XJv2J9TkyYxXrQ99zi+kuL5W199nqOoo59Sy2jou5mPyfamnaMmJpInMtAnwZyyFPY/MpSVellAMsppuFvQW00nuYyNp7lm+e1yqevW2hDHIG8pzSUO+W6gtUS+KiuPIPUMjXXLp+05Pf0Hf8TmpQ=="
+    },
+    {
+      "call_index": 12,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0x9ddd3ed932d2a1cfff1ef9dab19198cf5e8c289026ccaca54097472b68e198f7",
+      "semantic_path": "contract.exists.rocketMegapoolFactory",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 13,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0xea2ebb19c30018052caad88f7dd31731c8183d90ba707d2516007eed4b3bddb1",
+      "semantic_path": "contract.name.rocketMegapoolFactory",
+      "old_value": "",
+      "new_value": "rocketMegapoolFactory"
+    },
+    {
+      "call_index": 14,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetAddress",
+      "raw_key": "0x0daa0d715a7b4f4224221c135ef0a61050b0d8b23f030d7c9bb8128781b94eb0",
+      "semantic_path": "contract.address.rocketMegapoolFactory",
+      "old_value": "0x0000000000000000000000000000000000000000",
+      "new_value": "0xd5bffeaa9f373b9c367132772faa0b88e3f0e38b"
+    },
+    {
+      "call_index": 15,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0xa69414594226591706303fb70372ccfeaf4e1f8bd13345005f70c62d26a789b2",
+      "semantic_path": "contract.abi.rocketMegapoolFactory",
+      "old_value": "",
+      "new_value": "eJzNlEFLxDAQhf+K5NyToCx7E+vBwyKot2WRaTJbgnESksmuRfa/m66tVai1xV3ZW5t5yXsfk8nyTWhykYOYL+tPRk9gHiuHYi6kJfYg+ezeymfkB7YeSrytRWuQKDJB8FILn/xXwZVSHkNIZf44B5qF3SoTgYFxERkKbTRXqUqWHFRQGOx2JOfAPsp0oNhlQxnh06zNQlYNR2iECp2x1XXDmKQ28miXv8CtI0nWliaTKTRYJocxdCVy3shvXp321TBgTP/nF5d9gG2pH3CjcXsAtLFNS1gJByWj6uTHaNz/cy1Ss5y1Jt/fS1TDYEVS9lHt108F6c7npzVkXTpNmjUYHfBbqOMPMeE2nzDH0ZUeFLZbDhm2M9mgD3X51ydi9tMDMZt451bvOv4/2w=="
+    },
+    {
+      "call_index": 19,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0x49dc31a6c6c1890e20a8e7cd5593b87a54338c6a0339f2f1fe4afaac278422e0",
+      "semantic_path": "contract.exists.rocketMegapoolProxy",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 20,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0xe4fd20196ea6827642eaf9b5ba6917e2020b353ab006670dea88f9a20a4950bc",
+      "semantic_path": "contract.name.rocketMegapoolProxy",
+      "old_value": "",
+      "new_value": "rocketMegapoolProxy"
+    },
+    {
+      "call_index": 21,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetAddress",
+      "raw_key": "0x7bf5049133be050bebadf1b72f025b975d6fb4a18d15fe2c9611753edeb25292",
+      "semantic_path": "contract.address.rocketMegapoolProxy",
+      "old_value": "0x0000000000000000000000000000000000000000",
+      "new_value": "0x1b389d76a04d01026c5f5b0a125d4ccf26f9cd51"
+    },
+    {
+      "call_index": 22,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0xc26498ef0e6c9813e33135f35b655b290238e59f5a1f82f7a9fba0a863c8ca65",
+      "semantic_path": "contract.abi.rocketMegapoolProxy",
+      "old_value": "",
+      "new_value": "eJzNlE1PwzAMhv8KyrknJDjshsQOSHAZ7DShKU3cES1NqsTtVk3777hb1w9aWPclcWqbvLEfv3U82zBlkhQ9G82KVwRnuP7IE2AjJqxBxwXeTaxYAr6jdXwBL4Uo4gJYwAyPC+HcNQW0jvsAXEoH3rPtZ8A8coS3FHmotMKcdo01Cc95qBsnKKVHlwqKxLbBhnES5bFNiS/i2kPQxpWwBtnYauEfsleYVstn0LAgkB7G4PSABlYXBUzp+/7hsQ6IKm5EOmwX9pWCQ7ppsnBcUuRKDBkYPMEzcnlAhZGz8XVK40REgN3ibmHTGL/ATUCAyi7xqB8ntFbXLLu+rlPsNm9S09TDK6XyOE0kPXvL6l6yzg0jHB1ysSwhy6LrNLLdYXTQplirhl3jKDUClTW/JVkANi5OnaAzgjoNOXS4ZApWZ/GM14lyO3f/wGq3wM+/fx2gcRQBaTL4b05VjTgM7EZeHTdgbqyEp2q1x4xSqIxCxbXyV+32I0bMewdHDeWPGX0e3oAJ4fZzk2C+AfFGy3w="
+    },
+    {
+      "call_index": 26,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0x3138aa7ba2b9c05610acde3f0251c7c8aa9612b72da2cffd67763d6dc3d7a541",
+      "semantic_path": "contract.exists.rocketMegapoolManager",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 27,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0xbf404ae4adead149e45729bb439a46d4bd76bfd51de5fb1cf39957b14672c550",
+      "semantic_path": "contract.name.rocketMegapoolManager",
+      "old_value": "",
+      "new_value": "rocketMegapoolManager"
+    },
+    {
+      "call_index": 28,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetAddress",
+      "raw_key": "0x2a2b4a8dd1ebf36039ccacb8955595756efac973c96d20c49559e03f5c7154ae",
+      "semantic_path": "contract.address.rocketMegapoolManager",
+      "old_value": "0x0000000000000000000000000000000000000000",
+      "new_value": "0xf2ccd522ba5ffeda28fe0389963845d61f342034"
+    },
+    {
+      "call_index": 29,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0xd3e2a23d6e9e4ac30311acfbb0f3e284787182fd921654066b628f5616fc9beb",
+      "semantic_path": "contract.abi.rocketMegapoolManager",
+      "old_value": "",
+      "new_value": "eJztWVFP2zAQ/itTnivEOoYQb8DYVAkQA7Y9IITc5JpaOHYWOy3RxH+fTZPGcdLECdle8FuJz999Pt99dyH3fzxM41Rw7/he/RSQUETushi8Y89nVCTIFx9umP8E4lawBIUwU0YL5IM38SiKlOFjohucBEECnMtlscFB+YOXh4nHBRJwmQo0xwSLTK5SRmOUoTmBcof0zEWS+hLQe5m0cURbZwWXCEIUM0Z205jUUFL596epBrJCBAdIup8FJUBu1bB/ngnQOcTp/AmycudmXZ0/t5BcfhYupBlLRX5A6xAtUuoLzKgZH59FMaNAra70Mo/VFyDyl2i62yKcPeJ4/1Bu1wLJzUhKOxUSA2Nz8QbBS0RlZiVbfnvnz1icLREhQEPQHT76xVPNn0hjArm73G5rppDGvQK7mDfV0YBgD09atXJ4oO3nhIk7HIE8fRRXEaSdQmhPLmV4sN909zSA5yqgtOsGNMpqR1XtKEc9NGsslkGC1oicJRBIdxgRbgDZBQkWC5CXvoJTRBD1oTFMJp3NjeYInCC+BO2GXpctXCPlF6mEOyc4xJvUPI+Zv7Qh0YI2FAJk5QzevL0SWVI7QHZqgy6dZq4ZRd+SHrpqSDZUlhnUk6JVpLZErhPGFk2lWCzUOHWXkh4tVZpWqTba0W6lR/NUXHtWPVCpqwHmnJEVjCmpJXoI4gLxUvmrzbN7OrAdSlYY1r1YbTPhjKVUtLNS1zf9fNjEqlgazqrb2yOuy3Hhs+FAM7pg7eexlununNdFW+qkOOEchzSSW1Rjsu1qJsoN/E5lVwM1c6VvRzll1LrB6iABxIxjYU3C6BsCPdm0jeoupdH9d2H6PQWdpO226wReefanGatq/MH7cy0EZ1BoMA37biNqihvQvpW7HkODuX3jtl4FrY2yOnHm72cXKJPFvGcWeH1oe33c1UxrEvumGbZ1hB1PE91I7kZyN5K7kfx9jOSUCbzI3P85xhTVxroht5Y5oVY+HjYhXKVRFUCa9WfUMOHbSUBbf2hJ7+l+01l2C/t030oPI/UuNaPf1oB7SNGvLYEmUv9VjEoqZt2uaysD5Mh1dtfZXWd/9539K5aAZYm4Du9em5y4OnF14jqGuF4x4d6cnK46XXW66nR1FF0tPhD9g8/DK0i4Wu78/HpUcq4G7ajnZ4aHv0gmeNM="
+    },
+    {
+      "call_index": 33,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0x376eb20dc4e54f0e411d22b8665370ba704aad7e09f9431f85389d3dc2b22806",
+      "semantic_path": "contract.exists.linkedListStorage",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 34,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0xeeb5d3091c1cfe59e380fce40eeb936ef5b570bee855b97cc50d3e128717ca4f",
+      "semantic_path": "contract.name.linkedListStorage",
+      "old_value": "",
+      "new_value": "linkedListStorage"
+    },
+    {
+      "call_index": 35,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetAddress",
+      "raw_key": "0x4161f285b5ecde00ac6efedd44eb63318b08f717e48e69fe4ddf2127aa4fe66c",
+      "semantic_path": "contract.address.linkedListStorage",
+      "old_value": "0x0000000000000000000000000000000000000000",
+      "new_value": "0x52590e8aac140e2020f8f51695719922ebccb6d6"
+    },
+    {
+      "call_index": 36,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x586c9bd4773aff9d6bb6d7993e787c595e81d8ee1aef59a294587ddaa6a1c1cc",
+      "semantic_path": "contract.abi.linkedListStorage",
+      "old_value": "",
+      "new_value": "eJztWFtP2zAU/isozxEPoE2It0l7WLWOyzbxUlWVa58Wq6lt7ONANPHfZ7cBJ8WBcGkoIk9t4nPz933nJM7oX8KFsmiS45H/i6AFyf4WCpLjhEqBmlDc+y3pAvAPSk3mMPBGM0IhSRNBlt5woqsG3xjTYIxbxnUcUt64HaeJQYLwyyKZ8oxj4VaFFIoUZJpB8HCZDWpLXcDkNn2sxmmBYA4PKrX4X6PW9WHdyBdQmjG4smBhgLB0dtLifQIql0oKEPF85H5zZSANFHgOOrLd9IG3ddfVYnOScUbcLgcs+JdGLdyNVSrjwC5IZuElAbRHwWBjBIfXRoQ1LXtDLhbAhtw8UMX+d1DScDz38N6FLdPxNdplErTKcd5eFDMrKHIp3lQRaU/4FgmfNDFeroOId+H7aiLUNwf8AYQNBIObjTERAfrgy9eQoY6tX4orPedw/Yk0/lqB/YSisuvF6qpJXY69FXOnsw/N3VPVTngpz0jNFST6J12Hg6/dU64D/dQ0MAQxx8sP3Qy9Zrf3sM7raWLz9ARu+knSKSsiIL4bE6VvwvduwjMNOZfW9I3YJTOqjvpuNGPQhQJY9ILYza8Zn2wqd3nG07CU+a59QGhzaHPlaYy8W7fxpdKKmG+AxVAi+kmw3UkwGoeEDlbNwWwI1Vm04XP1itd8hn/ZPAlacCQav/zkse+o6dB39Mw6xv8BSs5bmQ=="
+    },
+    {
+      "call_index": 40,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0xc55eee4dfe852d11ccbbcbd3ee277d6afc9097e4719cb4e8ab824c4aed4eb01a",
+      "semantic_path": "contract.exists.rocketDAOProtocolSettingsMegapool",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 41,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x1dc509730a85371e06054621bcaf7e8b27aa84430fc08a3545fb628fe6d080ed",
+      "semantic_path": "contract.name.rocketDAOProtocolSettingsMegapool",
+      "old_value": "",
+      "new_value": "rocketDAOProtocolSettingsMegapool"
+    },
+    {
+      "call_index": 42,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetAddress",
+      "raw_key": "0x050542cbc919928ae1e180204ac202686dff54c5e7cec1d4c169340aca42e679",
+      "semantic_path": "contract.address.rocketDAOProtocolSettingsMegapool",
+      "old_value": "0x0000000000000000000000000000000000000000",
+      "new_value": "0x40628faac22383327b9f7bbc86cd1857050a2dce"
+    },
+    {
+      "call_index": 43,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x142ac845cc1d35d11f0408cdbd299e49693f92364539aef734c1fdf3c8b02dce",
+      "semantic_path": "contract.abi.rocketDAOProtocolSettingsMegapool",
+      "old_value": "",
+      "new_value": "eJzNlk9PAjEQxb+K6XlPJhrCTYImJmKIQDwQQoZllp1YWtJOUWL47hb5s4uFBWPU3qAzzLxf2feg/y5IzRxbUe+vXjIaBbK7mKGoi1QrNpDyxZNOX5A7rA1M8H7VlEGKIhEKpqvGoSk33IzHBq31ZV7Pgc3BcpAIy8DYcgwjksQLX1VazWABI4nFJ/xmy8alfqBYJiWNg93OCXKTrNVyjm30mv2sRGjHx2Ccf395dV2ILrZtS4f1zQlfi97MqZRJqwpZD37Co2bKFnekMBZVLXijqZvech7Zda2vqpv7RyTXchyLrM0txaAr2Oa9QWpS8p9FZn/SBs6LYZuu5R5WZ91ZeLQCCnZNAVS1pf8X6oEsnwXWH1Sg+WJUcA2tZTXVaN0RAH2eR8XS8xNj8XmXptjATBvc/pzEoqxn0XhN/h5HjrGJEqLJ7APSnonzTq4NZyBPPKh/pJMUMYEku/+Nnv0n5FfskJxO2eEcpMMgkMpWspVBHilhOW6PMG5C9xhlkOyxke5H8FfIXRAHfEG4xwYWWPYrW9m4AV6Q9z/EK3bM0dhV+WTe1I6lTe2bWTP4AOyFjH4="
+    },
+    {
+      "call_index": 47,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0xb2e8035fb57342996ddcc12f23f264ef70cec422ff99fc9370b5e4467a9f54d6",
+      "semantic_path": "contract.exists.rocketDAOSecurityUpgrade",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 48,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x2c15d60f0765710184dae1d9e6167181c04e023b3b9f6016a668e0fcf925e1d5",
+      "semantic_path": "contract.name.rocketDAOSecurityUpgrade",
+      "old_value": "",
+      "new_value": "rocketDAOSecurityUpgrade"
+    },
+    {
+      "call_index": 49,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetAddress",
+      "raw_key": "0x43656778aa233312cea1568285c59e8a8d1a86a2bde8cce9acd630c1b0a6eba6",
+      "semantic_path": "contract.address.rocketDAOSecurityUpgrade",
+      "old_value": "0x0000000000000000000000000000000000000000",
+      "new_value": "0x950baf0358164339114914169bf16754789b5dc4"
+    },
+    {
+      "call_index": 50,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x272de80ffe08f4460e5d639d9d029c1fd262c65de1793402aae20cd2a5fb6f55",
+      "semantic_path": "contract.abi.rocketDAOSecurityUpgrade",
+      "old_value": "",
+      "new_value": "eJy9k8FqwzAMhl9l+JzTYKP0Ntilh8Loyi6lDMVRg6knGVvOFkbfffaakkDbtVCym239+vXJllffypCLEtR0lZeCnsAuW4dqqjSTeNByt2C9RXkV9lDjLIs2oFEViuAjC9/9UPBUVR5DSGHZ+0B3sFsXKggIzqNAaayRNkWJyUELpcU+I1UO4qNOhmpX/MUY0/7+4XHA4jw7DmBnz73fQZUJOp0G0miThKN05lfjbSJpMUxjseEX6ij4z3DR1R4qfLmO8dDKGwqPCpoGwVB94hLnaabSuPWGnXJvN0KzeNTr5UKnbW+5oJ6qQR9y+CLR5BzP5AxNY/Bz7HE/fqWS2Q6yQ3SOvfSpv/HBqzR8+x9Z/wCakLjg"
+    },
+    {
+      "call_index": 54,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0x712c69db2fe6b4fff7e8f1c5e21b8fd64797a5978bd37a89428a8c841094faff",
+      "semantic_path": "contract.exists.rocketNetworkRevenues",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 55,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0xee81f4c75da1c74c278f06f5b128df8a2946a7d010af8940998f8ac5fda20900",
+      "semantic_path": "contract.name.rocketNetworkRevenues",
+      "old_value": "",
+      "new_value": "rocketNetworkRevenues"
+    },
+    {
+      "call_index": 56,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetAddress",
+      "raw_key": "0x8f9e2ad2dfaf148af699eed576646085970cad645107033c3eed729180249a5f",
+      "semantic_path": "contract.address.rocketNetworkRevenues",
+      "old_value": "0x0000000000000000000000000000000000000000",
+      "new_value": "0x9d9708da8e0200dd8dd9ad09e0aaf184ad260842"
+    },
+    {
+      "call_index": 57,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0xa004a2af3084df1d33ee17af09b4fe0346cc07e004f0826ba1c462056208639b",
+      "semantic_path": "contract.abi.rocketNetworkRevenues",
+      "old_value": "",
+      "new_value": "eJzVVU1vwjAM/StTzpymDSFuiF12GJso4oIQMsFAtJBUiVOEJv77ElHWspYy1H10N0qe/Z4d+2XyxoSKHVnWnYSfhEaBHO1iZF3GtSIDnG6Gmr8iRaQNrPAxgJbAkbWYgk0Azkwe0FssDFrrj+mQB9I/9tMWswSET45gLqSgnT9VWsWwg7nELMIzWzKO+4Rs36rS6Px3+y4nxQrFcSQ2uWwpJtCnKA6SO+mVRLFX4ZHaURXD7X07o1B6gdEazCeGgDlorQ5PtD+vER8bTZpr+dB7rpHFIK3PhZdeUyJwm2GXTnESWp3eTtbgFVLfGYOKBrluXdPln9b1Umxjk+SN81PyV8IKbPCx2sd1C8twfuHLB/H6ffV9CXPUSzAYTB9iQSCH4BVHIfw/t6hQZL66JhVWYJsJJUiAHNTzw2OacU1fPOYpWeySpqRBaYywpzP05YfqV/fmtNwEpKsuzl4YqO+usqhR4fbyHaQyi2bXHH2Vj0VzZJ55NGoKzCi8/dpwfNGVOuc8qXOlI03fAbWZn+M="
+    },
+    {
+      "call_index": 61,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0x8cd45458eebb8dbb9460f1d00a0ec47db22054db504bd072fa98df9041ab4a6a",
+      "semantic_path": "contract.exists.beaconStateVerifier",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 62,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x53911ecec534a52a671324a7b1f5971e45e68bc45ff341d5bceb135c2be5867c",
+      "semantic_path": "contract.name.beaconStateVerifier",
+      "old_value": "",
+      "new_value": "beaconStateVerifier"
+    },
+    {
+      "call_index": 63,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetAddress",
+      "raw_key": "0x5a6367e6222199e9e1cbd0452d13a79590451226ef0963b81b55f3b08a73b949",
+      "semantic_path": "contract.address.beaconStateVerifier",
+      "old_value": "0x0000000000000000000000000000000000000000",
+      "new_value": "0xe9a114c50f26001443b91079ab5573a90d2d8469"
+    },
+    {
+      "call_index": 64,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x5caa705acea20821db73966029d1224ef5fb8b33c7b23ce29cd200a1ff3e565f",
+      "semantic_path": "contract.abi.beaconStateVerifier",
+      "old_value": "",
+      "new_value": "eJztlctu2zAQRX8l0NoLx02MIru2CFIvWgRx0C4MoxhRI5swRQrkyI5Q5N9LRrL1dhihzao7yxwd3rnz0Op3wGWakQluVu4noZYgHvMUg5uAKUkaGF08KLZDWpLSsMGFC4qBYTAJJCQu8JeuB3yKIo3G2GMqOFD+8TzpXJHZ59n1vIYyQpG5R/2VG4vjDMSDUlTBjm8MwOZXq+t1DRcrvVs6ZJNQhPUw4CT+SAgRrBFOxNiUNijRcPPIE/TKI8wJzYdZl/ADBI/A2tK05Bj/vJ4EhoDwW0YQcsEpt6dSyRRyCEXtcpuQIZ0xiyoFDPVAYVarPi4Te1GStk19gTGVpEqi9AM6Xi+m35RVrbgHTtYWg6ZjhY1yZrQQRcoXrh3utVJxLau0fC4xlKXWLocoA/aoeZwvC60qoyG7QqVEha3pcv/312fP8VAFxplkxJX8+2XxIYys59W04uyPPbqQET41gTbudeBLCStemoU7zFsV9poa2x7bSMMBxBeNkb2Og+i2io83GMdoq7LHzyBAMvTq10YnGAFmi1G7IV6/Gty94DriVvANL7rmNlVsO6bINdpYBD5xGv3yqSR2Gw1ABsf2tPx6eq0zuf9yf5yEjFsi9Tz+bxKfZhFLz2+EO7mc9xG+Z0kTcDkfoYh3V5qfJeeW4pnP3Wzal8vwNptNvZZAojJJC3l3QP6G+ft5EtAn6l0nsJIybgQbqbz/DDbkGHd8VoWrzMc+GcXB23Ss/wA7bBRG"
+    },
+    {
+      "call_index": 68,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0x7471f64bdc2c012831f645310627fa7276cefdd0c4b6f21810700ebd01e30172",
+      "semantic_path": "contract.exists.rocketMegapoolPenalties",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 69,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x383c79cef4db45aa01dbb00f73aa686864ed1496c8a0fa0dc32633fce39cc287",
+      "semantic_path": "contract.name.rocketMegapoolPenalties",
+      "old_value": "",
+      "new_value": "rocketMegapoolPenalties"
+    },
+    {
+      "call_index": 70,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetAddress",
+      "raw_key": "0xe253286a5d5839aae062c9fb55828abb611205499f0152eedaeaa85bfcdee758",
+      "semantic_path": "contract.address.rocketMegapoolPenalties",
+      "old_value": "0x0000000000000000000000000000000000000000",
+      "new_value": "0xa2afc3c2d8ea4ebdbe925cade17c29517630e6ab"
+    },
+    {
+      "call_index": 71,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0xce567ea1c752476581a9ada6562e1ccab5ab0270e8ee8bf300c17f760f05236e",
+      "semantic_path": "contract.abi.rocketMegapoolPenalties",
+      "old_value": "",
+      "new_value": "eJztVMFqwkAQ/ZWy55xKK+JNPPUgFJVeRGSSTMLSZDfszlqD+O+d1DQxGE0bLG3BW5J58+a9N7tZ7oRUmSMrRsvikdAoSBZ5hmIkAq3IQEB3Mx28Is1JG4jxqQBFEKDwhIK0AK7NMWAchgat5TIdeKD8sF95whIQTh2BLxNJOVeVVhnk4CdYd/BkS8YFTCj23k4Ag/JUO5YZQWLRa6oOcYuhGHHHR6VhAio1pdgUY8i0Tlr0eUdk1ZwGm+P3+8dBzeYnbL2m+qz3oQI2qOg6XCRTbGFaVYBn5G7Kx1mWSOatoLhB1nDtzCOj015537Z3aXtz56eSqH1/5+/1SajrrlQvy11fjLGj92xutVvOLnCEpWmGakelty//USKnApJaNaOpZ8RIE2cMhzeFbdukbivtHk7lbSS+9RFWqpo5paSKF5og+UWFrdMGD0ebPT3FXN43nLVYGtPi0PdnjP2368K5vmjCSQm85dgzx6w4nNLiz/xwNmhsUe5c0PDceobfXM7qHSxTXTo="
+    },
+    {
+      "call_index": 75,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0xcbca55b4c53ddae1f4a743bbdf01b2285414a1760231282f5c2cd4b516aedc53",
+      "semantic_path": "contract.exists.rocketNetworkSnapshotsTime",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 76,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0xac9ce42dab3a8c556608c7df3c0bd7da42bff9f0f141f58e26920c69e72ceb60",
+      "semantic_path": "contract.name.rocketNetworkSnapshotsTime",
+      "old_value": "",
+      "new_value": "rocketNetworkSnapshotsTime"
+    },
+    {
+      "call_index": 77,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetAddress",
+      "raw_key": "0x5860447bc519a299684af42c46eaf2f2660e7cbe465c46b36f702cdacfb41f9a",
+      "semantic_path": "contract.address.rocketNetworkSnapshotsTime",
+      "old_value": "0x0000000000000000000000000000000000000000",
+      "new_value": "0x569f5b3024054ab4049a50df223a747afe18a891"
+    },
+    {
+      "call_index": 78,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x2f44410952833fb1d54310f4699d2f1e05bea00ffee972657b8a6359ea4fb3a8",
+      "semantic_path": "contract.abi.rocketNetworkSnapshotsTime",
+      "old_value": "",
+      "new_value": "eJztVstOwzAQ/BXkcy4UqEpviBMHLqXiUlWR425bK6kd2etAhPrv2CTITskDJKpSiVuSmR3vzGajLN4IF7lBTaYLd4mgBM3mZQ5kSpgUqCjDi5lkKeATSkU38OBIa8qARETQnSPGKiTcrVYKtLYwVjq0frBfRkQjRXg0SBOecSwtKqTIaUmTDHyFPVmjMswKkn3U12NSIuirUdBLCqUX+oTd0TUhsw1otBRpsFNVysxLwivXGPj5QKu2GlXG3o+vfR3yXeCpRjvqLm8DDwXNzEGlw9vzKzi8eO7aCIZciiPFNq8s9UR3GMLXAE7v4rnOd8BGYyZ/bRwgNrgd9jC6GXd5cNAJPAzvTdy+OIF5KVOTn+MAf838/RZYmkuL/n/Jjpt8e2Fjr2IFDAQr2/erMbeZYw7M7Jxe3Uafcc+4a0pudPOr9e1/gnY7XrkApR08GO2kK9jJD2NdvgOvUhkB"
+    },
+    {
+      "call_index": 81,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0xc25f4b999b76b3ec82cd646dbfd4e715200d6b8a8a10a8208c15c4010ad4f2a0",
+      "semantic_path": "contract.exists.rocketNodeManager",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 82,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x5225266f24d50f7347622f20b8c9c8b115dda798199a692b9eee8c4e3bf6673a",
+      "semantic_path": "contract.name.rocketNodeManager",
+      "old_value": "",
+      "new_value": "rocketNodeManager"
+    },
+    {
+      "call_index": 83,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetAddress",
+      "raw_key": "0xaf00be55c9fb8f543c04e0aa0d70351b880c1bfafffd15b60065a4a50c85ec94",
+      "semantic_path": "contract.address.rocketNodeManager",
+      "old_value": "0x2b52479f6ea009907e46fc43e91064d1b92fdc86",
+      "new_value": "0xcf2d76a7499d3acb5a22ce83c027651e8d76e250"
+    },
+    {
+      "call_index": 84,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0xb665755e7f514adae7d03140292e555a67796a7f6d6193f2b69e1988efc42a7c",
+      "semantic_path": "contract.abi.rocketNodeManager",
+      "old_value": "eJzVWltv2zYU/iuDn4OB4lXqW5d2WIE0C5IUeyiK4JA8TITakiHRuazofx/lOLFlyZYSW433lojkIb+P505//TFKs+nMl6N3X6s/PRYZjC8fpjh6NzJ55gsw/rfz3HxHf+HzAq7xUzXJgcHR0SiDSTXxqlid8N7aAssyDPtHObD48PPb0aj04PHzzINOx6l/CKNZnk3hAfQYlyvCzqUvZiYIDB/L9DoDPyvWR34e/RhBWP4wyWcBgINxiUd1PBbv0Y7ehRXzkRo8eD7nAkaWW2w59dGLBd2l/sYWcAfjzVysSn0+eU3sLPxPhVyK9elk5XxPwxWriwmnAcD52ck/69tfoF+uw1vM/Bqr5D6KFaHWWLAyRgrUciaINYljjBOqRewsSxQT1FqugAsWUWeMFc5FKCjIt7iMoWn7kpXdxGlJkTALmgZKSGId1VxanlgOkEhiEXTCnItjCYpIKZgWzkitQAtFFHP/e+LwOi2DnCC3gymnFNMGiLKEEoi0iVxQJoHAbOAiUCi4spaqKCYRZ+DAESVMJGKIuRIJP2CmMvR3efG9B1l3UNjTx9nHN5Bdd9OmjCBJrCyiIVLJiCScsgQT52hsgo6ZwCIjwiVGChJFhsYcCHJitONhzBwObTrPx0sx80iwlDMfXKPrYpLn/ibNrs/C4EU1vydnaKllBlgiY+Y0cYIE40Mb1IkxiBLtkBIS/FZikwSlUyKKg0vTzBmOicZDVrVeRnkZJv2bZ3iSG/BpnvUIAFoTHRFLpJYOSBxZkhCBKg6qp0zwcDQKBgk8RAnnEILiOScxsBwTyWQkYQFmUy7RYOSqomRrqrCYGCK+S4tJm4MO6/KZX2zZO7lws8xUpDQoYCA5kzweDMo1+ve3WOVI1SX9iVgD0Niocfft995EfZviXSveefYE4fYXalvHzyNubWTpkPgD6A8hXhSpnoUU7lOW+hTGaTk36S1U1F1Hi9fYGwkJVWiQuw4SGndzlTtXSxeer+iox+JxOknb1ta4O13SjOV2vhbkf/3WRtpycK/MUascDX7jxczNXWAv8L4X6i2Y94tYgxI2OMA64saxj/NZ1nHyX23qLMTAkM/jgWr5nLEzLJ7i2Bp5Jp9Mw9es/dCVd8mu6xFzIcTXZvQ5s1ncXcuRm9vOnmvlCsRnyIKnL57r5d+f0MzRtZumn03HuHfDTITggncZ5k5+vQL8AT2k43XPtP2y6o4d70NsWNnr0b33uKZiXoUU82Tnsj1DakrZpChPWVMfhamf322Jbh2QGuzXZXU0ErrYWSk7Xme7xbRKwL/3I7axGkPOGHT1tiqzdxAzSbN0MpvsKATudxeC/uYzeHOzerOvW3+ywSf2pGMa1Ol4g4/qIULDGDKDHy//2mn9+c4Czk52Wv/32L5ahMVpXqb+uECb+j8e5b1S0tJeF3K+lFi8mpumuMrL9hX3+q7kdjFTzGxwhm3FWLe0tRbAan1/vuLCL9p6Az0Y2yiw0Td4CXGdYbA9E6iHxBVZy4+rUX/fqanTTMTR0DH/41PEPojiTQrLIyW7iredUZ892kBnT+LNK5QIDDMEBm1prBBy4Gy4oB1URGxoNg5fL7SKHDHKvAUTnxbvUQfhMVBKZWM6uIGcNwuUA2oHEGpjUGzQzl9bX3o7C+v1WbMe26tJkCh2hMqhOThwzyA0T5yTg6rC+Vo9ekCWwJmL46Qzb3qLxthFM7mtnl0PtMMYIoyACIZ7F2pnZD3dPyBGuE0SJ9mg2cdGRp4qqoMIusANusTaTX3z9LlxVn8uGu33vU/yhMQQd3n89TB01d0nXEIpFnZ6+vgAvM/jU2Wk46yrh/9SfepREF9leLchx31pC+Bq8bzbom5PNX2IF8O//TqhI6X5vsNeH+ff58cj5baguTt6K6RwVHVZwtrVdfyCo3yRO9odRJLQOERvPaQ5B0xbc9jdUYBCibEeLkrMsl9jURRUImPUm5z8LRZlZwlQmUK8KULHe858ubPcChKk/ge80p5a",
+      "new_value": "eJzdWVFv2jAQ/itTntEeJm2q+lZ1nVapRajQ7aFCyCQHtRrsyHagrOp/3zkJGCcmgUJKyBvEl/P3ne27L+enN4+yKFbSu3zSPxUIRsLBMgLv0vM5U4L46ssD919A9RUXZAq32mhCfPA6HiMzbTgSmwZXQSBAShxWqR+SPXgfdjypiIL7WJExDala4ijjLCJLMg7BvIEzSyViHx167503j6DRcsZjhDkhoYSOjTqAVwi8S3wjGbFIkDWaDCzjATiwdfZ2tKDqORBkQcLtjDe9rpFbbmP8/+37D+NW0dkGvtWwjl1m0EUCD727v/np+6DMezAHpk4Ru7pZPjLZPp4wpRL9oN+zIcZALbh42YHbgoigm1pfPxM2bTDLMeehcZPkKuMnGcyx6884V8+UTXs42Nf2Taf4sR06QKN/nMEd94minJ1VriGIiCkHx7qi9cj8kKBhkG5+ianrnHbEyeN1nf5zRWy7WikEZKQjUipGVnyDII8A7XmssqmcsqWgWSYx8/XRqA1mgnB/oC59VT9WziZUzFwF/JiIzYQBRCFf3sOURGkON3NU0zpEqtYeyimoqzloYa2Pyi+AcnKFE+g+fUVycwqLz6V18xrppwOqPx6us5zTQmqyJ/icSpwyyWklDG394ZAeTeCGW/AnylVBxzF+n90yqigJqWwFt1UCceWq4+WRD/Eq7P4Rn0ysbyG7Tle8HNIZdb1rhaNrIge7BeNpWBIOHKw1IIk42YlTRaapdWULaBqX+k611ZJA9ECsvjZyMfH5LMKnzA1aZyQ2tZVn5kRZFrtg9rco4GFB8aZ9qqxFpkncE4a1WqzbZF9XbBJ27vOh4iiE456Og9Kg5nHzikm+4tCfRU7XZHrAAlz7Sj164hx/LJ7tJtn6VXQRvM36u204jWm/UySdpEHaIGhM7TuYXL5VVk4uX7WK1apB1Np76qwudZO24ymkmNXUNncTjZSqB626g2ialEwTv+VE+9kVx7lXldK26OeunMFF160Ru2XiNbNnG626VHbz6phozWQCfKBz+EPiUJmycjP4XT3d50dGAE4RWGGpdQ3zomCkipqiqBLWYNOE3U3vg5qz04r1yeEBFlvUfbU3O1GNsisIR8JaXe9i2a/5fqKGmBVr+i438bJM4hybZG4hKq7R5V7lqVFHDaGXqv1T7x6DNGbnsNs38EqoLd2aWeYgZOUXmj5NF9ukwsWeQmH4H3qLnYg="
+    },
+    {
+      "call_index": 85,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteString",
+      "raw_key": "0x4812499483c9d16249abecdbb4dfaae839546be997879f5992d97b2c991116e9",
+      "semantic_path": "contract.name.old.rocketNodeManager",
+      "old_value": "rocketNodeManager",
+      "new_value": ""
+    },
+    {
+      "call_index": 86,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteBool",
+      "raw_key": "0xba2f0325d2cf968f0a7802bd45db391151a3de8ddc2169da640b3d0e01fafcb7",
+      "semantic_path": "contract.exists.old.rocketNodeManager",
+      "old_value": "true",
+      "new_value": "false"
+    },
+    {
+      "call_index": 89,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0xb1eb167cc69e31fea587795103259244462e12ce70795439a26e84c95aa0fd5a",
+      "semantic_path": "contract.exists.rocketNodeDeposit",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 90,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x13caeb95ecf2f98da7badfe204eeaa9c83d0e3ed9a12fafde0618166c1fdd20f",
+      "semantic_path": "contract.name.rocketNodeDeposit",
+      "old_value": "",
+      "new_value": "rocketNodeDeposit"
+    },
+    {
+      "call_index": 91,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetAddress",
+      "raw_key": "0xc5f0e8e643416573963c05884a77dfc5eba3461eb8d39b60a0a58aedca955fa5",
+      "semantic_path": "contract.address.rocketNodeDeposit",
+      "old_value": "0x672335b91b4f2096d897ca1b12ef4ec9346a5ff4",
+      "new_value": "0x6b13698c306a297fee1383cdc2c65d63781d2d47"
+    },
+    {
+      "call_index": 92,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x80203cc374a9d8f731dcb64a192bbae0da3e6a2a001dda27c23f61d7790e83d7",
+      "semantic_path": "contract.abi.rocketNodeDeposit",
+      "old_value": "eJztWFFv2zYQ/iuDnv1ASqRE5i1bW3QP2Ya0Sx+CIDiSx0SoLBkS5cQo8t9HW0pkx5blZTLqonuzRfLT3XffHe90/S1I81ntquDsevnTYZlD9nkxw+As0EXuStDul8tCf0X3yRUl3OHvy00WNAaTIIfpcuNtub7h3JgSq8ovuwYH2gdPN5OgcuDwonag0ix1C7+aF/kMFqAy7E74N1eurLUH9A+r9C4HV5evV54m3wLwxxfTovYOWMgqnGz6Y/ARTXDmT6xWNtyDFztbN/LC7DF+8q/xbFlMB4BebN5Aqv3/kMcdEngPc9dhPW94C5ZLp7gD6eZlwzucFVXqPqy4b7fhHFfvXw8FeeQ0NDxGahNJTaQ0SZQgglPCuGCoWWgBrUKLJmLKLyshqBEGaAwCFdLRI/hjM36JGtO5Bx6gPQGgSwKlFDpJJAtJzLjVlHEaKUu4QKMilhjJdWh1iLFgXBkdhlYIEUfj0z524rjiBwzil9TdmxIeIBuKnw4Vg1ASHRKrQiEjaUJpKQk5ZVZZa0KVRJpwaa0CoRIRcqIlozE1Psz62f6+sr1l+q0qcnO+l4sBgGmap9N6+oeP8wfcRcM2iFo4XAvp7Ryy1IAv23/V6isuOoxm40FmVJAd5sGWom7xcYbaobnwnsyKIhuQ64Ahui5LH9lfIYNc75eFLtHfeFegIXfPL/cHitq18Tv4UrR1rl1a5Ft6kkLSSAvzk+iiF+HTCysHgkThGoxpivA7cHBZFO4Vht96OhLt1NUaPSyofWp6Xmur86s7XgrjSxUfENe2O/svhS0X3rv7puM4liOIGFmSwP9Z8rNmyfKG/q1Ec9R8sTxhMSLZlFlnyx26tt1rNFVt2NLH3fVNR8EWcX5x92g124jymgerKcpfSLtdkAoNB3a8lPccLJOhicV5brp7dJiJPTz0sDBP8eENLPiuWrEwoW9i4c8ZluDWJ6h+Glo57FDmd+eAycg3nnFybCX44n+SGojjKEkow2P7/3e1LCinqADJiPCjytDMMSoDp1oRIt9BxEaxkbk45MLsnWQ7ItN8OWpUm+VkF4//feCIWWSttGOnxchE+KJyAU7frz6ojOk+ANcySoZ08Dbjq6tlo7bRIuzPAtUMlFspsHo+al8QEWKkkbKvtSmb71dXUGeu+xry/vPHI7ZbmkjOKDd9Ns2xrBqYgUIi+sqIGLeIcGYNM5ycZu48tGHzuTNy0lAlQVJokuYAAbRieh3/p5t/AB1OV7s=",
+      "new_value": "eJztWE1v2zAM/SuDz0EPHTYUuaVrhu3QbUiz7hAEAW0xqVBb8iQqqVH0v4+O3diunY82boAEuyUW/UQ+PpGUR4+eVLEj63VH6U9CoyAcJjF6XS/QigwE9GGgg3ukG9IGZvg9NZpCgF7HUxClhhNTNugJYdBaXqYMB/IHT+OOZwkIrx2BL0NJCa8qrWJIwA+xeIN3tmRcwIDeU+fRAzZKIu3YzSmEFjtVrwU+oPC6/MZypRIErLzJnVVabHCx82q8qdHRFqCVzxUkx//PP30ukIAjVFRgPRu8BYtkhA1I45XBFcbaSvrKDK/McI68f9uEHzdBAwxQzhn4aFhSLvLR/JzeQigF8BGyLTGmCcJLrcSBEnDtQpIHzkLbxYH0ESr/j6Q7YWABYRPd6/tFbaeJz2rpbXS9AuBrHZbedhb7D3HK2VCm/aXAWBo2ASSEJfYn8+cj8Mv595iUAJaGr0G4kTMF5AzuCvLxvAQjMhlfAcFAa3qBwaYl+nNbttGOcq4bO2etbU6dCkhqtSVPNZVONsu+5lqf7rK+0ZaDgY5irVhhu+lqL1ntraq9RdWOpnaS1AuQbKjK57kfnPS8vK5murPSw9G4LuCSPMjFIbJNXR7Lwv1+8v1fZtosM2mx/2JQvGfBqWeMZ5SN40nh5gwpnTkG+NdJgxGqqp/b92pGrwc3l7g4YCmdZQcwo76nxCWEoJaXqtMJLi8kDfI69si4A55iwn7b9HyfYL7KgZ3GYau3g3qVXXtrKPiRKjAItnpUm+jZ+dtNc7zFjia7yt0CTwnFTaM//NZa/yn2mqOx6fLWPF+sy/LFCeR4kbPMRauFlO6QljzF7MM/4yr7YQ=="
+    },
+    {
+      "call_index": 93,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteString",
+      "raw_key": "0x9f488e16ee483019c091f957e92b0102f1b0a9cd88ca848f622c3f8a6512461e",
+      "semantic_path": "contract.name.old.rocketNodeDeposit",
+      "old_value": "rocketNodeDeposit",
+      "new_value": ""
+    },
+    {
+      "call_index": 94,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteBool",
+      "raw_key": "0x1ed1776bf448d679e24be57d2a13a469b3e45a9f4c1e2c4b4a62b108f908adb5",
+      "semantic_path": "contract.exists.old.rocketNodeDeposit",
+      "old_value": "true",
+      "new_value": "false"
+    },
+    {
+      "call_index": 97,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0x7fbc4e1d19aee3639986e24c4d9034eef1edd7c44d8eb6a5d84012a437857377",
+      "semantic_path": "contract.exists.rocketNodeStaking",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 98,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x824135e811f99f547a2bb96edc63cb62116c384b1151bdec6adf694d93f8a86d",
+      "semantic_path": "contract.name.rocketNodeStaking",
+      "old_value": "",
+      "new_value": "rocketNodeStaking"
+    },
+    {
+      "call_index": 99,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetAddress",
+      "raw_key": "0x8fc06385de84508eaf7eb3d75b93167987c9629589fe0a868a2b4e0e90862dd8",
+      "semantic_path": "contract.address.rocketNodeStaking",
+      "old_value": "0xf18dc176c10ff6d8b5a17974126d43301f8eeb95",
+      "new_value": "0xedfc7dcae43ff954577a2875a9d805874490ee3e"
+    },
+    {
+      "call_index": 100,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x4338a86d97db51bbfa7ecb4c3dd48f0d29f7ebfa9e2642442576d9f6f1741b36",
+      "semantic_path": "contract.abi.rocketNodeStaking",
+      "old_value": "eJztWVtv2zYU/iuDn/NA8vCat27YsAHtUKTZ9lAUwSF5mAiTpUCic0HR/z7aceM4cWI3lVN16Itgi+Qhv+/cqfcfJ1VzPsv95PD9/GemrsH6+PqcJoeT0Da5w5B/OmrDv5Tf5bbDU/pjPilhoMnBpMHpfOJJd3fCqxg76vsynG/k4PLFpw8Hkz5jpjezjL6qq3xdRpu2Ocdr9DWtVpSd+9zNQhFYXvbVaYN51t0f+XTwcYJl+fW0nRUACeueDtbxRLqiODksKxYja/Dw9pxLGKlrpxtOfXBH0O0ea5Jm5b9QeiUJy4mavJL1ecJzZOVqShskfbidcPT29c+zrikib2fRBS22v8scuzII3lguvAP0UlFknNClIIQHA4xLzZ3WUfOAzPnArHJoZfljhLOeix+E3xL+em7wWwkPJFEhU1aJYBSH8nRoUHJMRgeKSkOy4DhpRzR/zTxYwWWQZKUJaXDCmzbSswj3bVvfYbuu28u78BfD++S6ak5f3d90M+faA5CzJlpGqRi10DwyoZUTIiUyLGKxdhCJEXOGgQzEePTeORt8cQgYD+d7NXLKZ39jPdtE/p7U+K7G/my7/sCiMMZ4XUJPih5SAKMSWYzFS1LEWJwnhhgdFGcigySAO2+ZRi10kPFHkFoxnnGHICUJfPCae29JQ/COoghSR2mIihYWkUgLR4655D2U7BG5sUZiSl6idd+C8N0E5fb71Ntxh02fqOt28BafJEpKToWQgHOXtDMGExrlHECUFCNoLixPKoB3XDBIEjiTCUHCj5S+Yv2vpt4pqTuVpBAciBtuwQRE1CGYpKyjxABLzjHOG28VgdUx+VJXlZdBec5CwuH95Xs183+qfBY7vGy2Mu6kYaVUMswzo7lUmmvGrbeCIo9RlfqKuPIlF7BSQXGD1jPtKZQ6KgCn4Y18h5S+m6BQKinqvq+KbJFVivp+a7sdS7LiCkyk4i8MtI0cuAgIwSXCYNCjC9EJybRREA2F0pFwHpMzyjDLkYJa4nisTX3A6slTQehp9CePOsGKAF+arYK/zGlneXmonTvbNGtCrtrmAUkIJcXqAF8Mdm6MT7bcy4mnlP8sU389/v2Xtq7LWTusqx7nhzmaP9fwbGdqM0UPSbio6HIj/EUnj4Xrpa/c83njqXRCL0HHG8zhpjAdEX6UDkijeDn8r6tplcdFgrRIFNOXB4AvJ+Ft115UcWxWQIqs8CbsnYDSGpcTXdDnrmFcNCQW5z2e2zcNb/Cqms6m4yRBkrIpado7CVUzXhJK94LWeLlvEu5e8Y0IfgLFRbIvAX+EyndO80D0Yujj8U0tPCIKAotMxWj3ScGmK9cnKFhvRO53IEOC15KjkPFeTbR29uM2Yz1S60XBdLBDx++Bmpr53cfwTU0ofbpPZmhzfYh53QhPHmmHV3D7bWb+9di5k0HDM1z16UuBr4W9sX0fEjez1jHAoaP0Q/D/O+YgahV4wm8QISifLb7PvNoeKfr5vOFDhZAKnEK9Bfyzglu/1NzQ+iLBWJR+nBG9X5nr0FHd82BB8P3dyz1c+vgl99czlZffW4a3EM68BiOHblwHwj1r9pP1ReDGoILH6rQL6vqbdVvKM/tYcWaHLc2UTFFGxcappsvld5I9KIoniCi3peqRnVr7UmJEFcpu/wFjHO2L",
+      "new_value": "eJztWd9v2jAQ/lemPPM0aVPFG502bRJME9DtoULoSA6w6tjIvsBQ1f99TggJISH8DEusvlRtfTl/32ef73x+fnWYWASknfZz+CuhEsCH6wU6bceVghS49KEv3RekAUkFM/wRGk3BRaflCPBDw7HaNeh4nkKtzTBt/ED8j7dRy9EEhL2AYMI4o7UZFVIsYA0TjukXZmZNKnCNQ+et9eqAMVr7MjAwp8A1trKoPfyLntM2X0QjGRKQoInBTpX0C7C1dhwlc2Q8Bebvj58+p57AIBKU+toaXOKLmI8FnkaJQf9X9zFQwrhMrHCJZvpb60Oymep0cQbu+slsHHipXqXm7qJuGKuV6yOkhxfpM5GS74jDuVztoo2Gq5SGiVlnf9KaSVTpFkKa/wYeFGlVkeoDDnpeY7ktiv3B+9nYDH3sTtVDBUJPUalaaF1TkZ4Ev0umbrJC96n1mhpmfxjNPQUrUYPUepoj19R7qJpVN0Y5w6j9TaqSwvHwLTsnwrgsIsvBjg9usRTvxNwiDVxjIwOKQZ18MZ8GwiUmxdmcwi1S2hiIDWdIP43p1+H3R2lWysvAPC5AMfM8tyXD1X9ipVS8R6zi9UVybsAo4ExDOGc//GkVyy5oilPOcHMoWMQtap5syt/9w6Hx3KIyyjZWPbNiC5PU7DwpM+wsPDG3/OyMuB4TzA/8zaGyvVZbx9Di6NtlZ2H0JZ0e6/K4nefJpupiYmYTsaL3hhJm2fvt/sX2Yk4ZSENJwOtTCuax1Slt5tHVAdXVe/RGXYawd1m3LkOeWjaoxge6RikrfSxsq6dY3iK7ll1hM6vOK/gu0NnRizSPnlw7x6NYh3ZVh/FF54uO16Fx6p/BzeyxO9M7ufOc//TwI8n1glD8XmjpegfiHtnyQmjRZkxu8nbKn+VYddhdA9LuJbi9+OkUS1Q6HD5amj8cKswfbnJZWMWPsnVbyUKEN1iN0T8XDhK+"
+    },
+    {
+      "call_index": 101,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteString",
+      "raw_key": "0x5b3562310c234b40052b9137550395a90f7109310497523e57b3e5956acdd05b",
+      "semantic_path": "contract.name.old.rocketNodeStaking",
+      "old_value": "rocketNodeStaking",
+      "new_value": ""
+    },
+    {
+      "call_index": 102,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteBool",
+      "raw_key": "0x99c2326cbd20def4333a7a0354462aa567acfd0a2bad0ef6dc21fd104c0aeb4e",
+      "semantic_path": "contract.exists.old.rocketNodeStaking",
+      "old_value": "true",
+      "new_value": "false"
+    },
+    {
+      "call_index": 105,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0x01b333f0c2a56d5d2c83e4b43c62b008d76aa3750b2cae55576486d970956d43",
+      "semantic_path": "contract.exists.rocketDepositPool",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 106,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0xf859580a17493df5f62a01253414e9b1e7c27e75e7f2b526cfe6123db46d39d1",
+      "semantic_path": "contract.name.rocketDepositPool",
+      "old_value": "",
+      "new_value": "rocketDepositPool"
+    },
+    {
+      "call_index": 107,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetAddress",
+      "raw_key": "0x65dd923ddfc8d8ae6088f80077201d2403cbd565f0ba25e09841e2799ec90bb2",
+      "semantic_path": "contract.address.rocketDepositPool",
+      "old_value": "0xdd3f50f8a6cafbe9b31a427582963f465e745af8",
+      "new_value": "0xce15294273cfb9d9b628f4d61636623decdf4fdc"
+    },
+    {
+      "call_index": 108,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0xc754f6d5aef972d47630bec683fe3b82d94b3529898571b5ae9b170599348b64",
+      "semantic_path": "contract.abi.rocketDepositPool",
+      "old_value": "eJztl8tu2zoQhl/lQGsveL9kl9MUaIG2i97OogiKITlMhcqSK1FJjKLvXvoWx7Vl+xQ2kALdJeRo5pufwxn60/eirCd96oqLT7M/E7Y1VO+nEywuCt/UqQWf/nnb+K+Y3qWmhRt8OTOK4LEYFTWMZ4af28cGlyG02HV5Oy38wHLhx/Wo6BIkfN0ncGVVpmnerZt6AlNwFa6/yJG71PY+O8yLXXlTQ+rbX3d+jL4XkD+fjps+JxCh6nC0mU/AewzFRf5ivrORHjxwLtMYl3U5aZpqB/nokbOHOBve+vw/k2rtDTJVnda+Vga/4yuVY9zh6frB4AonTVemy26mVXb8YIu3OId4rCG5B2ooJVI4HazSVDFpfYwkcKU8i0oQaSVFghEJ8SY4joxr76LWEbVDe3LpY9uM/1zZ36LH8vaw7BqAgkFnrfFaW8GIEjJ6KiTlLhJpMEst8pnIfAqeoTJCuuAZi8YYxelf2X+Vfeqrw7JzUIoKNCQQ5qRmUnrnaDScyOjQg+RBI5GQr4O2QRDFtKVWKWIkZZbJk8uemj9Q9Of3PnP+V6YvoYW7+pDo1rIoFPPRKYZUCRfIrMa1g5gXo0fDowuWa+IBKVFcGsEcI4wQyigjyySWEq8xYN7ilhUw07Tp09rouPES+9qnsqm3oJn2JlLLh4KHRdjDUfeFXO0ti2WTIBDkJLjB9G8w/QsV1PPxu4bYmt1b57v7bLfJb0u824k9n7yQT3ondz4xJfO42MO9KKAnSZ/bqyOCxT30r+G+HPfj1aBd3bwnlATFEPJlU3uSeNMEfJIHQJHn6glmD/uHDtuj2IfRz0HuNKE8eDpEPoapw8vhprWF7xYv0C34+frxT+jBHscdV1Fatgl8uAI+D06bdbJ1rq9nLYYyreYEVCdu0Yoop4TV/xs/NQmqy+NyuDp7n2fMUS1pGCqbdvGk/Ah99UjL5+9fnJHJEysFlfuYZu+tq7Lrmio/d8+vkmZRUmkOES0my7OmqnLk9piS+/357AwjQrsDRK/Kb30ZctTwLsFXPCMQzb/hgvCDg/cW227h5kC7N0PN3py2YUoRgwiSnKP/3C1vyvBT4wQNiIMMzmKO+xMpIsV0",
+      "new_value": "eJztWMlu2zAQ/ZVCZ59StAhyy4oGSIo2cdtDYBhjcewQoUiFHDoWgvx7qcWWVUeLE8mRgd5ka/T45nE28u7Z4zK0ZLyju/iRUEsQwyhE78jzlSQNPn26Uf4D0i0pDTO8jI2m4KM38CQEseFYrxscM6bRGPeaUhzI/ngZDTxDQHhtCSZccIrcW6lkCBFMBOZfuJUNaes7QO9l8OyBM4oCZR3NKQiDgyJrhgtk3pH7InlTcAJWbDKyUrEKioM1vNVSBUDrfh98+ZoDgiMmKcdaGrwFi3iAryCNVganGhmnP5zumYYnmdviHB2JtsUKuOShUmIPlTrDUBlOx8bwmXTAHSs11SrYX5Vu0Ec+/69SrUqRL7pXidQeanS+8B3PnVUmnUas3kOlLqxkZld1qV2d5iA4A9eWL1k7Yr1D+EnalzIgXISxVz8t2jX1E5vuNvEGHy0a6n4XWx9aav1LhDxf8BLnyqfGDe7jBuSryY5LoyTnC2EoonQ6cnbKUsav8cw5tdInrmSNe5vkAlhUM0syPWshpk1y+RosRa8Hf6vb7ezq54M1gNJa4qxe+b6Y7uOqfB+tVQVOS5PuYqKLkE8QKotjDYA1qEsBcoWmaR0jq9Nm1EFwzpBOQID0i7tQ78PrxDdJzTk+bUUnnVV6RyqP6CuUM7rvC7NrWPDABssT1TKo+sEtO6H2ULbvLoU/PsbeXa02fEq77Md7ViCW7P9lPAX1itFQhdV8th7YK5piOmkEbkb7odxjoUivTcLVetwjsGs1R3YilP/QmTq3BJKBZj3M26Ei6GM9+eU6eqOsK2fUfjXZfh4OIJrgcWdDcQOGEyVZg9EoLotnLQ/Wo3/z/DdYsbrPBXE+/NbNWvHF1Rk3RgmX2p16Fa+UDlinSgiHqEF0t9IVf7TxMQKZqygPDeb8Pg35Dc61rtdaH09cxPYpSdo/3m0hTktnQ51e3iQXOd0cfFwXN/Hr2v5xWNY9Drst1Q3i7ykrTTu4WvmgDCt6eKH0jhNtC4rl59Y30Bz9BQN5OC4="
+    },
+    {
+      "call_index": 109,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteString",
+      "raw_key": "0xefa313c50e423aa5f127dedec88af5265a323d4c42f1a774ac98381aa4765641",
+      "semantic_path": "contract.name.old.rocketDepositPool",
+      "old_value": "rocketDepositPool",
+      "new_value": ""
+    },
+    {
+      "call_index": 110,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteBool",
+      "raw_key": "0xd5408e125710eab17cdf2147135ef16391ca4fd37d945ebcc411f1aea89e33e1",
+      "semantic_path": "contract.exists.old.rocketDepositPool",
+      "old_value": "true",
+      "new_value": "false"
+    },
+    {
+      "call_index": 113,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0xf8ca16e44847d02e9fc65c5783ec590ce9b3408e4041467c761b2b6feb1bc1c9",
+      "semantic_path": "contract.exists.rocketDAOProtocol",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 114,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0xb55221e6c7609817e03878f3a0e49dd059e3b5ed8fff872a0cb11a5c9e0ed4ba",
+      "semantic_path": "contract.name.rocketDAOProtocol",
+      "old_value": "",
+      "new_value": "rocketDAOProtocol"
+    },
+    {
+      "call_index": 115,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetAddress",
+      "raw_key": "0xdd8392ea82afe5d437031f1c54f58ffdabbe6bd40476c61bf349c74639bc99bb",
+      "semantic_path": "contract.address.rocketDAOProtocol",
+      "old_value": "0x1b714ed0ce30a8bedc5b4253daaa08c84ca5bfcb",
+      "new_value": "0xcac25e88276a333cf9d4196d112d93af67ef809a"
+    },
+    {
+      "call_index": 116,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0xb56ffd44baa9e0fc9be40d151b982827274c2311cd5c7095dda31f10c6994e86",
+      "semantic_path": "contract.abi.rocketDAOProtocol",
+      "old_value": "eJztWttu20YQ/ZVCz37Y+yVvuRRF0Dg1muQpCIzZ3VmXqEQKJOXECPLvHdpyLEuiSMe0kyIBDMPiroYzZ+4Hfv95VpTLVdvMnrzv/myxLmH+9mKJsyezWJVtDbH97e8q/ovtm7aq4QxfdpcyRJwdzUpYdBdP680LT1OqsWnouL2SA+sHXz4czZoWWjxetRCKedFe0GlZlUu4gDDHm2/Qm5u2XkUSSA+b4qyEdlVvn3w5+jwD+vrFolqRARnmDR7dtifhJ0wbR7fsW9Fnoc2NHW2x2FDi+rhTe33hWVW19HpYviiaTuN0cxvPsWy3lGWfBIScvfU6isyN0l4Kx7PSgamohZLcYIyaZZe9s94b47zLmK3xylkh/fQ2hjn5ao+RRw8J10ldtVWs5i+e/vV7OQ44J41DHo2PPiewivvQoQMqBwXKa52zsyYwywW66I2NImWToxAhgDL3Bo70LsqzG2OLDZXXZyMwg6+5sBazwEXAuj9FHtQNbzCuasq6l+V50eKQC1RU0kcTNUEvBbfS+OxRYEBnfGKCB6WkNclqKwwEJrNWjAWNhvOkBLu3C35M8P4sNvNnP3Re8xSkCS5mYT3YGIKXLoDlLHF03MioLdPaWqlsUIaDzphU5FFrH22aPHobbFt68Hxd0V/DptXjw7lH7Am0/0ySHecwX+HjO/bSiJ2w2u/aFDFFUImqE+ZsufbGG2e0ycFGmXP0NgghbbQ8JC4hO2PBWicyExQI9idxbaiqea9fLw8fxanPrtQ46NHAmPaJapbLPKMB4Doqx4VSmmnqyyGZ5DkGkC7KhOAodaN0SXILjlL7AeaQetW0mF5XCU+wjldKT9Cwl+s2PKnQcmot7+zk53Ogr9SDqYvk5cCjhQAMWdQyMQPJAA1ePDplRTTMCWvod+A2CZcDqsC8UEkGzvVEqfv+w8HkbbbTje6Pzt89srsM/kaZWK4Wv61B7h5tSu/ENbfd5MZJDRctNpuiLqvDhqzrC48SPMereVsMRY7jjIp5yMFYjsLwyISOxuSuWTNOs6o3kXPwKjitHOTARUJq8FQ8TJBB/SRFf8cbW3X/UavCu2KzIPWMuFKpaGRyikq+FSFpjqybbSVIynmpPIJ3EhK6EJMWtKkBrW3ZOAVGGJx+yyjPqyLiyxeTjFM1xmJZkOGTjsxAtn6HWr/EMr2tEZpVfTHkVxuiUdTQg6ROjZaTv6xPnknOaMSOgSUpfRBACwtQr1fcKmFc0opn6uoKJvdrvGeiPqprqZvTT1GlaXy8vJT1CsuzzapyH4lNC3X7dn/ofMsEs1pc2ds8dlBfx/Nr/HhdyodC2yibHQRv0WFwyWCgYuWjQB6jMDKkrGiM5Qy0cZbTgQ7YrSgMXew+/grtHzq0v38svlsmaHFsOAKFn7e0CQnjaRoynmZrwwAMjdjccaVARxCe1qWMzlurY2RZG2Zd6HhRXBvVR0HfXiNPKdZyUS/W7OtX1Y9pBdneLm8sDFukLd2sVu36jaMp6bwqY1tU5e5WwTWTXqnblux5/RXz+Ud13hlYxqn1UNGznJgfQHQ7fU97ic3DWXo6RMbtQWCHf5zSfscUTduGD9g/qSFrLnBKMzKNIyBEuqsbx28Eo+QcWAEG4Ozj8PbCuMW8TRoPjkZ7ke6cD98JyK1Kt5cx64dwzXNNiR8NzgkSVwP47XSc0/Hs1YCgkXTVgJTD/FQ/pBus0pSw2phoeuNmVFhusiT7ArOf1xkp7DA5NJoMOj3IBh1mf0576Z9+31yTNlM6xhjwjFn7P6kXu4HeR7b0w7imSKZEMUharoMQd55CBoiPgaYzdmcYgLCX2tiH4RYhMekQANFajHeOxRG72GMCObhtDTWAEevVgIhBqmCoexzax/ZExf6NfsrYkNGrJPnQ5vQrNh7Mtzsb8qRrHHAmIG7NBzfanGF7a+/d+E+kGzUGpss9c+Wu1ucFftyr7+W/YAGVySc06eFO6dLKKoNDY+NudHVz2pgljAA4vtzYXkHTntTVsmpI6lWGH0Bgx/37fT4ZDpprLZnXfX48p9HySs6A0q5PZTexwionlTQjqf8B6mSFIw==",
+      "new_value": "eJztWltP2zAU/isoz32atAnxxmWa0CirBjwhFDnJaWctsSP7pKxC/Pc5bUqci2NTknSjSDxA7Z7Ldy4+5xP3Tx5laYbSO7nPf0UQjMS3qxS8Ey/kDAUJ8egnD38D3iAXZAGX+aU5CcGbeIwk+UVf6BdOo0iAlOoYN3JI8cHzw8STSBCmGZKAxhRX6pRxlpIVCWIov6E0SxRZqAR6z5Mnj6hLq4Rnysw5iSVMqlZH8Aci7ajiRab+/vT5S2kt0kRTtT3OjSsunHGOSj1JL6jM7YrK27AEhv2bFMQKwBabJkN6NxMcecjji9MfX9kgfio1lC1K26imoThzcJG85FMhJoEkAGFOs0FRu4EwEypzL9mSIvSN2L/p63eqZ+cwuSEBUX1wXvSca6Ib6Z4sBrEzgr96yb0liTMYPw5rJxpZcICRuH+wxULdGDMaV1TiYUYk4Dw2BmN9OEoczjZmDPtAq2FEIkTXPIIZiDDX0ctrnRZvcK9CWd9Wvjom5zFRXxEDtSq9B7SUhqwns1tHMMrO62NHmcCy5KjAJP9Il56Lk1VUj92kBiuEZiPUZG0vjBLraRYjPcwO2ACv1gRHrbk7ygZ/iChbchrC5UUvs5SAkKZU2dnreEuUr3tofCmw6FYAkZlYDR2G8I1lMGok1EukfiiP+glJupZ1BWyh1+xbJEokAm/bI73L65slG3/l2Dm4Tb9reNw2yo9M/J8ycf+pc5dGBKEre8x0YXUf8FVqzKlICg7tRdNUDaf1NaE0KKhRb+omz7DQ6EwfzjMWIuWsanCLlg3v9Y0vcz9Y2Ku6Bj712vGNdFh3ifg2TqjF0QZrNZybvdpbME8jBsV90nSS0zFaWlAzMU2taNX4oYPBS9+CDIjle5AVs4LFef+41Zp0K2tjRqvgWoaDqfGE+e7Mi0WQI9VikdLNrZiR0xiRoZOsUhOv4kcchXUTIs4EiN/JgHQzHr6R8jCHYEtUvP8ib6atiZgwo1XQCWOOQxZywfJeum4OFqSM9EEbVLWlf0SwHBavMfGyrla25uywS1lEWNd4W2fvWr5agt++bX+kwB5TYNcQNrbeAXbOBWBlB9b+t6TUZhnXWga1pnFLCo89LG35oOOysim/puv97opInAmecqmkbsqww7FG8Nojtpt7pXVqsZf5sdWWY5Mlx6+04+Ev/oPiew=="
+    },
+    {
+      "call_index": 117,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteString",
+      "raw_key": "0x0fc90207d1ed73ae47adecbb27e1b6b836f3312313c09c73f7f2f2685565b89c",
+      "semantic_path": "contract.name.old.rocketDAOProtocol",
+      "old_value": "rocketDAOProtocol",
+      "new_value": ""
+    },
+    {
+      "call_index": 118,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteBool",
+      "raw_key": "0x60ffa1d5bcafadc131eb53013fa0207e1804ba0d69987e5b18dd1fecce344e62",
+      "semantic_path": "contract.exists.old.rocketDAOProtocol",
+      "old_value": "true",
+      "new_value": "false"
+    },
+    {
+      "call_index": 121,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0x1b6de551f468eda0a6401bdb037150330e814e04857548041d8c3339357ac08d",
+      "semantic_path": "contract.exists.rocketDAOProtocolProposals",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 122,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x48fd4fa6879e5c6bc991f9696733e156ac233bbd36941c537722cc6f80029b0c",
+      "semantic_path": "contract.name.rocketDAOProtocolProposals",
+      "old_value": "",
+      "new_value": "rocketDAOProtocolProposals"
+    },
+    {
+      "call_index": 123,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetAddress",
+      "raw_key": "0xef2e22821a4475e079169ab11816e834c99a8c2cc6b2ad6d625d969e37e8cc7e",
+      "semantic_path": "contract.address.rocketDAOProtocolProposals",
+      "old_value": "0x6d736da1dc2562dbea9998385a0a27d8c2b2793e",
+      "new_value": "0xcf7f6e23cd8189b7f56b14f66e11241c8ac0f03b"
+    },
+    {
+      "call_index": 124,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x0c3b2b9c9a83aea929e310d07d52566e4b5b04f12cc1e7bb5f857abe8f6e18f2",
+      "semantic_path": "contract.abi.rocketDAOProtocolProposals",
+      "old_value": "eJztWU1v2zgQ/SuFzznwS/zobdu9BLvtFv04FUUw5AyzQh3JkKikQdH/vnTs1o5tWXKjZlvsAjnEIvnEeW9m+Gi//zwrq0WX2tnT98t/EzUVzN/eLmj2dBbqKjUQ0pPXdfhI6U2qG7ik8+WkCIFmZ7MKrpYTL5rtCb8hNtS2eTitcGD94MuHs1mbINGLLoEv52W6zaNVXS3gFvycNivym9vUdCED5odteVlB6prdkS9nn2eQl99e1V0OIMK8pbP78SB9ItwauhdfBiqry00YJW52sB5bvmIABb6Fu4a5oitPTT8Lw5Bd/iwKvYFM5dUWO1+Hl3yuJ7xq6kXdwvwNha7JvJ5X12XaWkLXVKUdKtknCZwEs8AKbSzKwjsGmD/LiFxH4FJ79N5p4bQiz6XjYB0wq1hhnXDuwQr8lNz9UYaPQ8y5gEJq66IWxiGXKlqJUQkCyQonHUruHSoddZQoDQSwVgmntI9KeaGmYu79hx7uaJ+9PPfR+HvRzVM5RKJVJhBzmTdjOHM511xOR46WoQpIhdRSSo4uFEoLIqss10wz5hSTLBo5ffrRp7JNue5fPDgNd3tLRTcr0PNpmsw3vH+3Vl7TYr46Co4qLUxQJLk2jmJ00QKFgDwA0LLNoCVREGNFBLQRfOFUjJp5qwWSiVLh5K2+pbTU+fn6hHsJ23GPl6UH9hWkvydR+RrmHT26tHcx7OXVYWUN+NwHCZFiEaSmSLjUjSLmWkbNCiaYYV54rbS0kgzZ3DVtNA6MKfTDG+Gvoayv63mvrHeDj6Hps9UujgrKdJD5TDPgsEDlGZlQxFBIksF4klKj4iEWXHOOyjKhIMoYjWdgs/DMPljQ/Sibrk2EL2ukV9SE1aZ3Y/4O9hZNnepQzycFrabe5akav6YbaLB9Poe8sBmuXzQUyLvAJREQZW3RCOVJ+Zhr2TEVmCAuGbOuMIwJrqXz+dBmuXUTF/+R+t2TZaeEH1Phd+V2bh2WlaIEBVkfYEDZrBK5XKbaO+MKKLKdV5JHKaS02ZT6gIwZkIrLQFagcmwdSN/NcJfdi96r0/Hz7WLI73/YrtbDN5y6S+ttjr5exq4KqayrPdqiUypwFwfCnzKO9W1jyiiCz9eMnADjoti+QlyMuUMcj+Wr858yIBOzg7CGnyzLSX7+eIYPG/iBvYxw7P3Mbnz2lLyKIgAWzp9a7eN79CicI015gNM+f3yIyB1XOyWPTCvJjBgquJ+Fx/tmdJfElRvtZXDtISftuuScxOBG0XevXR0gsN1l4NvXHiPBliyOBKGqu3qy5mX56B7ccv0WzvJct4dh/G2i+20YIcGWIuvxflF+RNMtNEkUakiVPTtzMd6vDwCNNOgDKMcdeS+l+z560hPNCBNJi1+kY+yz2ud/e/lcu9YpSSTkAV00p5IYTmRv/9xpKJSLMmfUKZZin0TId6Yq5eTMf2WN31smd4v/pOpyW8yTILIQTXp7+B4yqsa6q1UI7aiUeNsQtF1z+5JuvmbyxKlhnfaIYE++x1TXdRno/PefIC9OovKvipb6vVlQhRNzKQk9K/4vs4eX2XeWybtF9gP0oyqF8xj9rnfdbOY6H36rdZu3HgzVbgLdcT09P/xel3RzcIN3v/FCLoCn2UrQni9RERUWLKP+AyofckQ=",
+      "new_value": "eJztWU1P4zAQ/Sso555W2hXitsteqqVsVeBUVZXrTItFYkf2uKVC/Pe120CcDzcpJAHRlXqgtf08896M/SymTwHjiUYVXEztnwiSk+h2m0BwEVDBURKKZxNBHwBvUEiygqGdtCQUgkHASWwnzqU74WcYSlDKDOMeh6Q/PM8GgUKCMNJIFixiuDWjXPCEbMkigmyF2Vmh1NQABs+Dp4CYSdtYaBPmkkQKBvmoQ3iE0BnKZWGAGF9lwbIw2ycds1vUoJDXpFKYGOIFSH+u9ZDafP/2/UcGiSx2OHgZtqylE8ZSJEKR6Aaoloa9IV8zdJbAGji+m7BPmeofRh86SnQ686QK5WTN3N7SHekIWefiwiNTaJpg9G6Ri43GYbMHHbbTca94H1uJE0ii/enXqjBF9hSgleUyPYOviRtmcxY9sGOC962IsiaRht6V2OVQKoMTFMI9u6ql6P7EcsW4MofJaQqyECLyarEb7EOGX/soWuW/HJTUCiG8FiGMQVK7RznENySbSIGCiqhVUN52lMdKMoENkaG6jIhZKE/0uCqxWGiQPgW5Y7zyjPI/hIpkzL1viMOX5bzOSc/cXqi2+kJjGmbj19RSc4pM8Jos2ww3teudB+vef/Mm5v1wyC+Wu0+SjzLgh8uy3nHXxNLAYvsJzIxxd/SVUm5+3DXCOXC+1VDnM8JVfBXs68nQletWv12toyw1mV+ftrynLDK2N5VeslIr2DVLOU0reFLFRF8fJA3BLFkNQYDr+CxN3/6Ug7PrHRzrE86rYRZbhHythgSJQ3w67ue++3uk5ILmzV15DVBDG16Dcth3e5kru+Wv3+Zl8nzu2Etb6ml75IoeSVL5xpRAWcJMfRzjecpcEfNw4mhKzXyYCN9a9LvFV8BXrmZHQRi+Jd5WP0YadYyO9ymoRsrfSiBKy+01bF4Ktt8KYHwtGIXh708g/1GM/eVgZbpJgIf/m+Zjm+aNRX+XmCsZuqj7bM+1uX/ssAtemdF5lk/BX3j+5blmsKmKY/YP+2s/cQ=="
+    },
+    {
+      "call_index": 125,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteString",
+      "raw_key": "0xcb87c612a57fd7fec0dfb7b92ff6873bd51020645fa8baeb3984543903479b00",
+      "semantic_path": "contract.name.old.rocketDAOProtocolProposals",
+      "old_value": "rocketDAOProtocolProposals",
+      "new_value": ""
+    },
+    {
+      "call_index": 126,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteBool",
+      "raw_key": "0x88416e42613eb0b00d1e010d414828599ba9a04d287a95650d397464d18a06e5",
+      "semantic_path": "contract.exists.old.rocketDAOProtocolProposals",
+      "old_value": "true",
+      "new_value": "false"
+    },
+    {
+      "call_index": 129,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0x9593c5cac55ea3f7f963bc2ca78daeffdb3d3cad0380543f6d17091489df6ee8",
+      "semantic_path": "contract.exists.rocketDAOProtocolSettingsNode",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 130,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0xdf48baa184df51768cd66aeeb58320038517dcbf2dc4b9d758f61f1303061a06",
+      "semantic_path": "contract.name.rocketDAOProtocolSettingsNode",
+      "old_value": "",
+      "new_value": "rocketDAOProtocolSettingsNode"
+    },
+    {
+      "call_index": 131,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetAddress",
+      "raw_key": "0x8ca4d6d0606ce014df1d1195bf14ab56b1115c8ab25bf8c7d3ea96995ecd3da3",
+      "semantic_path": "contract.address.rocketDAOProtocolSettingsNode",
+      "old_value": "0x448da008c7eb2501165c9aa62dffeec4405bc660",
+      "new_value": "0xb02b883303e658ddcd58d3871dc4ca0c91f0fc9d"
+    },
+    {
+      "call_index": 132,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x46e0a7d2a8418b6b95fd0f1d95d910283fae79cac889deb10e217184909236f6",
+      "semantic_path": "contract.abi.rocketDAOProtocolSettingsNode",
+      "old_value": "eJzNlk1v4jAQhv/KKmcOScgX3LbaXWkPSFXZ7aWqqrE9oVaDHdkTWrTiv68JlAChYbUFKbfEMx6/D+N5w8MfT6qyIuuNH9aPhEZB8WtZojf2uFZkgNOXO81fkKakDczw5zopB47ewFMwXyc+mf2Er0IYtNaFaVMHtgurx4FnCQgnFQGThaSliyqtSlgCK7DZ4U62ZCruCrpFK2cKqDLHkdVgT/3jTs0M6RuW2kr6rtZlhSuhK/qIkmldNCiNhnr9tOSFxNcmMa8UJ6mVW6nVgSJv7DTioXL/LQEBaRalHcIn8Cbn1fwWzUQqWToJU4IX7Cao3HsYJ6cg3kMX5QgwDRlkyXmOWvwPbe41STW71a9o+oWSZ5yz4ZB3obhG9L4lSS4Yxinr4LjDmXSjA+t6PRuMLGUBY0FwqL4lyKl3t2jPdixSfa+AnptTt1mrA/jpJrOxpg5u2CW10Lud7H/HaZglEEbR1elvNg3tRcsDlnMeRnh16N+uYr9mlcdJGvh53jGr07nW9Fxbpi56PLh+IESQhKMOlHvgbvu7ddqeAURJDhAOk4tew8F5S3laQFHhaWPZpthO1/rnv1J7P8Uhuki4GIXBZSewjX7Yy2PuXUdb0C2z+jxxCHEq/CC7MnHLT46h912lxd3yq89zxzgSkX/8gWkOX6Cxm31nXDL7yCOzy05lHOUiErHvqv4Fad1Slg==",
+      "new_value": "eJzdlk1rwkAQhv9KydlToaV4q/2AgoWi/TiIlHEzjYtxJ+zOakPxv3c3iomNpkpLXXpLMpOd99nMvJvBRyRVZtlE7YG/ZNQK0sc8w6gdCVKsQfBJj8QEuc+kIcE7n/QGAqNWpGDqE191NeEyjjUa48K8XAdWDxbDVmQYGO8tw0imknMXVaQyyGGUYvmGq2xYW+EWjBatisbhumaC3AGDHVLxpdaQu5fJ8i4U6+5Pz84Hw1J0Wa0MbleYWV3R9maVYEmqQdg1ZmQk3yhPFTcrGxGl20QVz7frmUmcH6TnHt7l1E77DBO8Jf1MLFXyQHPUe+1aw579mkKpvMIuJiDy3kO3kBqKuB7GVmDsWy0cSYl0EwI+7ZhtVqvjRLneqliDQS66DXhcLrbKWmww9ZeZpX004MA6qUbU7DbHheq6j7YX2HajKoNBwXWWvfUvuu/JrRjKkPenRDwurJrSUCZ+Q+GTO6Zh4hWilhSMOz6DAFWcKZmDNcFs14vkcaxhDumVWzWmuTrijv1weFrfe/LrDFJb+XOqOvMqxTTa/t7/i39LWDXnHYwri95FWTsHQiPdnIavkOuZqPHVjoLQwGoj9ZWtOlg1vNrp8EO8ssYMtfHhb/3gYpcbXBzoBcNPdGrR7w=="
+    },
+    {
+      "call_index": 133,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteString",
+      "raw_key": "0x87fb3082ffee78d8da2037b1afc9a33816a511e43eb770c7d2b844967fb5a435",
+      "semantic_path": "contract.name.old.rocketDAOProtocolSettingsNode",
+      "old_value": "rocketDAOProtocolSettingsNode",
+      "new_value": ""
+    },
+    {
+      "call_index": 134,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteBool",
+      "raw_key": "0x47fce0ebc691eb0220bcf2e01d832b470bf52205b170a3b6efe17a0979f798fd",
+      "semantic_path": "contract.exists.old.rocketDAOProtocolSettingsNode",
+      "old_value": "true",
+      "new_value": "false"
+    },
+    {
+      "call_index": 137,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0xdac559c842e8eaa911edf5f6fe203aaa3be8fb2757c76df8340d4d3d0df1a1e4",
+      "semantic_path": "contract.exists.rocketDAOProtocolSettingsDeposit",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 138,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0xd2d2ef541b8434d312e4ba9b0122b7d7cda3c591bd9db2b57a5213c3911d2f44",
+      "semantic_path": "contract.name.rocketDAOProtocolSettingsDeposit",
+      "old_value": "",
+      "new_value": "rocketDAOProtocolSettingsDeposit"
+    },
+    {
+      "call_index": 139,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetAddress",
+      "raw_key": "0x876d8a498b5341a6b5897a8239bfb0347e2b8d81fe9401d355c1e4b0ecebedaa",
+      "semantic_path": "contract.address.rocketDAOProtocolSettingsDeposit",
+      "old_value": "0xd846aa34caef083dc4797d75096f60b6e08b7418",
+      "new_value": "0x227be8dd01df8ad9bed0178e4f8cec2996c5c365"
+    },
+    {
+      "call_index": 140,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0xafe06c46abfd7ff4f3b076df3f16752c466437bba83fff9a391e30d7b900a830",
+      "semantic_path": "contract.abi.rocketDAOProtocolSettingsDeposit",
+      "old_value": "eJzNlk1vm0AQhv9KxdkHwMuHfUvUVOohUlS3pyiKht1ZdxW8WOzgxq3837sEasA42GpsiRvMzs6+j/edwY9/HKXXBRln/lg+EuYa0u/bNTpzh2eacuD06VvGX5AWlOWwxK9lkgSOzsTRsCoTn/N2wo0QORpjl6mqA3Vg9zRxDAHhfUGQqFTR1q7qTK9hC0mKzQ57sqG84LagDRq11EBFfriym7TUP+3VLJFuTLnnM64zo8jc6bK6sJWygt6DTbIsbYgaKW/x48o3Cn81ibLQnFSmbeRNJGhy5lYqdgHcVxZJYFMGA/pr5SMTHoKAKGbRaeFfEIdFF/bdD8Jjuv8tXVS6KzBygyQYkH4Pr2pVrGqCykEr1GTGRTJNWMQgPJ/kwfpgoX6P7EKkCDnGMzwbY5FxBakyKEZ7NdKbJcxzwyEmpVtM45LvTgMuPeZ35fdk2fGr9LI1/A0S2cgD0M/m1Dpr16FfVJnNB2KAHvZJPfrh78l/0nvTOASfsavT31bzehQT3Usk5z7Dq0P/sBXH5XYehJHnSnlR9MlpGz9vIC3wuJnrFDPYKWf/iWr9FF10O3rFzPcue+t99K6ND7n3Zu5B9xrk48Q+BJFwvfjKxD0PH0K3ndzj7vXIx7kDnAnmHg615vAN5qbad6Iz4/f6Mr5sVwZMCiYC11b9C5fvTaI=",
+      "new_value": "eJzVllFPwjAQx7+K2fOeTDSGN4iYmEiCDJ/IQso4ZuPWLrvrBA3f3c5NNigbGBXq29be7v6/tf9eJ+8OF4kidDqT/JEgFSwarxJwOk4gBaUsoIuRDF6APJIpC+E+D1qwABzXESzOA6dpPaA7n6eAqKepyMPKgbXvOkiMYKCIzXjEaaVnhRQJW7FZBNUXujJSqgKd0Fm7NY3+pmYI1EXkobiFRCIn7Is8x1wnkYqakGZSRpXuquDn+H59GYfXKnChREBcihZZpSDb9NwBtGtR+v3y6nqfnK+pX1LUXyb5hnhUoGCks9moa8zzLY09hjBMZcYx/9QSnQO25LGKy4UtbBCDILRT4FBvZo+/WbPM2+o8GXAWcYS5jT+Si5rUM6oyqunzmYuw1gMQiPTIkNFzlayMWm9BeUVk1SdaoNgmyIBqbyvnhXrgeGC1SvUTvwVNT1oF1yu61en72R+wPOmM/9dP7mGjTDMWKdhvlzIEW7149G3ttIR1xzQwlr5pojTMaRvptot2ITdeMvgMf9oGZlhql61uLAPPsOwP8aoaGaTH3e9umk6Dm2+eBf4HtjCmfg=="
+    },
+    {
+      "call_index": 141,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteString",
+      "raw_key": "0x1071d954e954c94d366888ea6bb9fcaf6b34ec77df45718de9e69ab54a3c191b",
+      "semantic_path": "contract.name.old.rocketDAOProtocolSettingsDeposit",
+      "old_value": "rocketDAOProtocolSettingsDeposit",
+      "new_value": ""
+    },
+    {
+      "call_index": 142,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteBool",
+      "raw_key": "0xf490c81a457d59c6185f9c511881df38800a48299122de8f6ba142107fb97a5b",
+      "semantic_path": "contract.exists.old.rocketDAOProtocolSettingsDeposit",
+      "old_value": "true",
+      "new_value": "false"
+    },
+    {
+      "call_index": 145,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0x2c7a6c4cdbe3df73d1d3b9e744609cd44ce5bc02a5f60239cbdd9da068a0e153",
+      "semantic_path": "contract.exists.rocketDAOProtocolSettingsNetwork",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 146,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x2ecf152cf8f0f7059f1b430b7e02d084531667c869cbe2bb84ae7f1184128a6f",
+      "semantic_path": "contract.name.rocketDAOProtocolSettingsNetwork",
+      "old_value": "",
+      "new_value": "rocketDAOProtocolSettingsNetwork"
+    },
+    {
+      "call_index": 147,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetAddress",
+      "raw_key": "0x282fd49dacaf2128d6f069f81013ec59ae7081a236fbad29f69dd2383662ce5c",
+      "semantic_path": "contract.address.rocketDAOProtocolSettingsNetwork",
+      "old_value": "0x89682e5f9bf69c909fc5e21a06495ac35e3671ab",
+      "new_value": "0x67fd03a5095197d1ad1f932bc55e022c420b1153"
+    },
+    {
+      "call_index": 148,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x0b97b3a611ea464041739c7609889a390d58e02aba3e8665281d2980b36f9955",
+      "semantic_path": "contract.abi.rocketDAOProtocolSettingsNetwork",
+      "old_value": "eJzNl11v2jAUhv/KlGsu8v3B3VpWaRedELCrClUn9jFECw6zHVo08d/nFEZCsibVSiffgX1iv4+Pffz64ZeV8W2ppDV+qH4qFBzyxX6L1tgiBVcCiPo0K8gPVHNVCFjh1yqIAUFrZHHYVIGPohnwmVKBUupudRwHTg2H5ciSChTelwrSLM/UXvfygm9hD2mO9Rd6ZqlESfSAulFmKw6qFO2ew6ihfnlWs0J1D8/Zptx8KyjeYTVuUarXKEv93w3CmqaW8afr78J3GT7VsazkRGUF1y0vGoEra6yV4qV++5l51Hf8hPTJz7ix8nUyI3Bc2iO/0n2rB0EuS7lY69yvi5yaheGwMMQYhzD08k9wA5zOgK9MywRJPBZEbABhilqi2huahyD244CysAdiiuLEMNOTmiU/iRj4zLd75M9QrSe4LWSmJpjD3iwAggSQuc4lQEeWrrkZXzUqvkSldMsU1Lqe9RR1uOCfHyPrW6GHHs5BHfr+S+Rfq4AXh+D6/ofT3xRF3o+eHiM63C/t14VOGSGujx8O/V2PaNhuD8LIsVlfyZyX6SZTN5ADJyi/8MqYDNTM/5c6Rmga2jR9s/47gT9L5MSwquPQAAMbYZBjKjLzskAjEieB1+fgmuoNzYHnhHbkO/EgxQyfQFDTkhB6SEOX9m2hBYjaxpm1+GB7iMTp8w1H9ZV7uC3yXM8rIDfPAKEbR7qmele9TEbDxuBxB3nZeDE27cEpRPZ6jze/RRtL0SoDIaGJ61z3Hu2iXx6pNvf5YHWgO5bj/cQuBBG12yXj6sSdPdyGbu7kDnfHdbyfO8CE+nbbJtaT71DI43cDJzN+7VzGV35V+Yz6NNDlZfkbMc0U0A==",
+      "new_value": "eJzVmE2P2jAQhv9KlTOnSq1We2NhV6q02yKgvSCEhmQgVh2b2mMoqvjvtZtA2M0HbLuI6Y3EE/t5x3j82pNfkVArRza6nYSfhEaBHG9XGN1GsVZkIKZ3Qx1/RxqRNrDETyFoATFGnUhBFgJn5jigmyQGrfXNlPcDxYvdtBNZAsInRzAXUtDWtyqtVrCFucTyCz+yJeNi32G06xwxTg9jLpG6UurNo7CESS+gainRhHG1oyZNBctkWtJXQH1jPepa4KaMXjgVk9CqhfB+sUAfs8bPOsFRCgbb6Zx/fv/hYx3bvumtyb5pT8AK7Ql+HtI1wtgZ309P+++E9H8tNIw4h0hpHyUBIyaRuSzk7wH5zKhQDKkCjq8bFpV1dpz6lZ9qmXCi88nqYwYqGYJassrbAP3ItGWZNVbF7L+oZAM0xYQOfV9sqIwmHWvZ735hNaWh6Pd0lglrQyAjqj6utBXkdyTYXpGrMpr3ckItj/yiRSL/ZgCUlp0VUbtnskZ5ZOkpT3u7FmfHUlRwsFc2rRcQd6e1bFc1zyMqgv68Z6Xlq++RyzofuXkm6A4kqBjtvQoHpxPb74US3YL1YPCHQxVfswrV4A2M4JezHIppxoa4AZPwSdkYTOmNuaQqh8ptgZS+OwOSk5FiccQ/vVvPoO3iqAgStvbWh8dOU0ngbA3SYX0aixC7P4juDWV1os6+Nrs85nlHGSbArQeIt2Z8ncvonLEcXmisWQy21R8zVXjsYhs0Fl62SWXFMHNT+rzevBR5qDoVfRXPzE3YXy7EJhvNpE407I//SFcOsUZz3k3BTdPWe/PKXWr6G/qK2y8="
+    },
+    {
+      "call_index": 149,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteString",
+      "raw_key": "0x9383977f5fadf28f7065e44f1cab91853f66800b812d8d64418735401e0c4a29",
+      "semantic_path": "contract.name.old.rocketDAOProtocolSettingsNetwork",
+      "old_value": "rocketDAOProtocolSettingsNetwork",
+      "new_value": ""
+    },
+    {
+      "call_index": 150,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteBool",
+      "raw_key": "0x32e752a8d18a2f0bd65525c2bee024d122891a669c01aa3d10c8c0086dd5c90b",
+      "semantic_path": "contract.exists.old.rocketDAOProtocolSettingsNetwork",
+      "old_value": "true",
+      "new_value": "false"
+    },
+    {
+      "call_index": 153,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0x2f1543a0bb763e5add8e66a6d1ecf9f369250faf3d1c081c9fedfdb25f662cf2",
+      "semantic_path": "contract.exists.rocketDAOProtocolSettingsSecurity",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 154,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0xcf7c87bcde4731e06fc90bc84f49767241050fe5ced6001117c6261de1cebc4d",
+      "semantic_path": "contract.name.rocketDAOProtocolSettingsSecurity",
+      "old_value": "",
+      "new_value": "rocketDAOProtocolSettingsSecurity"
+    },
+    {
+      "call_index": 155,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetAddress",
+      "raw_key": "0x87336d3db0f2d2ad242d7fb1fed28c752c24fa617f404ed98ee246f9b27671b3",
+      "semantic_path": "contract.address.rocketDAOProtocolSettingsSecurity",
+      "old_value": "0x1ec364cdd9697f56b8cb17a745b98c2b862cbe29",
+      "new_value": "0xc9d771aaf504f33bb3c8a7e67ea9f1881f837cff"
+    },
+    {
+      "call_index": 156,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x168a96afda04a5479c44aa3009481d345b65d06f4b35f72791702eb9fd8bcc84",
+      "semantic_path": "contract.abi.rocketDAOProtocolSettingsSecurity",
+      "old_value": "eJzNlctu2zAQRX+l0NoLSpFk2bsE6KJAC7RN2k0QBENy5AqVSYMcujEK/3vpR60HE6VobEA7aXg5vIfkle5/R5VaObLR/H73SGgU1HebFUbzSGhFBgS9+6rFT6Rb0gYW+GEnKkFgNIkULHfCR9MWXEtp0Fo/TIc+cCxsHyaRJSD85Ah4VVe08aNKqxVsgNfYzPArWzJO+Ia+aKuFAnKmP7KdtNw/nNwskK4FVVrdVctdT+3oJULn35Msb0gaC3+Hnje9rvBXoy2d2i/oK3t/oCiae5fY9c6ephnnbCbyAevvn1A4wvF5Z8BmCaQ44P0jwnqEzuOYZ5gWQ7v+xWnjluOyLZJcxAnyru3Alo9DpRatMFok8pXPQD+aVY+qbYf69qBsAjtADydRQD+c7/89tKsihyRNL05/o3U9jM4PioB7Xz8vNC+FSPoZuwD0N99xZLc9y6cxK8uBkH7XY/wuQnHFYsnFWc9s8nr+HtdQO3w+hUeJHYz4P/+NW1vRRZe5kLMkPu91DdG7+etzn1IYQAfJfjtxAtlUsri4MHFwh/vQ7ZsccAfhfjt3hjOZsv7XuFl8jcYe5r2SzOKlXBbnTWWWljKVGfNd/wA12rRK",
+      "new_value": "eJzNlk1Lw0AQhv+K7DknQSm9VfQgVFD7cSmhTNNpXEx2w+5sNEj/u5u2NmnXpJWC2VuyMzvzPjDzJrMvxkVmSLP+rHwkVAKScZEh67NIClIQ0dWrjN6RRiQVxPhYJq0gQhYwAWmZOFf1hMFyqVBrG6ZtHdgdrMOAaQLCJ0Ow4AmnwkaFFBkUsEiwumE7a1ImsgXZOqhpDPc9Y6RBRFyKMU/Lm9JQE4ex79c3t5XeqtFP6HdpOcePKndlxKZhi6KHT4wMoU+Shgi5V4JejFQm7VCN082OGhdxbZw1EtmTZ6C3qtgua30AM9pmViPfAgX7JAeqfUO6hRpyTWeBzcIWNBv0Cu5OyqSdarHNcIA2516xTGxFX7Z7ksUKlniPCRSeaZoiyc7N50DYVHb+rbhwHIPTLjfPITHoGEJ9lHWrkZ791/C/hHW7a2DcmV4TpeOsvpEeWuAx5N4IHT7HXH0Dc1bqmK2+WA6e47cX4lU9clS6DJ/0g16TG/T+6AXhN0BDH+s="
+    },
+    {
+      "call_index": 157,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteString",
+      "raw_key": "0xd3ab4c47e6408acdf30a251e4f8d2cb3dd0d1eea8a4fab833f1fc7e72e918323",
+      "semantic_path": "contract.name.old.rocketDAOProtocolSettingsSecurity",
+      "old_value": "rocketDAOProtocolSettingsSecurity",
+      "new_value": ""
+    },
+    {
+      "call_index": 158,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteBool",
+      "raw_key": "0x560a51a3f787261cd56fc31a3aa2259410cae605189f46da50d14c8a1153418d",
+      "semantic_path": "contract.exists.old.rocketDAOProtocolSettingsSecurity",
+      "old_value": "true",
+      "new_value": "false"
+    },
+    {
+      "call_index": 161,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0xd4ac9edd8c4a0c9565b70690425498ea9f35b8522acc26a9cc9b8f61fd40fdff",
+      "semantic_path": "contract.exists.rocketDAOProtocolSettingsMinipool",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 162,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x7fc4f21fee0f24f99414dddafbf248814ff5f0163516d97006c69de4dd25e4d0",
+      "semantic_path": "contract.name.rocketDAOProtocolSettingsMinipool",
+      "old_value": "",
+      "new_value": "rocketDAOProtocolSettingsMinipool"
+    },
+    {
+      "call_index": 163,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetAddress",
+      "raw_key": "0xcabd9a4f404c4ffb362a3c40647a1a12f3bdaa2ad3bbcdb92ea716c2ea3ff22b",
+      "semantic_path": "contract.address.rocketDAOProtocolSettingsMinipool",
+      "old_value": "0xa416a7a07925d60f794e20532bc730749611a220",
+      "new_value": "0xaef94c3650aa13d7a2456477fc374a16b94b9152"
+    },
+    {
+      "call_index": 164,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x00644ca695a4f08ec8241fc2a7f6750437cddab1b29367348942f486c7351102",
+      "semantic_path": "contract.abi.rocketDAOProtocolSettingsMinipool",
+      "old_value": "eJzNV9tuozAQ/ZWK5zwYMJf0rd3ualdqparp5aGqqsGXxFowEbZ70ar/voawIQmEbNNE4g2Nx+NzZuyZw+MfR8i50co5fSw/NSskpLfvc+acOiSXugCiT25y8pvpic4LmLJfpRMHwpyRIyErHZ+LVYczSgumlF3WizhQGz6eRo7SoNmV0ZCIVOh3uypzOYd3SFLW7LAnK10YYgNaoxJTCdoUmysfoxX0T0s0U6bPc0lvGLVuIpffZRmc2kC50du4JnmeNoQaJJW9G/iLYK+NIzeyOs1aKowgtXNqkbJ1/OiNIt+lEYvX4bcAMWmykyshxdwiuGDzXAm9knG6sFTOSwzGxogrtE0q6q13ihVnWW6k7s9DGcILwq5U/Fvqzsa85Pf5bLhejBDxcU8xf5g0HTgLkvhuSHzaw+InpHzgLNzQA5rwPhaXYIPNziEFWTWAAaFHMQsQ9eOd6G9FxizuI6Hftytgb2yvkNeD/greRGayb0e8OHuCDynmMe29/tcFW2T/HlIzsJtDQ4QjyviOjmznjpDTlR6smNbWcg161pxae6034cnCs5mMPexh6dRi3z9I9yye68cheBgfnf35YsQOYgi7CSfEw+zopO/E0B4rCcLIRZz3PNaJSTKhH4Se0QJeS/U0MA3lRygMCQ16OJRD9kKUpUmMZg9C0vz1kslpVbgBlcPzeMwDlHySykRDMTD5MCYcU077BvA9FKK8SLUQGqII8nE45lGyqx22YD1rKyu6sdUeM1BdlbwGpYbzsiKS4CDh0eHpC1U2FCG7cjAU9gEmyOWRd9CxMNo94p9falXUMehrF9WrIv77z3olFZsiiNCx5x52Irapr9dyk/eyoi3SLfHwdcYeBBFF7q4f8a8ybj+VDdIdb0Vt1w9f5x2wMcVoU/A1h7+wQi327WjL8bamHB/6VXKKaYBs1L/k2lx+",
+      "new_value": "eJzNV01v4jAQ/StVzpwq7Qr1Vra72kogodKPA0JoQgYYNbEjewyLVv3vaydZkjSBtHS7+Ibsl5n3bM+8Yfo7IJEa1sHV1P1kVALi+12KwVWwkIIVLPjiTi6ekScsFazw1oGWsMCgFwhIHHCuqoDrKFKotd3mPA4UCy+zXqAZGEeGIaSYeGd3hRQp7CCMsfzCZtaszMIGDF56FY6zfc4V8kCK6A4jCyMpvgsXIrIxpOFDikIp45J2mS9bb6e3IdyWwKURWbY6q0YeFCa5GJGg1Aa+wVRq4spxRflKBt6HNjZGPyNRKiw+fdCorhNpBB+X50JcfvnapvDvVrvI1CjsElkj9sPEsbfkfkK89JbcECxmPYAYRFZCHpG6pwQtnU8i9ZZCqpEawS9KTPLtE2/vVE5jtMl55xW1scL8Gh8hNud8WY1stpWTWFX6n0ZmuzIGXpfBClS9AU5yZGkpR0TBHtQQddyBTmrx/0zUkHTHGyrYT2dHpNlNr8QNcqf1wIs/ruWB/KnyiQkT4ifidaRg60aecw4+NWrOa2/IHWRoGJ9IRHI7RLHKjtmLw2tjOGFQ3gwHj6DI3WYxvZx9cunONmc7NLSnLBBr0G3nPgatfRnXT1BF2tUgiTZpfoh6X9/rddvpfFMMFi2mWkD0Ucd+89+//6uw6qsHNBbuekhlw8J9U1p/c69F7l9eQ1/DxX0T1qzcV9paSlcfNvYPyitzbFBpt93ZuvuHGnf/nb1g9gf/mR43"
+    },
+    {
+      "call_index": 165,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteString",
+      "raw_key": "0xa2aa8492820a3e2b9ba7126fadd6cdd364ca3340533ba8c12dcf028e6d3614e4",
+      "semantic_path": "contract.name.old.rocketDAOProtocolSettingsMinipool",
+      "old_value": "rocketDAOProtocolSettingsMinipool",
+      "new_value": ""
+    },
+    {
+      "call_index": 166,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteBool",
+      "raw_key": "0xd48d4a07242899e52f7a7158526373490a485d2f35df484b7798fbe62b5988b7",
+      "semantic_path": "contract.exists.old.rocketDAOProtocolSettingsMinipool",
+      "old_value": "true",
+      "new_value": "false"
+    },
+    {
+      "call_index": 169,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0x34c40d410d3bac9fd49abe6a6f4e14b0f3d31063e80a5db0a6e24b8c0312c07c",
+      "semantic_path": "contract.exists.rocketDAOSecurityProposals",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 170,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0xa253835b4c913ddf41ecafa1d638392f882ba09ee9e60fb76a69a08bb23cb478",
+      "semantic_path": "contract.name.rocketDAOSecurityProposals",
+      "old_value": "",
+      "new_value": "rocketDAOSecurityProposals"
+    },
+    {
+      "call_index": 171,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetAddress",
+      "raw_key": "0xd615a96d4712b095cb2b361bf3b92d16e28023d809fbff89fc4947bc7a83bd9c",
+      "semantic_path": "contract.address.rocketDAOSecurityProposals",
+      "old_value": "0x6004fa90a27db9971add200d1a3bb34444db9fb7",
+      "new_value": "0x334b9b1a6f9d7531efb13746482ff40f1c2a0c4e"
+    },
+    {
+      "call_index": 172,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x2d2827714fc7d14cb5b04c45f0b90b5dd28ce92a91810c85b412837adc5a0330",
+      "semantic_path": "contract.abi.rocketDAOSecurityProposals",
+      "old_value": "eJzVlk1v2zAMhv/K4HMOrhN/5bZil2DIMDTbKSgGWaIzoYpkSFSaYOh/n1zn047ruPOA7WZZJPXwFSVx+cvjsrBovOmy/ETQkohvuwK8qUeVRE0ofnhQ9AlwgUqTFcxKo5xQ8EaeJOvS8Ic+N/jImAZj3DRWccj+x8vjyDNIEOYWScYFx52blUoWZEcyAScPt7JBbakL6H4avpIEra7PvIzeorduHITRGWWhVaEMEbNPp5UOViXb3o4SSUE4E2VxH/xm8NxKilzJGrW/nfgQJgDh34KGLVCLMDB1Dj5LJ/Sug9rtCJerM2jOTsH3k1WECzdyLJSD3xrWGeg3C2hvepRFbvjgacdp4FMW+R1pD8H/mdOngenHsZ/RiNHb6JePbfzQzMAZt+QwtwL5wIlEQDPmU9J7G2DLDbqim3dsR7MkG5Us4bmKMntnSR8D9KmKByhEdcMOeprHSZYHEPc9zQawVPOLGy6KCqtTiLYgXwn+fJ+QGyIs3KTeolrqJPiQIvrRZOzHQVdR/hMiZkqJdgVfZ9vlu6+ch31O0nTMaPo/aNd8iWvyXXmEawp+dxYDKwjsjrI0732ED2RzdyBci3ZT8ewQzs+fgxSKnN2ClUEj/ctbq1vX64r+oU7MD7IkjaNLnU6oG9Cm8utATdpAkxbMDYfnq4CvnStxFTF1/SvUgcNJziYs7Go5evaHnVeCsUWhNLZfChs1eHdFUxbEJAe3zG8s7Uyi",
+      "new_value": "eJzdls9PwjAUx/8VszMnE43hpvFCDMaAnggxXXlgQ2mb9nWwGP53OzvYYJQhuB24rXvfvn767euP0XfEhLJoou4o+0TQgvD3VEHUjagUqAnFm4Gkc8AhSk1m0MtEU0Ih6kSCLDLhpy4LHicTDca4MPo8JP+xHncigwShb5HEjDNMXVRIoUhKYg5FDzeyQW2pSxitO8cYrWvf3t2XWJSWShrCe89Fvo0qI8h1lAgK3EmkxTz5yXhTKygyKZpigxVQi9AonPOXiVmJjU2KHHnQZ9jpRraLu+m3gEUM+uii59Lt7EXCGp7df2C+MDpvA3I0DmFCFdSJA6h9y5G1bCqsmEFXKf0ac6t1VCk/AUufpXdmHW4T/GWNB6C4P8pa3GkGMDPt1TWHyo9eO99QkjeCX+f5lRBu4SSThn6owtcr9yqWkoeN+o2GXXryna/courVtufSgVttz6gPp2jXqA1A31Wxe6ecVAopQnnTOBYuSemE8oLKLHdPlHr7Dht3iR0FUQLaZOFaoocQz0OAJmGwbPpVVLs9jVVKagxv0ERe/tgY/wBbGuCx"
+    },
+    {
+      "call_index": 173,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteString",
+      "raw_key": "0xe99be7b04c8d0cbc313c53c95379f99284d5b6e02675d90ca6cee452508714b2",
+      "semantic_path": "contract.name.old.rocketDAOSecurityProposals",
+      "old_value": "rocketDAOSecurityProposals",
+      "new_value": ""
+    },
+    {
+      "call_index": 174,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteBool",
+      "raw_key": "0x9e4a1464bc24977fd5ea4ee72477cd3f9829c2c6b5424b6b2c300f4f641faa9f",
+      "semantic_path": "contract.exists.old.rocketDAOSecurityProposals",
+      "old_value": "true",
+      "new_value": "false"
+    },
+    {
+      "call_index": 177,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0x2d3303048bf75f2532b771d0b8453c28b697b9907602bd073ccc24652a77044d",
+      "semantic_path": "contract.exists.rocketDAONodeTrustedUpgrade",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 178,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x3c54dcbabf92e6234d19c225fec84ef223526d2642a63598d3ed80ffee882ade",
+      "semantic_path": "contract.name.rocketDAONodeTrustedUpgrade",
+      "old_value": "",
+      "new_value": "rocketDAONodeTrustedUpgrade"
+    },
+    {
+      "call_index": 179,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetAddress",
+      "raw_key": "0xc4d8121668414b370f17b1b2491632caaa0782c14a891769bf34bd9718ba7193",
+      "semantic_path": "contract.address.rocketDAONodeTrustedUpgrade",
+      "old_value": "0x952999ec97248547d810fd6464fdb78855b022ab",
+      "new_value": "0x9290aa076a2f1418a4e414e3d83ae03ca8e1ad10"
+    },
+    {
+      "call_index": 180,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x78372a7597f6686eecdb24e57195a2f11ed186f0aa0e6976fbf99f6089543eba",
+      "semantic_path": "contract.abi.rocketDAONodeTrustedUpgrade",
+      "old_value": "eJzVVclu20AM/ZVCZx9m4yy+pT3l0EuXUxAUs3AMoY5kSCMnRpB/78iWLcupA/VQND1pIfnI98gZ3j0XZbXpUlss7/rXhE1l1992GyyWha+r1FifPnyp/U9MX1Pd2BXe9k7ReiwWRWUfescfzbnDTQgNtm02pwOOHX683C+KNtmEn7tkXbku0y5bq7ra2J11axwjcuY2NZ3PgPlnW64qm7rm0vKyeC5sDt891F0mEO26xcWUT8AnDMUyR+wtE3pul7DlbKSxf5xqOJr7LCegU44JUpe/GcgRKZXnSEdzz39wuPl4m2XKiCcn3GKVLsiSJ6AEI8sCRqsjSIkBPBhQwhvmYlSaGCLAEAtKCcMEN5xSilowZwjV+J9r9H2zauwMmawRKjgORoB2gJil9ZRTZkUkhlLJeMx6QYyBZPWIZiKiIF4GxjVXAP9Cpt8C2dPZOQLh4/Xz9DdU/zQc+lnjGZXKw8kZWhapBoaEem2NN6BzAwQGGULQ0TMQVmThkfoguSLBSGmoNO9X93od5un+zts49wQx4I4FEJwp7yKnAagB6qUjEDTzgkjwKmg0XDmpnNIW0el8vDRQYNINLIa+jXVssWnLusr56i5dWzR9/XokNyWmr+yNbYmPo2fsKp8OifYrwmaOQ28ublQRgwhApgW/KikvmbJana24fZ5TusF8wHg7cDqSfxB4XL83rpwT/2rmRoC3FvLg3B3mZNKn2ev6TPyLe9n7oILI9+v9LzOGyNE=",
+      "new_value": "eJzlV01v2zAM/SuDzsEOHVYUuWXrDjm0K/qxS1EUtM0ERh3JkKi0RtH/PjqW7bp2bbdJEa075YPUE98TKVLXjyKWqSUjptf5V0ItIbnMUhRTESpJGkL6cq7CO6QLUhqWOM+dFhCimAgJq9zxVj93mEWRRmPYTAUOuD+ebibCEBCeWIIgTmLK2CqVTCGDIMF6Be9sSNuQAcXT5FEAO2UrZTnMBSQGJ82oI3zASEx5xcbSIBFkhObbQR3s5qPaqTTnu1RA1R4NJMu/D74f1kgUP0cqzTlL5zD7MWcxGLFywjVK+scpXaVLDX6w6gSCKv9KILx/PSc/QqSfrnB8OfxxMqkkGieT56pvn58jI7LFRmdapcpAMj/uCG9Qt9Z5OtSN+R3Hus/LwSl/hjKK5dI7/XdM8w+S6s6y11sqd7VCmbJzUuOYnbnA6F/YPNY3LCy7+iyIx6xv1XUN0NfnnXOgFDE2pE4zdlaWnDqjx4GFlSHFSg6I2zrJ2zEZUgfLWRJa8jvGJdIvGTVCHN6jG7HNax3j/V4YFcIP0OJcSro4bf73i9BpUZw9ZF6WZbsUvSJ0kUfSzwilXbmXwvHs96niFqat4VN1pV+9G75eNXcvsTuT9WgLIRoMLhVB8snqxs0IfTXzchromAS8ouRyg58Zn6p+SlpVy+yh1uq4Y1/S+yJXDUIeXN7/24Bldz9X1eBr1CY3D96aRx9xfe88Vdecp9sKdfMX0A+HOQ=="
+    },
+    {
+      "call_index": 181,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteString",
+      "raw_key": "0xb75e51c24e01d29f9cc7699e08527319bc3befee7c88744243e5f05bf06325f5",
+      "semantic_path": "contract.name.old.rocketDAONodeTrustedUpgrade",
+      "old_value": "rocketDAONodeTrustedUpgrade",
+      "new_value": ""
+    },
+    {
+      "call_index": 182,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteBool",
+      "raw_key": "0x06d886b777962e3b0da7154afe653b6457ac2fe7e4db9eddfe8946db0dadcc99",
+      "semantic_path": "contract.exists.old.rocketDAONodeTrustedUpgrade",
+      "old_value": "true",
+      "new_value": "false"
+    },
+    {
+      "call_index": 185,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0x8b8a4a57df9bfd55eb8ead78e4e9e583a8d75f2263dceee62ffb540f3da0f99f",
+      "semantic_path": "contract.exists.rocketNetworkBalances",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 186,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0xdca9b788a58fa9d7f3f1cf397b62554b7abd6e06cdbac9e4a3a24ce76d2a88ba",
+      "semantic_path": "contract.name.rocketNetworkBalances",
+      "old_value": "",
+      "new_value": "rocketNetworkBalances"
+    },
+    {
+      "call_index": 187,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetAddress",
+      "raw_key": "0x7630e125f1c009e5fc974f6dae77c6d5b1802979b36e6d7145463c21782af01e",
+      "semantic_path": "contract.address.rocketNetworkBalances",
+      "old_value": "0x6cc65bf618f55ce2433f9d8d827fc44117d81399",
+      "new_value": "0x1d9f14c6bfd8358b589964bad8665add248e9473"
+    },
+    {
+      "call_index": 188,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x06624910c40a518eb66df457fa9a172de3ee4510f239e437a0d80b79fe7d32b5",
+      "semantic_path": "contract.abi.rocketNetworkBalances",
+      "old_value": "eJztVk1vozAQ/SsrzjlgsI3JbStV6h720qSnqqrG9pCi8iUYus1W/e/rUBKafkC1m0rRqreEmXnznud54PLBS4uqpcabX25+EtYFZMt1hd7cM2VBNRj6dl6aW6QFlTWs8McmKQGD3swrIN8kXtfPE75bW2PTuDA94UD/4PFq5jUEhD9bAp1mKa1dtCiLCtagMxwqXOeG6tY4QPewSVcFUFu/jDzOHjxw5eu8bJ2ABLIGZ/t6LN6j9eauoovsyYMdz15GUpf5G6xnz4B2PfaQWvc/EHJA0pk7kAFqG/8bqCYraZnm6A4urw4DSSVBdko3ByJIcJsWq4Ph1Ug3i7aqsvVh8LpZjJ3g1S71BDIoDDaLVucpkWuyy8Y7LOiFF/37WAfct0LHLAAtbRKHkQri0AdUgoESOhAogLPY+MJorbhlOkaulYTQiCj8Vwt/Ge//Mt5FZeEDtrM2iIJYRCwyPNGWK80U9xPFJTKlUSa+jrSVWgjpK5RxhCLUTCiuDBrn0l7Oe3v/lZLrUVtN1H7IRxMYU8aZojDplAmAUWsMY3T2MC3h0xS3M3UVZUv9WX/4DZi0haG0LF7NXsVGMBOZ/RkOHFZI284n/dSG9tNS39b3mvNdir/eZNu9oMGZtt9YLxYm833DQjvC/nR5dkGuzW/YIJ67xkcmwWqQEpIRCYveb8uzfhTHpSBhaEGGfETBsrtwR8o/ltz6PBi7Ah3/cydgd2uPiL/hRlkf7Nca/pw13HSfb5+0f+MolowhvGe+O6ybp7oJx6n3/KYO6zbBE8ut8B3qH9bspfU=",
+      "new_value": "eJztVk1vgkAQ/SvNnjk1aWO81cTEHnpRPBljBhiUuOyS3VlbavzvXRBB4gfW0tQ03oCZefNm3mNhsmaRSAxp1p1kl4RKAHfTBFmX+VKQAp8ehtJfIo1IKpjja5YUgo/MYQLiLHGm9hNegkCh1jZMWxwoHmymDtMEhG+GwIt4RKmNCikSSMHjWFXYzpqU8S0g2zhrBjYpjaWxNEPgGp066wA/MGBdW5FHakNAyaYgGyoZH+Hm7AGVPWpIxt4/Pj1XSB63Y1dQu/g1UJpLcqMY7XripB1IkgS8T4uWCBIsIzFvDU8hLUYmSXjaDl6uxbkNTsvUHnAQPuqR8eKIyDYps3GFgn7quLtP/pdPxkkAJ1xy+uw8aDw764KG2otkb8Bo0rmJQqOwDQBnlay2btX0DeF26TsJbIU0VOz64q9IaIRPkRR1qapWc6Rdg14hTtWleaLjYxxSW0X4fhWpfcVvgljfHYzJVn9Clji0eLfCbFS40x0Uy7sVYm7+1t0mraHlVb6Rf0XrfnK2dXLq/H/md4/MFSqdhRv90jnlls43vTL9AizfQmM="
+    },
+    {
+      "call_index": 189,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteString",
+      "raw_key": "0x6d09087bd415457842b92aba82580031e5f291be3caca5433c5980ed2ea43642",
+      "semantic_path": "contract.name.old.rocketNetworkBalances",
+      "old_value": "rocketNetworkBalances",
+      "new_value": ""
+    },
+    {
+      "call_index": 190,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteBool",
+      "raw_key": "0xf68b6d46aa6ee7025f637a1f686e0d1ffa427d3c3804c75499e231ebf8881fca",
+      "semantic_path": "contract.exists.old.rocketNetworkBalances",
+      "old_value": "true",
+      "new_value": "false"
+    },
+    {
+      "call_index": 193,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0x538138290d9269a9324a3fa36906201f4d23f416e85dfade9a03ed8d7a23a54d",
+      "semantic_path": "contract.exists.rocketNetworkSnapshots",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 194,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0xdc271e7e16e7575332aa82983041b9de71bb11d8e64edd0677e8dc7356b0763c",
+      "semantic_path": "contract.name.rocketNetworkSnapshots",
+      "old_value": "",
+      "new_value": "rocketNetworkSnapshots"
+    },
+    {
+      "call_index": 195,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetAddress",
+      "raw_key": "0xef27338bd03b62faa0eaa677490d4a98a821e044d70d76339d384aa33e96c86b",
+      "semantic_path": "contract.address.rocketNetworkSnapshots",
+      "old_value": "0x7603352f1c4752ac07aac94e48632b65fdf1d35c",
+      "new_value": "0xe37f2d9dfb7397caf671df5190a5dfb601028f17"
+    },
+    {
+      "call_index": 196,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0xddf3788ccc6e6cdc9f2a416b09b5f343d0c17b80f4d7b95afd6f81dd201a743d",
+      "semantic_path": "contract.abi.rocketNetworkSnapshots",
+      "old_value": "eJzNVU1TgzAQ/SsO5x4qX4Xe9ObBS3W8OA6zCUtligmTbKqM0/9usHQALcUDVW+w7+1m38smeXx3clEa0s7ysf4kVAKK+6pEZ+lwKUgBp4uV5BukO5IK1nhTkzLg6MwcAS81MVFdwlWaKtTawrSvA01g9zRzNAHhrSFgeZFTZVEhRQkVsALbDLuyJmW4LWiDOl8LIKO+IrvZqe5ZRag9t9PlBqt2iQNcN9UQCtuaJkuRhgarSlm0JTvl6vi+oR7f2P9uE21GgwzkuK4/lFRDx63c5vjacjMjOOVS2MinayDIWVrvsO/o/G0RZ8gu54szGXpd2Ok47eq4S5PqzbwojMP0THofoDA4rvc3dziMvMj3fTa9YhRrev6B2CAcFGuhScVCnDLI3GAiseNnOmHNhH+f2YNNUm5M+b9mIkAeX/pe9Oc2DVyA3YlJFHIUvDo+OT2TVzVz5BL/batZAF7gwnmt7glKts0ldERWQymN7h/cH7/OHd1fRopBEId+3NfZLrlFpfd5I5sTDW1NNPEZ8LPUT4O5rfoBdk4D+g==",
+      "new_value": "eJztVstOwzAQ/BXkc07hoao34MSBS0Fcqipy3G0bxdiRvQ5EqP+OTYNsQx5FoiqVuCWZ2fHObDbK/I0UojKoyXTuLhGUoPyxqYBMCZMCFWV4NpOsBHxAqega7hxpRRmQhAj67IiZCgnXy6UCrS2MOx3aPtguEqKRItwbpHnBC2wsKqSoaENzDr7CnqxRGWYFyTYZ6jFvEPR5GvRSQuOFPmF3dEvgtgGNliIN9qpKyb0kvBYaAz8f6K6tqMrY+7CVnNtYfFkL9xSm6YWvrCk3EFc6vDvAuoAXz10ZwbCQ4kC53bSeBsL7GsP3BI5v46kNeMRGNJS/Ng8Qa9zs4eHyqteDhY7gYXxzsp7VCdxLWZrqFCf4e+5vN8DKSlr0/2t26Ox7bIa7lSlgIFjTvWPR5GaOOTK1U3p7oz6zgXm3lMro+Mu1959Btx2vXIPSDh6NdtIX7OSHsS7eATOvGr0="
+    },
+    {
+      "call_index": 197,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteString",
+      "raw_key": "0xba08c90bc6db50c48031ef7ff4e8f4e1c9f659e39956b4ed67115777acce703c",
+      "semantic_path": "contract.name.old.rocketNetworkSnapshots",
+      "old_value": "rocketNetworkSnapshots",
+      "new_value": ""
+    },
+    {
+      "call_index": 198,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteBool",
+      "raw_key": "0x9d4fef32b8f802c35e849c628c2af92f055627eb89626a966fdc837ca7fce2ec",
+      "semantic_path": "contract.exists.old.rocketNetworkSnapshots",
+      "old_value": "true",
+      "new_value": "false"
+    },
+    {
+      "call_index": 201,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0x6b28e50d00357b5f8c8ee96f076b40f702af4208432493ec45d8d64fdd3835fe",
+      "semantic_path": "contract.exists.rocketNetworkPenalties",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 202,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x2c5fb9571160d4f4a5234d40cb66fb58711e2e0a05440fde1ff2656f1921fd9c",
+      "semantic_path": "contract.name.rocketNetworkPenalties",
+      "old_value": "",
+      "new_value": "rocketNetworkPenalties"
+    },
+    {
+      "call_index": 203,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetAddress",
+      "raw_key": "0x347d4afae87d97b9278a63383047fd8514d4041bc1acab3bf23dc4e54d3e7eb5",
+      "semantic_path": "contract.address.rocketNetworkPenalties",
+      "old_value": "0x9294fc6f03c64cc217f5be8697ea3ed2de77e2f8",
+      "new_value": "0xed0493de30e82be7c16c8925c7204ce9d1136b3a"
+    },
+    {
+      "call_index": 204,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0xa5bc6b03c37a3f1ca27a8c4bdb874b768be25677a92145fe4e0173ba23caa46b",
+      "semantic_path": "contract.abi.rocketNetworkPenalties",
+      "old_value": "eJzNVMtqwzAQ/JWis0+FluBb6amHQmjaUwhhLa+DqC0JaeXWhPx713lYMYmTUNqQm+0dzc7OjjxdCqVtIC/SaftI6DSU741FkQppNDmQdPdm5CfShIyDBb60oAIkikRoqFrg3O0DnvLcofdcpg0PbD+sZonwBISvgSBTpaKGq9poCw1kJcYT3NmTC5IJxSpZCmBQU5nAMgsoPSZ91Tl+Yy5SPrGu9IaATs1WbOFMdURbskfU9TjNVCmtrDHl8MDnSQO/3z88RtKsZC8j1a7+GypSFR5hmnWAMfJpaiYhqxQRM3dgrFHTn1v/L4bZzRDXtezD5jBgWGdPPFSj88poRptAQ7etbTaKSvoqRgOXp1b4FZFF0JLaRj0dB50O9jK/cDGnvZsPRTca4ddJG3cbi3Zc/Gu4+Rk5bzIQbhJyq6NGuQvc7ePZBI7w2Yz2/DjuxOU5nf0A6pg8Vg==",
+      "new_value": "eJzllctuwjAQRX+l8jqrqq0QO8SqCyQEtBuE0CSZIKuOHdljSoT49zokzUMkpaVQkLpLMuPre48fmW8Zl4klw/rz7JFQSxCzNEHWZ4GSpCGgu4kK3pCmpDSs8DlriiBA5jEJcda41PWGQRhqNMaVKdeB4sNu4TFDQDiyBD4XnFJXlUomkIIvsBrhZjakbeAE2c7bMnBNaayssxmBMOg1XYe4wZD13Yh9pRECSjeF2ZhLniglWvx5NbFynoaade/3j0+Vmi9c9Erqs36KFPEYW5QWZcMY3WhKB0kiuNMtW3GNks7OKdIqPsLonwCfWj/mRJdHfl5SSe7+b1m9JCF0kOq+aA5ALI+R+NrssmuTVHZd+MAS5nbHJSllqTD57bsqsjIgrmQzYzXTCmlotXYURrBpm+l4nvYkh/bWHN9PMVa4mlgpuVzNFIG4osPfbY9GviLYUFm3B28oUSb59FALdHi8XLk1S32RBjTLx91MsCucZIfmVRHe3BpfAYXZ/6gueputUZusfBR0rwtz74eQFx/8Q6Bw"
+    },
+    {
+      "call_index": 205,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteString",
+      "raw_key": "0xf33dfd1f97c7d554000dfa2fcb2e9387cddb64d322c51bed69ca94d67eaffe97",
+      "semantic_path": "contract.name.old.rocketNetworkPenalties",
+      "old_value": "rocketNetworkPenalties",
+      "new_value": ""
+    },
+    {
+      "call_index": 206,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteBool",
+      "raw_key": "0x027d7eb5126f6ecece38af3f42f12bf62d6ceadde4f5ef3f44201cd660469b6b",
+      "semantic_path": "contract.exists.old.rocketNetworkPenalties",
+      "old_value": "true",
+      "new_value": "false"
+    },
+    {
+      "call_index": 209,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0xf6ef7e7b277b3923840542252b73c318369eb73a34a97b3b998e13986ff130dc",
+      "semantic_path": "contract.exists.rocketRewardsPool",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 210,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0xb44aa606a1bd120e79521f886a5d2375defa54c068f0ae5cc119d89a355004ea",
+      "semantic_path": "contract.name.rocketRewardsPool",
+      "old_value": "",
+      "new_value": "rocketRewardsPool"
+    },
+    {
+      "call_index": 211,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetAddress",
+      "raw_key": "0x46c2b81204bf2f9dad36168c4aa8891f039200535328e7da10bb73514970fae4",
+      "semantic_path": "contract.address.rocketRewardsPool",
+      "old_value": "0xee4d2a71cf479e0d3d0c3c2c923dbfeb57e73111",
+      "new_value": "0xcba5951fc706fc783b7c142dae8576ebe29c41fd"
+    },
+    {
+      "call_index": 212,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x076527f2a89881adbfaec2556ea6669c35d47bb51c574bb4f62194e62313d616",
+      "semantic_path": "contract.abi.rocketRewardsPool",
+      "old_value": "eJztWU1v4zYQ/SuFzj7oW3Ru3WyKBmiLIPEtCIwhOUyFlSiDpLIxFvvfS9myJduyZKfehYvqlogzj5xHzuMM/fzNSeWiNNq5ea7+NKgkZLPlAp0bhxXSKGDml8eCfUHzZAoFr3hfGQlg6EwcCXllOFdtg185V6i1HTZrHKg/fH+ZONqAwT9LAzTNUrO0o7KQC1gCzbDxsDNro0pmAe1Hnb5KMKXaH/k++eaAdV/mRWkDEJBpnOzGw/EduXNjPVYjO+GV9n8/ipswFH4Fxe8rp2YpG6tqMlbki0Ki7KbrfLwhALt4Vpq0kJ8yS/DHMCrCUOpSn45BlwZ14DcYOaovGT4WhWn8N0Yd/naDUvm67z5TiLf3nxuE2uyUIFbjb3Z/H0Bru6EfYsIoBF2q5ePDH+cAPL+0IUptkP9VcOxCsaan4chLANzNfj8PoHEvNaou91WKbrNmm1D7u1tWmrA63E8lzVOt7RFtwHX7W41vyoXN7/XSetGPbv2TAWVmaY7H9u5jsHeSXw7UdCO9bA1q0iQs9N/tZMI3Kyp7Sue+xx4DoC5FH1zhuZzEU4hEGCQcaBgFEVKCU0ZiQgnzBIuJCDBi1tBlnIg4/rcCCVshr5cvVJF3yPpkVNpRaUel/a8r7ZnqtVqQMe0z0i1jgidTL4xJWOmTGyQB+oKwxEXCrb5FGBDGuBCuHwjiUd+dUk6ttqCbwNRLGNTBbEVr1IZRG/4P2nCeFsx7xOBl7yzjQR1SlKbOr5N7NFFKZtaz7eZ7mCAhIYr9vB2iY745X70i9IrmNoM0v98UcJvsbNrOJpiDSQ9KmlO71LcUv3bGvmpIwcpeXfrsckFdAJ9w/MlcbFSmh4mDKbtnuhgTQJPEZ9TbZeJ4LHVVfkURRC74IsHonAhWXct1hUEhCBkN6alhNGp/RUG4YUCShLsDebV/B85ZFZn9dFs/bR3eg4dEtMwfULHrIkLEEIh4UGzX0bXvrgMq9D4X1S3Wy4Y+mY72xJ235SUpscUkD9FjPQf8ASW3gdjLd30TDtwaPz1FbR3MIerTyjoCW75cZQRJ6EfCw6QnArv0T5CBZFcm8743JRj7fcfncaeluKK1C99jXuSysWUaW6axZbpMy2TzvXG+LUp5ZfUcRt7Ud3kwUAEcdD7z1pk4/pPd+BY7iscoHpcRj99UkVck3r2n2gwUbLQosi4JWX2/qH4EVABGfPrD9GPwraNfMXbInDVztt+fr4JI3w2rX+rG9+pRP0f9vJB+rozMD32ujniARIi9tG2W8IaqXuRA0UeOlXzkwu+QoeAhj1yL+g+1uq7j",
+      "new_value": "eJztmV9v2jAQwL9KlWeeOm2qeFsrplXqJgSoe6gQMslRoiZ2ZJ+hqOp33yUEbJqEhLQr0eS3NjnfP/t+uTMPL17IE43K6z+kfyJIzqLJJgGv7/mCo2Q+XoyE/wQ4RiHZI9ymQgvmg9fzOItTwZm0Bb4HgQSl6DVu9bD8weu05ylkCL80snkYhbiht1zwhG3YPAKzgiwrlNonhd5r78VjJLSJhSY3FyxS0Dv0OoBnCLw+rcjeHASh6f/Lr9+MsxLWTAa36SJjcCeVGvNFnAgOvDwpp+urU0DO+xpDwa8jSmM7HWnCgCutmuuYbxDUl0ujIwb5FMFICDTrd0JNfMjer2h7hkwp2o9WgaiY7C9D/jgUIhpMfrbTghKY0nIzGt69T0FrD7QCeeLih6ltXyuE4LcIoCwGEm2mh3+EgrI4UgXTnqm9fVkeKNwW8cUoK5GxnsehUnTQre22n+UWUCfEgq17R7VXnsAxMomTMIaq9LdTO+DBxynFck3TvUCeNM4StbRLElaEpvdSke0ZnVtbSBGXELvn8Orw6vDq8NoCWZlDiPZRNezak8qsDiARKsR7QV6Ml0ymtoRGI1fsHQuN40JzP631QxsOOg46DjrNoXMaZGZHKDN9UxFQ6GpqKrxsOqwq8rr9m+1O81GIPQLeRCyMb3dd366UzVxrfC4YLTRWTcfgVQjrs4e4I82RAAsmyy21C7Daxbzx7qZj2bzRSe8Mt8/lW8Ea8YQ+BdaR9VOH6dFNft1kNOaiJSfXEh+C9LsXn83bQoTqbYg5eauDVI2jtA1XEf4DTtkAl9csYtzvTFUOgQeUMfqwbb8xNaD+dMfok91Nxyoa7jM6Rqnq2OEaHQwE52ONm2PcHOPmmHPOMQQDs/hGaH7Oxq9+/JhZu1X9w5y7lnVkcWTpEll+SBGneRg8hwprOsY5HZoyvmTPOwGX2muL4zg5yNHE2LRvmD8/P1MLhj6EK7hnOsI/IS4DydYsr2N3g+347Pj8P/A5E8J/d4FtLK1A5r7UNJZXVW3l1elca8CmnHOk+y+W7N8n"
+    },
+    {
+      "call_index": 213,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteString",
+      "raw_key": "0x03f5ebd2f67a88f2994bd82c4e307fd548da2fdfbb8c5bdb4af0d909ad4d0e80",
+      "semantic_path": "contract.name.old.rocketRewardsPool",
+      "old_value": "rocketRewardsPool",
+      "new_value": ""
+    },
+    {
+      "call_index": 214,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteBool",
+      "raw_key": "0x0e3078081640a50fea51f3bbf7f54fe28782cbf8f1cdde3eddb8ff3a902f8849",
+      "semantic_path": "contract.exists.old.rocketRewardsPool",
+      "old_value": "true",
+      "new_value": "false"
+    },
+    {
+      "call_index": 217,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0xb199529bd65cf13e9280a6f289119fe951940e1b86db4e235a68d0c5235cf1af",
+      "semantic_path": "contract.exists.rocketNodeDistributorDelegate",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 218,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x7b3ea9b3b74d2b04797697763e6050d70879faa4b27877006ff8868a227b5924",
+      "semantic_path": "contract.name.rocketNodeDistributorDelegate",
+      "old_value": "",
+      "new_value": "rocketNodeDistributorDelegate"
+    },
+    {
+      "call_index": 219,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetAddress",
+      "raw_key": "0xfb3483c04a4c870b23f9315ce407aceff6ee8dd58eb34aa5becfb781351d3fb8",
+      "semantic_path": "contract.address.rocketNodeDistributorDelegate",
+      "old_value": "0x32778d6bf5b93b89177d328556eeeb35c09f472b",
+      "new_value": "0x35a85d4c115801395e6e3abaa784fb05826f129d"
+    },
+    {
+      "call_index": 220,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x20ea396c15722cdb04406c674ab38c9c0ad493808a30c6a433f25f448e0b5373",
+      "semantic_path": "contract.abi.rocketNodeDistributorDelegate",
+      "old_value": "eJzNkktPwzAQhP+Lzzm4iZOa3iohbnABTlWF1vGmWEqdyl6XRhX/HfdB+qYC9cDR6/XMl8mMlszYWSDPBqNxwjwB4WMgUKY21LIBs42dQQuqRpYwamcYZ2VjPblQUuPi0JuJBQru+OYzWTKIz9tpE6J8BbXHZOe2Mta4QL13Regs1C8bF9DaoffRwcJ0NXizjcZhN6XDtZXdFcUQz2le7CkGj24Y+SztBL+3/iS4RrylIJkpnpEadxsPiP7exNSNChSVu12c45pi///whShFT2ueCQ2yl3NVlhoVpCikkFkflRB95JBJwVWGPIVc4J3SBSops7THcfsVu8psMXSHEC2bQL/tVBVsSaaxJ8AoqrJQhb5kPEF6iqE/v4M7tF5eDfd8rqe8c4MfZ0nXdYeY8iCWHo/Js36qeS7UD+SvsX//kDyvlARZ8Uvkc3R+o3MFWl5CljcGFpUWOo/A4y8rpZ3e",
+      "new_value": "eJzNkcFOwzAMht8l556QQNNukxA3uACnqUJu40Gk1qliu1BVvDsug3YTm6oiDhzj/P78Jd72LlCjwm69zTPHAoK3KlCEKkjn1o4iNdBBUaHLnHQNWq2MxJK0lJjce9Y7sFBXRzXIDirGbGIOeI9v6A+uBBNB9bBngfcJmQ1OUA+FJ4oeN2NVjmPDuBmi2vni8uqAqIxpY34kE/A79Svgp+JfAiXUeAKVj4kbRL4O9uuhUDHymMUWzWI/dNrjV5cfO6whqixd9E6plBDpHP8Z5c6+4v4F0vGEfvbJp1/7U6sN+LpI6NGW/X+EWkw8XM+6rM6ZrBZ65B/dUEzp"
+    },
+    {
+      "call_index": 221,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteString",
+      "raw_key": "0xc0f64d3a84132478eb930bf3b490d80d62897bf637afbc0a760f1f661ea60f4b",
+      "semantic_path": "contract.name.old.rocketNodeDistributorDelegate",
+      "old_value": "rocketNodeDistributorDelegate",
+      "new_value": ""
+    },
+    {
+      "call_index": 222,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteBool",
+      "raw_key": "0xb21171e945f5f91a89127918fe8cadf0ae7380aa5852162541be6ca6cc695768",
+      "semantic_path": "contract.exists.old.rocketNodeDistributorDelegate",
+      "old_value": "true",
+      "new_value": "false"
+    },
+    {
+      "call_index": 225,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0x7babf3297861b48964c7979198d8a0f9620418f3fe26bfb8be10092ba77d8808",
+      "semantic_path": "contract.exists.rocketClaimDAO",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 226,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x53f9ee4639ba709aa867ffc0e2061c0fe9d5c96483f354bccc6548ecc1195e69",
+      "semantic_path": "contract.name.rocketClaimDAO",
+      "old_value": "",
+      "new_value": "rocketClaimDAO"
+    },
+    {
+      "call_index": 227,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetAddress",
+      "raw_key": "0x9f962f7366a154518619713c3762e0c7ff40312cf36c6139b71f6d1980c5fcd6",
+      "semantic_path": "contract.address.rocketClaimDAO",
+      "old_value": "0xfe6db0ce3f61a4ae04c0a3e62f775a6f511c9aac",
+      "new_value": "0xfb2f2ab63dcf412ced6cde5f4f809215ed0c81aa"
+    },
+    {
+      "call_index": 228,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0xf4208f47c77f2bdbca76c1c853d013ae4c10f7b52fac83386498716d1e2ff0c4",
+      "semantic_path": "contract.abi.rocketClaimDAO",
+      "old_value": "eJztWNtuGzcQ/ZVCz0bBy/KyfnOSPgRIGyNx0QfDEIacobOIxBV2ubaFIP9eWpZ1sWRJttdpixTQg3Y5HPLMnDkc7vm3QRUnXWoHx+e3fxM1EUZn0wkNjge+jqkBn375VPuvlD6nuoFLen9rFMDT4GgQYXxrOGxWDU4QG2rbPJzu/MD8xfeLo0GbINHvXQJXjao0zaOxjhOYghvRckZeuU1N57PD/LKtLiOkrnk48v3o2wDy9Om47jKAAKOWjtbxIN0QDo7zjNnIGrzsp4qXSxRVvKorT+/fLfcxN7ldaLcvWGCeOwtNPd4Sgac7SvUeNwvYa366/CyUXvqBHKSYlr7uDZ7jK1Vj2uLpYmHw6fTDWf2VYvuZYnozfXfy8bSpU+3r0XIaXdFsP6vZZTfaOM8xaOUCOeNAkJXBKV2Q0IogDzN0JAC94rzkVjHl0ahAQaFELF9Kio34N+SrSUWroftPpaEhaLtm+nZey29HkGfh3jRIjiRlUQSjQzBYIGhSFr1TrigKQUGznADUQXtU0nOJUngnHAbFmcK+a/Neiv6AVcjPL89XyeopNflX1dhPerNUNulse46f4W4y29oHipfpSz8eYze+w9s+mYX5Oe1nYbAWtRfMWq4ABZS55KUKpRPGF8YEywRyLUiCC1J6r40uOHdgmBOhcD8nC/85bTmF6XgNzPasCpZF3DpReqeDkbYAq0TOJ1PMl2iRaVY4LZxzwXDJtdOcWV8KxwOWxO1PmdWeteXfJAZ/TvAgMQClkZmSQwi6dMowGxAyMZiWFIThLpNHgyUMHAxHVuZ2QBkttDWSmJ2jeqzZ3UjjcJHHnQ3t3PqS0hsYQZy1xXWXHltmI27bo7XZJl9VdL20DV30qapjfjPriCEHbE7PhxLq8rlchD3oH9bEcHdRrOG+z+MD4L4eT+qYw3dYuPdWTS9V8vKq2O1hBO29DO46uV9QSgfDaE+h2haHi22C2C1uebMGMTfsi2ver3M8K2neoG7qJvn61itxpbLcGCN/AHF/u6na1O6uW1fP7i4byGfvewUuRO6xpTb9At+kzbME7wD2DXspxeHLa3G4t4HeM//AIy3S9VYJPPhrxwo11qngOGdC8MPE+/ziETK0D9mQLVe2n7fzsVvUQtszBB6oROf3nb69QjiJ+FeVvmAD1z2jMaULzoF7am3u+7T0IwtzJ5fbCUXsOWjMCgpSPDlo/wvaMwWpmzXUr6RJwkoksnw9m8vFr6hp7+bt6YLtYz2w7fc8VUXAAhV73f7/ei442y4BPeiO0hAKlQ+Ci78BoUUAkg==",
+      "new_value": "eJztV0tr20AQ/itFZ9NDoSX45iQ9BNLGJC49GCPG0thZIu2K3Vk5IuS/d6XIelgvW1achAZ8sLSz3843L307f7IYDzQpazyP/xJKDt4sCtAaW47gJMGhL7fCeUC6IyFhjVex0QoctEYWBz82tGXRYOK6EpUyy/SCA+mL58XIUgSEvzTBknmMIrPKBQ8ggqWH+Q5zsiKpHQNoPY+eLDBGkS+0cXMFnsJR2WsXH9G1xmZHslIiYXAYX+e+Mh4K5uDVZX5aahIf1I4FGbMUbCWFX8PzcCASHTAZ7RKONs/fvv/IccAEiVOOtTXog0XMxxqkRWZwO72eiQfk6g45nUeXk5upFCQc4eXbMDRrx+awEi6JDgsYFpl+qKhJBKVldJE22IUHZpc7cNR2K3/bzr+h6GH/4n+VJExRmh8T7jDZMONG0qw+JT3ggsS1a+Rruh8GkWv/ha86uGjMM30Wzdt27hQiv0Tm/03CwJ37nlrtT+A2tVqzeqpE3c7C3qqQUus10jl4wBOdJTQ1HVOhWU+uqrtChpvcdqW5Q0zwDlK7lWm3l2aJzjaaO3wc4QeCm6jsF8XO2h2kVo+vzXYED9R2drR9nY4o6L1pqCmwujgs6saSzm4DiWYxki+7DnxN+RTSXKlI0oGR+e+sHn8+MkWqvcuWIhG1FULJ+7fjU01yr6mzR63YgzSOfXzn2J2SrmP/np8BjpvagbX3HfagjM8XDTlXu0k3lgUvzak3Oqtk9XE8nXD3L6N7V8LmBE4XXO66/5+ym1oLUAXI3dPG5nPY9BwWOhGIrzEv8jNClCpe7lSDZ01a8GzIL9WR8naTNn+dxu0XsuqWir3xEFkYC5B/Lu8wJQ=="
+    },
+    {
+      "call_index": 229,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteString",
+      "raw_key": "0x435468ae9bd71f039cecef89c35d4d1e71dd19bbeba1c0a6c82930462041891f",
+      "semantic_path": "contract.name.old.rocketClaimDAO",
+      "old_value": "rocketClaimDAO",
+      "new_value": ""
+    },
+    {
+      "call_index": 230,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteBool",
+      "raw_key": "0x98438923fb4f778f24aafc2f59b997a2475816fa6d3e9851f3e3ad384edde173",
+      "semantic_path": "contract.exists.old.rocketClaimDAO",
+      "old_value": "true",
+      "new_value": "false"
+    },
+    {
+      "call_index": 233,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0x5edbbdd84be9942343f055bbdffa7bb65bffecd98270d40e7346b6dfc4ad6f03",
+      "semantic_path": "contract.exists.rocketMinipoolBondReducer",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 234,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0xd58a8a506530b1f63cb53dd9584ad34f550191d0b50c3301fb2195de6a1492c6",
+      "semantic_path": "contract.name.rocketMinipoolBondReducer",
+      "old_value": "",
+      "new_value": "rocketMinipoolBondReducer"
+    },
+    {
+      "call_index": 235,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetAddress",
+      "raw_key": "0xc582fcd768126c28d6611f75b950535210f1d5f90fcf7f66f61e0a297ae2c8a0",
+      "semantic_path": "contract.address.rocketMinipoolBondReducer",
+      "old_value": "0xf7ab34c74c02407ed653ac9128731947187575c0",
+      "new_value": "0xde8ab526b19fca2d5a57c4a78b698041717be591"
+    },
+    {
+      "call_index": 236,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0xd21cafe6cb41b0a021725ea6aa9b34c7bd289dad66172d895bf38e2bfe9cdb2d",
+      "semantic_path": "contract.abi.rocketMinipoolBondReducer",
+      "old_value": "eJzNlktP4zAQx7/KKuce7PgRmxsgrbTS7mrFIi4IobE9rqJNkypxChXiu6/7oOmTAmqhtzae+c/Mz+Oxb5+SvBy2oUnObic/A9YlFNfjISZnia3KUIMN364q+w/D31DV0McfEyMPFpNeUsJgYnhfLxucO1dj08TlMNOB+Yfnu17SBAj4qw1g8iIP47haVuUQxmAK7Dxi5CbUrY2C8WOT90sIbb2+8tx7SiC6jwdVGwvwUDTYW63H4SO65Cx6TFdWyoNFnvMyBnmZD6uq2JJ5b0lsEWdFrY3/UyE7tRIfLqrSncfkytBJvth9RDLkA9yidLcwuMB+Xk6iXqGLjPKq7MxxhNM8lmmSRw2UemEpEkkzxrRJIc2sVMJnFoSnSggikdMMdAaKa8pTqwyzLPMsFUZ+1Sa8UQwHBuvD7Ode+JdQWiwW5G+qENX34M+sB6+sE6ioYDaV2WRDCFGcci7AaJ1K9FopmXlOjZMowYNG5okmUuGJn4G9zBa0ZvCK/cS8SLnyDNDTVKPyER1qTyIaZ4mgGBs1rjrJkWYUCFhvmJapVlIxY1M+r2PXzNsAcv9CZPdY622obIC43zcNOiRmcoanXHDFo2rDPOk3j1Hfli9DYO3UWxKbitAjwOgKsfB6GRvhzKzv5u6d9vT79stjlOPD1nqn9wTEiPO+X6ufO64ZO0YzdPX3MfyEJqyM4z81jn5XDr8jvs5io4O298zBiNBMo0gz/SVEbqBoT4yHoiRecSn5dB7Xs5F5Qigoi/PWEXdsFN2wWL4MTmJecCmIEOzo3dAhOL02MMxwKxcv109gcIJjwRqtfKbZKoQu//pdF96Hs3/XZe+opgja7sp5hHUz89uTqtqVqDosZMG9404c97SN4vN87cV+4EcW415yZtIY9T9vLzUl",
+      "new_value": "eJzdlttqg0AQhl+l7LVXhZaQu7RQKLSlpCE3IYRRJ2Gp7sruaCoh7971EDdWc+opwTt1Zn6/f3ZndbJiXEQxadafZJeESkAwSiNkfeZJQQo8uhpK7x3pjaSCBT5mSXPwkDlMQJglztR2wsD3FWptwlToQPlgPXWYJiB8jglcHnBKTVRIEUEKboC2wrxZk4o9I8jWzoqBSUpDGRvMOQQanTq1jx/os76pyCM1E1DRlLAhFzySMmjhc04Xw9BFdUCqQq5pxeb++ubWahEPt1qwCWdNKxPuQXgYDNE3jeFSjCUZ9aoAExR0rm79lsXKXOE1aDe4e8s2+GcbA7t3pdNQaXDPBC7vpPAHpquGYZ8DFxdc5DawViFjKqGPnoJ5LPJe/IFny+vBftrG69xiN5TlVjt/3j7iCcflP9taID2BpsxUtadeFSYv0scHxP0WG+vfvuIXbXQMQdxxm6PiNOmOQzuI28dfF2bROuvwop175CyWOulE/zbU8R8ti5ag0ln4IFFvF0/vcpY/Mb9gX/7Kfvqpn34COt/+KA=="
+    },
+    {
+      "call_index": 237,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteString",
+      "raw_key": "0xb0147fe3422495616613a52d5dd4723176e0786947a18417d9f7a806386e186e",
+      "semantic_path": "contract.name.old.rocketMinipoolBondReducer",
+      "old_value": "rocketMinipoolBondReducer",
+      "new_value": ""
+    },
+    {
+      "call_index": 238,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteBool",
+      "raw_key": "0xc7362627628fec153b2a6dd22addb48e754b4d1f17583f9f495f1bffc82cbf1a",
+      "semantic_path": "contract.exists.old.rocketMinipoolBondReducer",
+      "old_value": "true",
+      "new_value": "false"
+    },
+    {
+      "call_index": 241,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0x5363eca1ab6c895d5eb29da1301b683e7cd6f80ef27ac7215779b8bc3f8c5805",
+      "semantic_path": "contract.exists.rocketMinipoolManager",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 242,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x712d99b64894a88e57b2065f790d79225d6c4a60de9d62e719e92e3e4c2b6377",
+      "semantic_path": "contract.name.rocketMinipoolManager",
+      "old_value": "",
+      "new_value": "rocketMinipoolManager"
+    },
+    {
+      "call_index": 243,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetAddress",
+      "raw_key": "0xe9dfec9339b94a131861a58f1bb4ac4c1ce55c7ffe8550e0b6ebcfde87bb012f",
+      "semantic_path": "contract.address.rocketMinipoolManager",
+      "old_value": "0xf82991bd8976c243eb3b7cddc52ab0fc8dc1246c",
+      "new_value": "0xe54b8c641fd96de5d6747f47c19964c6b824d62c"
+    },
+    {
+      "call_index": 244,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x8dbcb47ea1b95b945ad8a07ea9995ed9f9f05c9d32b7abf92ab673ab5c0e88f4",
+      "semantic_path": "contract.abi.rocketMinipoolManager",
+      "old_value": "eJztWktv2zgQ/iuFzzmQEp+9Je0WWGC7CJpF91AUxZAcpkJtyZAop95i//vSr9jxQ5Jj11GBvQSOSA5nPs18Mxzq049Blo/rUA1ef5r9DFjmMPxrOsbB64Et8lCCDa8+FPYbhrtQlHCPv88mebA4uBrkMJpN/FJuTrh2rsSqisNhIQeWD/79fDWoAgR8Xwcw2TAL0ziaF/kYpmCGuF4Rd65CWdsoMD6ssvscQl1uj/x79WMAcfl0VNTRAA/DCq+e2uPwO7rB67hiPvLEPHjUc2nGKMuzcVEM92h+tSHscZ8n0ur4f8LFWlrIRhsWrYZnGCwn3OB9lt8UufuALhqUFfl6Ok4wD1umk+9oAKVUgBYUJ9aDY0maJMRJLRXXKv5BzzXhRgllmUqQpIRSw1NFlJDqpRDrKAxHBssLgf8GcovDR+Q/FiFKb4FfRsS9so6jojy1iZAaKCVEMcoYB6N1ItBrFaH2jBonUIAHjaknmgiF/YY/LxxeCPz3S73flAgdcCfKMKOpiWD6iDFl3HLnJBKtnLfOpIlXMQIos5QzKzi1ieQKGLMSEJD9j/sW7m8xcmgxbUc+JVpaQzxPhXVKURqZhTJNuZORWVziUXOlWZpyaV1iaHR26gwoEDJFK/SvTtGP/LCgi2E7Yp4nTPkU0NNEo/KRLFB7EsnAWcIpStBx1AmGVFIgYL1JtUh0JOzU2IQt7TiUkncA+TJzn8MZ92pHwg4IXyoYhkYU7DxM36+hL+rQsWZYLdpTNJxSH/g6XyXMp/BbwVKZGNMfGHeXmmnAza0nMMwcxILmtjbfcLqWsZjYaXMTy4jrGGN5NxV2Bdi6LKM/38Bw5ukd3OEjWMjDL+EUQGN2kOrcTrFGxGHEZBTh+zMuuAvwLcvvH3Pc8qWs4TndIMkN11b6pwZt6jPn970v5wy7G8MIwMHd7zFcx5UTPAxBu0Pu98BdzScZPuzVeX5QiB66yixbPIHaxOrNNdjwLovqZRW6HpvhKIKwSFo8ezfc55myMcrv13F63WL1TuB0jeJnWo3ey5Rq32L1Ns+O99PrXpNvpo9k3CPDrRfApEgbvLbHzhorcUcMuqOdtfC+wucmtmE2yprLm23UbrGMHB7q6kj4ooyQLSjjzfMz8bjEIURIv54go1qkoBMkPGThqyvhYZYSThDjsqoqhpPDgJzTv1LD0aKHo9P86lDRJdVvOMtbHBdVFuZiGz0F83r0amvVoahT58WEI1AQmFwOk/XJsgERs6hKdhCYPz8v6UgutZIXc4rfvmdVaGGOy1kviDBGJHgp67skza20vC8fn48S0PCUo76U/R9u/7gbQvW1P/5PbEKNAnkpBP5eJY5Zc8/FI1HMiG3h8ByHGM8MPB6OxBopbHo8HF2PghGK2SGw9wcgqhhDS+jPBuJXOEUZpUBpf26n6FKddjqHzXDs61lMmZQQkhzPsEf6UY/dh1rUaNP0Z0PQ2lh6cSS4NAy9eInuq1uU1XfZP83NywYsb6bL1T1CNGEETZq2NXhelJo+LvrXG3D2jaS0AyIJaWsYnRyhu0j0MEi9JomQtu2m6SXaMLer3scKvpbKcfkmPn1u8KQ4eF6Ocx69FryhB9d/ohbSWEhS/nP6xk+vhvpGBo4yQrWmDS/wqQE9fH80USKV8vhzfVdCy/KNG60ONfzpt0qGMFRKqMuYdIFLOq2JTJSyh/wsKlNMmq5RT1chHvE4BdJWmR59UVI1dnxO1zux0gvmzv0xxNqAUE7fZlUoM1MHPLPyjsL8s5ijuXVc4iQr6mr2SeAzs2yODyesXinwDvfV0B333794DX09jhUSXigGibdWUakOxeAEy2qxroXc1SFqP3e/nnnHHI/1/uf/AOGJy54=",
+      "new_value": "eJztWl1v2jAU/StVnnmatGnqG7SrNGmdUJm6h6qqnORCrSZ2ZF+HZlX/+24IIYGEJCQUAttbi+3rc47vlw0PbxYXgUFtXT7EfyIowbxfUQDWpeVIgYo5eHEnnRfACUrFZvA9njRlDlgDSzA/nvik8hOGrqtAaxrGxA5bfvD+OLA0MoRbg8zmHseIRoUUAYuY7UG2gnbWqIxDBq33wZvFaFLkS0Mwp8zTMFhH7cIruNYlrViMrJFgKzRLsD4XPJDSK8E3yBlb7bNmzdD/nz5/yawh93O40+GY6XLCCGZcjKRw78AlQlyKbDqEIPBYBBsaA98GdSCtrphwwFsJdS+RrJ+SWkK6cCCtbpe4rxSw/zLVynQNlFBk1Buh9sVvFSxJ7HjlBLfn+AL+p/hwtqfwQcFCAfOTZh5WgnYWPnubKSUNNixC6aKSKtSl4EyNSHJzb9QqLrUjhPzWIfO4y6hEjo39AlFmI5nYaHObCtOQPF80g1A04BilyMtGzIv9r8Gp3zOHCfwHzj4j7gJR90mln7RgguyFi9kqfS+1z1ToiDu/7SLllUq9t01mgEOaEMJ2QvVeVO42RYAhh/lO0G447co1uH1B1yCiFiWiMpBmWSgMa8gUnLZpoLQis5mhgvLEVMpkFK3S2LH4lOI6AY+R06mGtgnc4z6vrtabYoxBURJDo3dUhWwgT8Lxqn3FCRR4jJR67mBDJzm4g4U5x2dXsXmcLDuYcbnW0gu3C7I/tymWr7RTbVLCcj5wDYHUHBdmKx0AhPEvNlZti5GvPaWaXRoqiNpJdS0QW3zeR17fXrnGmvA9OVJNysdGgSqrTH2jdTf+MfGYfj47J/ydptD4CcOl7phqQ51Ptjm+wKhDNvvEMG7z+9UU759f/zvrj7irN+rNY3n62Z93PvWzOewCs9pr+YkRbOLNbtKTTfif6oebColG0XL1WQvVOOzvkye5nEpnlgCKBHsXKce4H4/TS2mqSk0jsxT44bHi3GlwT08Zfc9tLQNu/SX5qIFWgat3arfPAVzk3rEbNID9eYFfQ364F3jaU4ZV33jsW6GdH2B15f25PweIKrrmGhW3DcKHYiwmo0BByKXR8Y84WhYRAfMOq1MAN1DWpzXcv3xxprAJqK7DYeMjBKWTH8TUZMev23Ljru+Gj38BKs2zRg=="
+    },
+    {
+      "call_index": 245,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteString",
+      "raw_key": "0x1afe7f2f8b778453f949e181bde99f2dfe721d9a9cc82b553e7b54caf0ee3387",
+      "semantic_path": "contract.name.old.rocketMinipoolManager",
+      "old_value": "rocketMinipoolManager",
+      "new_value": ""
+    },
+    {
+      "call_index": 246,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteBool",
+      "raw_key": "0x61643b20d123a89f8df44053eac154a13bd73b42d2ebd54409badf994e5076ec",
+      "semantic_path": "contract.exists.old.rocketMinipoolManager",
+      "old_value": "true",
+      "new_value": "false"
+    },
+    {
+      "call_index": 249,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0x07f49ecddd9a01d6bd233f2e0ab7527b5a56f50a6ac267745a2204a62e203d25",
+      "semantic_path": "contract.exists.rocketNetworkVoting",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 250,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x40c13bb24d86bf3d7039641b4b88e7c39df1a21852a5e8979c76bf71e29ee935",
+      "semantic_path": "contract.name.rocketNetworkVoting",
+      "old_value": "",
+      "new_value": "rocketNetworkVoting"
+    },
+    {
+      "call_index": 251,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetAddress",
+      "raw_key": "0x0253ad77dfa7370430edf1ea3f22b8f4c30d11c3bf777cb98c244a3d324c768d",
+      "semantic_path": "contract.address.rocketNetworkVoting",
+      "old_value": "0x77cf0f32bdd06242465eb3318a81196194a13daa",
+      "new_value": "0x994a9c49230fec0c127b8f42d6c5288f02610aed"
+    },
+    {
+      "call_index": 252,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0xfdc68a761638e6a2af1e7b7da8e2041e0cb9003c089a4c61e4e1cd3f375ab10a",
+      "semantic_path": "contract.abi.rocketNetworkVoting",
+      "old_value": "eJzNVstu2zAQ/JVCZx0sWtTDtyJGgRySFk3RHoIgWJJLl6hMGhRlxwjy76VsNbLlR+xUAXyzucvlzOwsqfvnQOlZ5cpgdF//dGg1FD+WMwxGATfaWeDu03fD/6C7c8bCBK/rJAkcgzDQMK0TH+1mwmchLJalD7t1HWgWXh7CoHTg8KZywFSh3NJHtdEzWAIrsN3hTy6drbgv6BdLNdHgKtuNvITPAfjty6mpPAEJRYnhNh+BTyg2Qlv84BVow0MbgV9naGF9bhd+eH5FgQVOPON3Vav8f0KTtppT041K/8K1rE3CuDnuDl2bh3PUriPj4ElEFEiex0AYUjYkVGRc0pggj1PCBoKCyHOQgkAMIhtKzmUaJQJjjDnJoqQhcMg7O0o81uIetUaTOEF3VVnrMY9b8UzlTj7pVOPNFS7aXFlp7pTRfmXlMfCajbzTsCtchjkVMh/0LEC4U6Hu75BsFGCFH7Pt/vv4tnSXqRnJeDoQ+JZm72J862W9MtXK4kco7wzT/kHqjXKSMDmUkn3knPw0TunJtVZOQaFKf5MclYAZU+zjv1rvd0ZogimL48uckbVs38wC7WV5JktlmgneuVtb7Oq102sKW+hPflw34HQsK4mgSZJ/mGW7+L8Y2zMFJhhPREzOpnDkoT6M/5dyv/deuD30gkEUDf1H1tm9wMX4FC7lgbfi/6FzoMgoRodcPEdbrve9MXrZocHL+h07GksRC+pfp4e/2xjFSQ==",
+      "new_value": "eJzVVMtugzAQ/JXKZ06pWkW5VeHSQx9qql6iKFpgQVbBRvYaiqL8e22V1iBCSqIe0pvxDrMzsyuvd4yL0pBmi7U7EioB+WtTIluwWApSENPVi4zfkVYkFWR470ApxMgCJqBwwK3qAu6SRKHWtkxfPNBe7DcB0wSED4Yg4jmnxlaFFCU0EOXo/7CdNSkTW0K2D3YMLKgppLEyU8g1Bn3VCX5g0in1XMCPnFatkAk+lajAsQ9FBqczJphjZn2dxWbs9+zm1rMRLzpM32UXXgsI23YrJI/DCgW1/cYGOhC+dVkcnVcLzJCWRinbIvRepaHJnaZuQ8Wx9tjUiJi4FH/sKxgwuJSvZx2CKLcr3Z+CrfcTucQozjLyaNNaSiPouJPBph7e0v891DdJXGTPskZ14WlgHY6/O96THlnUyY/xYYW+QYVKu/Kvac3HspqfmNTmE8edTIk="
+    },
+    {
+      "call_index": 253,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteString",
+      "raw_key": "0x7aff711771e346a2861b0f80d8aca452f45b4648f9b717fb4b99b53bd39da5d0",
+      "semantic_path": "contract.name.old.rocketNetworkVoting",
+      "old_value": "rocketNetworkVoting",
+      "new_value": ""
+    },
+    {
+      "call_index": 254,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteBool",
+      "raw_key": "0x68bfab34d07f2fc916345adb84f08d31e9a2b391dbdf3857c69bd5ca809c779e",
+      "semantic_path": "contract.exists.old.rocketNetworkVoting",
+      "old_value": "true",
+      "new_value": "false"
+    },
+    {
+      "call_index": 257,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0x22e1c8f6ad01fa9e7081057f33f8c53cfc802e4dbdc0e87a901a6ad656b45f04",
+      "semantic_path": "contract.exists.rocketMerkleDistributorMainnet",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 258,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0xe7096c53465bc914305a40c54735aaafc75d8800d4bbab2225431c8a48809dd8",
+      "semantic_path": "contract.name.rocketMerkleDistributorMainnet",
+      "old_value": "",
+      "new_value": "rocketMerkleDistributorMainnet"
+    },
+    {
+      "call_index": 259,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetAddress",
+      "raw_key": "0x759d15219b5adbaf4ec95ee41b49b3f96fcff9be0258e4a1cd69074965f237d1",
+      "semantic_path": "contract.address.rocketMerkleDistributorMainnet",
+      "old_value": "0x5ce71e603b138f7e65029cc1918c0566ed0dbd4b",
+      "new_value": "0xe4e2612ee8d7fdc8518faea85770a3b9c886e2f5"
+    },
+    {
+      "call_index": 260,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x884c25692220f1b7250803838fe01189bc4e25ba3418414715ef3a3a2bbbf0d2",
+      "semantic_path": "contract.abi.rocketMerkleDistributorMainnet",
+      "old_value": "eJztVk2PmzAQ/SsVZw5AIJDcomqlrtSqq+yqPURRNNjjLAqxI2OSRav89xpCAwkfyVa0p97Afn6emfc89uLdiPguVYkxXeSfCiWH+CXboTE1iOBKAlGf5oJsUD0rIWGNjzmIAUHDNDhsc+BK1gEzSiUmiZ5WJx4oB45L00gUKPyWKgijOFKZnuWC7yCDMMZqhd45UTIlmlAPJtGag0rl9czRfDdAL8+2ItUJMIgTNC/zofiG1JjqFcXMRXpwjrNMg8QQbVG2BG7WuM7bXJCl+t/xxotlRSfxAJI+5usqygr3Z6Sgc+Vq/vR1aMqHly+tlMszbl7kk3wuqkQrMO6RqyuZrDeYeISEY4TAHQW+TSwMbGDEYpD/EysMvXA0BjrxLcuHiR+ONNRymOuOiAe2XybT5c2GeCsuaI/1zAZDSyVWd0l2k+UOje7k6BKlyRFmCpORs1hesGg3b2J8kkKwiqcOrclbuF+jRKrKot99XFnKiYoEb5jAw1FAPN/5L+Y/EbMzmhqLVnSDsyKgRjQNO8w4fc7xA9uCAmGMQXBpi6u9v+tRBZxGfP2gXgeOgFm2Y40d8mFjQt/lVoLWqHqCv61Ruy7NjPcRHlpzLS5J0AKXF99V7hD4/oQEN3JvWqfvQLWZr1m97hu2ql5Uu2F6qhYKEbeVrBgftF7UQWb5E6/LrRIJRnv8AWmsfkbqlUo4QHw67Tc822fY33OtMRFr4rm2R/+6hmV/uXjrCdXoP/f1ntPmSVsz/RBBWyetW0hiDFn5XBm4caDrhmAHrMsMe5TJad2NEx90nfdgWPd6LqMu9awi4DscWLr52oDH5S+L1RnZ",
+      "new_value": "eJztVlFv2jAQ/iuVn3nqtKniDU2VVmnVEFTsAVXoSA6wcOzIvsCiqv995+AmoQkQVtY9rG9gf/7u7rvPF0+fhNRpRk70p/4nodWgHvIURV9ERpOFiK5GJlojjclYWOKdBy0gQtETGhIPnNk6YBDHFp3jbdrxQFh4fuwJR0B4nxHMpZKU8642OoUc5gqrExzZkc0iJhTPvScBDMoTk3GaC1AOe/tZx/gLY9HnE8XOXhFQZhOSjRTIBG1LehwoMklqNOp2QTL+f/35S8VlcQs2vvMJVHwvKM93igC4KE2j4fe3HB8nxtBK6uXQGHX78O0tXBPDqK4c85zQfbqePlYsrOxa4dAas6goKpy3QNmvspV7pLvGX331baozF32ruYqyVGGgDJBR0Q5XHOUAJRQ33NFQwCGzN3wy0yY+4uUPs7yTWTqZY9bBHQWEESajYILO82iR6Yik0R8e+i891KGYGRtpjYOipJZSXrlwoOOxx1/Sja9C/OBVAh1zl25p9c62h2NPgABaIh3J8bTi7So3C9tI3HbXTmpJEpR0F+1NB/+ce7Oboh9+2NTKq30cj4g953vdpnSxfgmZLUYoNziBTNFPSavYwhbCKDmh+r+TvMlAFnGC1vnoZ8yvvZezocbc6hZ8l77741n+QtA+fOu9UpCHp9XfGVibUsITA+Dm0PW/Od+VHZwVXMrcvwF4E3mP"
+    },
+    {
+      "call_index": 261,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteString",
+      "raw_key": "0x13de68d2c8954133899d1b6fa9c20c08b394a7bab6735e6e47b43f27922745da",
+      "semantic_path": "contract.name.old.rocketMerkleDistributorMainnet",
+      "old_value": "rocketMerkleDistributorMainnet",
+      "new_value": ""
+    },
+    {
+      "call_index": 262,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteBool",
+      "raw_key": "0x60628ae1fad7a96c6167bbfc38850d92ee1b78459218dcf2032921eb5ecddf90",
+      "semantic_path": "contract.exists.old.rocketMerkleDistributorMainnet",
+      "old_value": "true",
+      "new_value": "false"
+    },
+    {
+      "call_index": 265,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0x04a1919694c406fb1e9b26c706367c68f5f4442bfbc46daa6852a16d65769648",
+      "semantic_path": "contract.exists.rocketDAOProtocolSettingsProposals",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 266,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x623db634aca72daffe259b9e80356377a1db64c588ae02aead7535654442aa38",
+      "semantic_path": "contract.name.rocketDAOProtocolSettingsProposals",
+      "old_value": "",
+      "new_value": "rocketDAOProtocolSettingsProposals"
+    },
+    {
+      "call_index": 267,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetAddress",
+      "raw_key": "0x5aa44b41e40cd45c081364aad7a61c1f32e659ec04db2ab21b4b81488165d219",
+      "semantic_path": "contract.address.rocketDAOProtocolSettingsProposals",
+      "old_value": "0x59cd103df1be2ebd80d45c54a3cde8d4f812c034",
+      "new_value": "0xf6ad771dfb1cd10c66f688e251b5e5c21cbfdf81"
+    },
+    {
+      "call_index": 268,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0xa2273322adb92ce231019ed826f56d9eac6c235ab1633a231884eb2f2eac15c2",
+      "semantic_path": "contract.abi.rocketDAOProtocolSettingsProposals",
+      "old_value": "eJzNlk1vm0AQhv9KxdkH2PDpW9z20EMkt0lziaJo2B0wKt61dgfXVuX/3nXsGgwJthpb4gazw+zzws47PP1xCrmoyDjjp+0loZZQPqwX6IwdriRp4PTph+K/kO5Jacjx2zYpA47OyJEw3ya+6GbCrRAajbHLtKsD+8DmeeQYAsK7iiAtyoLWdlUquYA1pCXWT9idDemK24I2aIpcAlW6vbIZNeifDzQ50ucZlCXKHCdKCltBVfSeyMresyCsxdQU/5be5l4W+LvOzSrJqVDSRl4RQZIztqB4jO+uuOd5LEnCc+inqAs1MP4oDv00ikQP/9cV8orwoZjjsNhdcBMGPvawT7VaKAPl8A6Ol4YeF4ydAX8Hq0lpW/I2H9gHyBLMXBaco+F7pXQ1HxZ+jK71svAc/EckNUQJApmf+G0JHSzrsYXMGw5vkMhGpkCzetd91uboDdzvMusp0KMeDkkd9f1D43976CYOgfn+1dVPlCr7pae7jI7u1/iFjSPjnLVd7wqif9qKwzrtPAgjz82ynoZ9VIRfsIT18MaVJQ9Dn/kn6KczMOgNDz9LgzhyewfWAZ8ND9+zZg832WWdcnTaAl+WUFaNf+GmEe5TTK/Lnv2X3XgVrSERcpEw77KO0ZV+bIFt3Qcj7IjumOvHFTMIIuF68ZUVd85wW3TzJHd0d/z147oDTITvtgdivfkStdk9d6Iz4/f6Mr5sVwZ+JnwRuLbqX4OK/p0=",
+      "new_value": "eJzNll1PwjAUhv+K2fVuJNEQ7kC9MJEEBbkhCzmMw2gs7dKeIovhv9vJxwZ1A0MivYOes573gfaB0VfARGpIB61R/pJQCeCDLMWgFcRSkIKYbt5k/IHUJ6kgwee8aQYxBmEgYJE3jlW5oT2dKtTalmmzD2wX1lEYaALCriGYMM4os1UhRQoZTDgWT9jJmpSJ7YbBOixljPYzE6SHOXCOIsGOFFP7sDRUhWLs+8bdfRG5mLUr/Z5uyfCz6J0ZEROT4pxQPVRMehPraYWxIRywBfoSqadkKjVwn769XaYurDrcHup24t3H9WqkMgvfUg2R5NWTOdOsRJhISqLSSGRXekDzYrNt1/oArL/pLGRWAwX7Jgeq3n3XhXphms4CG0U1aLboFVxHSl5PNdl0OEA/616xvNsdfbnpQ0n4iBwyn35D8lC9OWi89TJV48qpLjyS4WnTjZfADTpSKB9nXSvTs/8T/i9hWXkVjFvxVVE6dvWN9FCDx5B7GTp8jmB9A3Ou1DFb+WI5eI5zL8QrZixR6bx80gfNKhs0/+iC6Bt/icJ2"
+    },
+    {
+      "call_index": 269,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteString",
+      "raw_key": "0xf32074b5a5628c48131e11856053a373543288cd2e11868dcfc09bb418035065",
+      "semantic_path": "contract.name.old.rocketDAOProtocolSettingsProposals",
+      "old_value": "rocketDAOProtocolSettingsProposals",
+      "new_value": ""
+    },
+    {
+      "call_index": 270,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteBool",
+      "raw_key": "0xaf435084ea13a9631104d8d5272b2e59daf4b0ee16cb4bd7da2380474988381c",
+      "semantic_path": "contract.exists.old.rocketDAOProtocolSettingsProposals",
+      "old_value": "true",
+      "new_value": "false"
+    },
+    {
+      "call_index": 274,
+      "caller": "0xe4e2612ee8d7fdc8518faea85770a3b9c886e2f5",
+      "op": "SetAddress",
+      "raw_key": "0x368c075cacb06b86fb0387ded6a722f9bd7b6c830d102a06efffe1056ffc0f6a",
+      "semantic_path": "rewards.relay.address.0",
+      "old_value": "0x5ce71e603b138f7e65029cc1918c0566ed0dbd4b",
+      "new_value": "0xe4e2612ee8d7fdc8518faea85770a3b9c886e2f5"
+    },
+    {
+      "call_index": 281,
+      "caller": "0xd5bffeaa9f373b9c367132772faa0b88e3f0e38b",
+      "op": "SetAddress",
+      "raw_key": "0x17c96c83f586348ef03c8eab91934e28e175b216f36d7e94e1134865488cf733",
+      "semantic_path": "megapool.delegate.set.delegate.0",
+      "old_value": "0x0000000000000000000000000000000000000000",
+      "new_value": "0xca3dd4bee7c174903dbf66c3897c27e9adaaebdd"
+    },
+    {
+      "call_index": 282,
+      "caller": "0xd5bffeaa9f373b9c367132772faa0b88e3f0e38b",
+      "op": "SetUint",
+      "raw_key": "0x17c96c83f586348ef03c8eab91934e28e175b216f36d7e94e1134865488cf733",
+      "semantic_path": "megapool.delegate.set.meta",
+      "old_value": "0",
+      "new_value": "340282366920938463463374607431768211456"
+    },
+    {
+      "call_index": 283,
+      "caller": "0xd5bffeaa9f373b9c367132772faa0b88e3f0e38b",
+      "op": "SetAddress",
+      "raw_key": "0x545ae0a88400bfdb684d4c4645ecafa0a1d9b7d552c288cde0014b9570fb26a3",
+      "semantic_path": "contract.address.rocketMegapoolDelegate",
+      "old_value": "0x0000000000000000000000000000000000000000",
+      "new_value": "0xca3dd4bee7c174903dbf66c3897c27e9adaaebdd"
+    },
+    {
+      "call_index": 285,
+      "caller": "0x40628faac22383327b9f7bbc86cd1857050a2dce",
+      "op": "SetUint",
+      "raw_key": "0x28184e4a62592f2b6e2883130dc5931eae790777a6a65e216d861529da885a0e",
+      "semantic_path": "dao.protocol.setting.megapool.megapool.time.before.dissolve",
+      "old_value": "0",
+      "new_value": "2419200"
+    },
+    {
+      "call_index": 286,
+      "caller": "0x40628faac22383327b9f7bbc86cd1857050a2dce",
+      "op": "SetUint",
+      "raw_key": "0x2209c490d5f0017d127e2e53e31ed835f5c60ec80ebd4e57f031715859e447a9",
+      "semantic_path": "dao.protocol.setting.megapool.megapool.dissolve.penalty",
+      "old_value": "0",
+      "new_value": "50000000000000000"
+    },
+    {
+      "call_index": 287,
+      "caller": "0x40628faac22383327b9f7bbc86cd1857050a2dce",
+      "op": "SetUint",
+      "raw_key": "0x74c8ad38f33bbaaca992518977bf66e135775c85c013cda57b63c2fc5dfd0470",
+      "semantic_path": "dao.protocol.setting.megapool.maximum.megapool.eth.penalty",
+      "old_value": "0",
+      "new_value": "612000000000000000000"
+    },
+    {
+      "call_index": 288,
+      "caller": "0x40628faac22383327b9f7bbc86cd1857050a2dce",
+      "op": "SetUint",
+      "raw_key": "0x480067f26f457c8270dbaf5f97c2e4fe653cbad2137f98c58c38bf7c006e6091",
+      "semantic_path": "dao.protocol.setting.megapool.notify.threshold",
+      "old_value": "0",
+      "new_value": "112"
+    },
+    {
+      "call_index": 289,
+      "caller": "0x40628faac22383327b9f7bbc86cd1857050a2dce",
+      "op": "SetUint",
+      "raw_key": "0x9e9f3bd1512c55501c80ae7ca9d7e9719ed7cbdb959d003ca5550fbf4375401d",
+      "semantic_path": "dao.protocol.setting.megapool.late.notify.fine",
+      "old_value": "0",
+      "new_value": "50000000000000000"
+    },
+    {
+      "call_index": 290,
+      "caller": "0x40628faac22383327b9f7bbc86cd1857050a2dce",
+      "op": "SetUint",
+      "raw_key": "0x0dbca4f21bb950fbe630afb0b13000961cf16d210585740fe2279e92409ac1ff",
+      "semantic_path": "dao.protocol.setting.megapool.user.distribute.delay",
+      "old_value": "0",
+      "new_value": "1575"
+    },
+    {
+      "call_index": 291,
+      "caller": "0x40628faac22383327b9f7bbc86cd1857050a2dce",
+      "op": "SetUint",
+      "raw_key": "0xa2c3fed2a27f96df42a24b3d77056274e3d23642aa27f9e76788d1816768737e",
+      "semantic_path": "dao.protocol.setting.megapool.user.distribute.delay.shortfall",
+      "old_value": "0",
+      "new_value": "6750"
+    },
+    {
+      "call_index": 292,
+      "caller": "0x40628faac22383327b9f7bbc86cd1857050a2dce",
+      "op": "SetUint",
+      "raw_key": "0xa0fa2b3d3fb32135103686f3e366e032fc6644ac79297dfd7deacaf30839de8f",
+      "semantic_path": "dao.protocol.setting.megapool.megapool.penalty.threshold",
+      "old_value": "0",
+      "new_value": "510000000000000000"
+    },
+    {
+      "call_index": 294,
+      "caller": "0x40628faac22383327b9f7bbc86cd1857050a2dce",
+      "op": "SetBool",
+      "raw_key": "0x72cdd0a776726140c930cc27d65bcdb8073b12d7d1d23af3dadab91955aa00d2",
+      "semantic_path": "dao.protocol.setting.megapool.deployed",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 295,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0xddbc4110de90dbd4531da2f27d1a3235c449afb8e5a28f1ab4ff64ef43b8d11c",
+      "semantic_path": "dao.security.allowed.setting.network.network.node.commission.share.security.council.adder",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 296,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0x49c92d5f871bae223d99b7e10a073696e5e6a1571a0bd47d60cdcbbae321b9e1",
+      "semantic_path": "dao.security.allowed.setting.network.network.submit.rewards.enabled",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 297,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetUint",
+      "raw_key": "0x17230967dc9606fd2f86361d62ca142d2605b4cc343c53d89c4643940f34ea05",
+      "semantic_path": "dao.protocol.setting.deposit.deposit.assign.socialised.maximum",
+      "old_value": "2",
+      "new_value": "0"
+    },
+    {
+      "call_index": 298,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetUint",
+      "raw_key": "0x24e59fe35f79cac37245394b45f9ae1675490183ce2e614c4a5a61ba4dfe6e34",
+      "semantic_path": "dao.protocol.setting.deposit.express.queue.rate",
+      "old_value": "0",
+      "new_value": "4"
+    },
+    {
+      "call_index": 299,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetUint",
+      "raw_key": "0xe3b7273542f8130dda153fb7777cc3c5b9589533d141a22fe46bdaaadf4c12d0",
+      "semantic_path": "dao.protocol.setting.deposit.express.queue.tickets.base.provision",
+      "old_value": "0",
+      "new_value": "0"
+    },
+    {
+      "call_index": 300,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetUint",
+      "raw_key": "0xcb86a7115941e5086c3b210c53c5e9cb6692f7edc03d37cbd7a4425b59c74f32",
+      "semantic_path": "dao.protocol.setting.network.network.node.commission.share",
+      "old_value": "0",
+      "new_value": "50000000000000000"
+    },
+    {
+      "call_index": 301,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetUint",
+      "raw_key": "0x4b1593a419363a7c461e1ff24463cd138b120370de55005eb0d4b40bc6237d66",
+      "semantic_path": "dao.protocol.setting.network.network.node.commission.share.security.council.adder",
+      "old_value": "0",
+      "new_value": "0"
+    },
+    {
+      "call_index": 302,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetUint",
+      "raw_key": "0x586cd0b80f0da2faf8c2ab00c18269b4230c222374b77097380c5b103db2689a",
+      "semantic_path": "dao.protocol.setting.network.network.voter.share",
+      "old_value": "0",
+      "new_value": "90000000000000000"
+    },
+    {
+      "call_index": 303,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetUint",
+      "raw_key": "0xee27f677ea17f441d6e26478a9a7aa988495f8ab6e34d1f6a24700c8e2097324",
+      "semantic_path": "dao.protocol.setting.network.network.pdao.share",
+      "old_value": "0",
+      "new_value": "0"
+    },
+    {
+      "call_index": 304,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetUint",
+      "raw_key": "0xd14780f6f45fe19e43b38c469bf13295a79ec1ba69ae248d29bde54b38066398",
+      "semantic_path": "dao.protocol.setting.network.network.max.node.commission.share.council.adder",
+      "old_value": "0",
+      "new_value": "10000000000000000"
+    },
+    {
+      "call_index": 305,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetUint",
+      "raw_key": "0x25e138482eac5af7486c87073145f1f90f22b1276e41faad9742a411c6cb5f28",
+      "semantic_path": "dao.protocol.setting.network.network.max.reth.balance.delta",
+      "old_value": "0",
+      "new_value": "20000000000000000"
+    },
+    {
+      "call_index": 306,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetUint",
+      "raw_key": "0x48d02caa298c0dae714cf4ac43ba5504093f89b6b0ba2728dbdd73b21b9d92fb",
+      "semantic_path": "dao.protocol.setting.node.reduced.bond",
+      "old_value": "0",
+      "new_value": "4000000000000000000"
+    },
+    {
+      "call_index": 307,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetUint",
+      "raw_key": "0xa45f1943702810802752153f86429640f4de02b9d52bf6ced8361b8ac3cc9565",
+      "semantic_path": "dao.protocol.setting.node.node.unstaking.period",
+      "old_value": "0",
+      "new_value": "2419200"
+    },
+    {
+      "call_index": 308,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetUint",
+      "raw_key": "0xd5b09fde6b91ab322f3cc670e59295713e34506c7ebdb495aba61f8344096ebe",
+      "semantic_path": "dao.protocol.setting.node.node.withdrawal.cooldown",
+      "old_value": "0",
+      "new_value": "0"
+    },
+    {
+      "call_index": 309,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetUint",
+      "raw_key": "0x9a3ecee2c5a7908938a85ea95545b24733141160d22cf1a793b91134959a4d1c",
+      "semantic_path": "dao.protocol.setting.node.node.minimum.legacy.staked.rpl",
+      "old_value": "0",
+      "new_value": "150000000000000000"
+    },
+    {
+      "call_index": 310,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteUint",
+      "raw_key": "0x2667306bf1c3fdbd6985406babb7b6f4af682212c96c7461d13f2c6e46339fe5",
+      "semantic_path": "dao.protocol.setting.node.node.per.minipool.stake.minimum",
+      "old_value": "0",
+      "new_value": "0"
+    },
+    {
+      "call_index": 311,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "DeleteUint",
+      "raw_key": "0x7caec2e39a311bf1e6d3685925742a711502024aed714d65f11acd3dd0abac4f",
+      "semantic_path": "dao.protocol.setting.node.node.per.minipool.stake.maximum",
+      "old_value": "600000000000000000",
+      "new_value": "0"
+    },
+    {
+      "call_index": 312,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetBool",
+      "raw_key": "0x0deab539f84351cbe4e69fe1a4feeba6d3e997e15bd9b3fb1b651b3b53f5bdc1",
+      "semantic_path": "dao.protocol.setting.node.node.deposit.enabled",
+      "old_value": "false",
+      "new_value": "true"
+    },
+    {
+      "call_index": 313,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetUint",
+      "raw_key": "0x3416be34d2e340d419038a690cfcaf3829714fabafbab0517e5789964f385479",
+      "semantic_path": "dao.protocol.setting.minipool.minipool.maximum.penalty.count",
+      "old_value": "0",
+      "new_value": "2500"
+    },
+    {
+      "call_index": 314,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetUint",
+      "raw_key": "0xa180bac08d311454e3bca3b1d92ccfdf707f273f3d726b4699843d035abca908",
+      "semantic_path": "dao.protocol.setting.security.upgrade.delay",
+      "old_value": "0",
+      "new_value": "604800"
+    },
+    {
+      "call_index": 315,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetUint",
+      "raw_key": "0x538b7981f3b8e1bf23109acafa95694c7c5c70729b5f5c27c8041b445f06a883",
+      "semantic_path": "dao.protocol.setting.security.upgradeveto.quorum",
+      "old_value": "0",
+      "new_value": "330000000000000000"
+    },
+    {
+      "call_index": 316,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetUint",
+      "raw_key": "0xbb0d91783813e34b70634216101289d82f845020b2d6c1633e74a2bce9871019",
+      "semantic_path": "dao.protocol.setting.proposals.proposal.quorum",
+      "old_value": "150000000000000000",
+      "new_value": "150000000000000000"
+    },
+    {
+      "call_index": 317,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetUint",
+      "raw_key": "0x4b0b62e309fd1192af176ef5bc07697e2012f689d7bf4ebfd7b15d2ab6bf569f",
+      "semantic_path": "dao.protocol.setting.proposals.proposal.veto.quorum",
+      "old_value": "510000000000000000",
+      "new_value": "200000000000000000"
+    },
+    {
+      "call_index": 324,
+      "caller": "0x9d9708da8e0200dd8dd9ad09e0aaf184ad260842",
+      "op": "SetUint",
+      "raw_key": "0x2fc620ac2634df90b312b263ccfada1a2b70d37436f6d4461a5be6b1603471b8",
+      "semantic_path": "network.revenue.node.share.value.1771372799",
+      "old_value": "0",
+      "new_value": "5000"
+    },
+    {
+      "call_index": 330,
+      "caller": "0x569f5b3024054ab4049a50df223a747afe18a891",
+      "op": "SetUint",
+      "raw_key": "0x1942b57ac03707cc80e1234d44f546dc31a5268e4bb89b3ab4d9978eda4bb797",
+      "semantic_path": "snapshot.time.length.network.revenue.node.share",
+      "old_value": "0",
+      "new_value": "1"
+    },
+    {
+      "call_index": 331,
+      "caller": "0x569f5b3024054ab4049a50df223a747afe18a891",
+      "op": "SetBytes32",
+      "raw_key": "0x2fc620ac2634df90b312b263ccfada1a2b70d37436f6d4461a5be6b0f69f70b9",
+      "semantic_path": "network.revenue.node.share.checkpoint.0",
+      "old_value": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "new_value": "0x00000000699500ff000000000000000000000000000000000000000000000000"
+    },
+    {
+      "call_index": 332,
+      "caller": "0x9d9708da8e0200dd8dd9ad09e0aaf184ad260842",
+      "op": "SetUint",
+      "raw_key": "0xcc73d497db3c72fa8024b9c744ecc8329d9caedeb44d6180972506d470564077",
+      "semantic_path": "network.revenue.voter.share.value.1771372799",
+      "old_value": "0",
+      "new_value": "9000"
+    },
+    {
+      "call_index": 338,
+      "caller": "0x569f5b3024054ab4049a50df223a747afe18a891",
+      "op": "SetUint",
+      "raw_key": "0xe654fe575c15f253b288fbbe8961ec7de28f91a0c89bb61e6b288f900b44286d",
+      "semantic_path": "snapshot.time.length.network.revenue.voter.share",
+      "old_value": "0",
+      "new_value": "1"
+    },
+    {
+      "call_index": 339,
+      "caller": "0x569f5b3024054ab4049a50df223a747afe18a891",
+      "op": "SetBytes32",
+      "raw_key": "0xcc73d497db3c72fa8024b9c744ecc8329d9caedeb44d6180972506d406c13f78",
+      "semantic_path": "network.revenue.voter.share.checkpoint.0",
+      "old_value": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "new_value": "0x00000000699500ff000000000000000000000000000000000000000000000000"
+    },
+    {
+      "call_index": 340,
+      "caller": "0x9d9708da8e0200dd8dd9ad09e0aaf184ad260842",
+      "op": "SetUint",
+      "raw_key": "0x551433d599ed7653f1b2a724b7c662d9455af52480fc1e4a0ff70ae1ac18f354",
+      "semantic_path": "network.revenue.pdao.share.value.1771372799",
+      "old_value": "0",
+      "new_value": "0"
+    },
+    {
+      "call_index": 346,
+      "caller": "0x569f5b3024054ab4049a50df223a747afe18a891",
+      "op": "SetUint",
+      "raw_key": "0xd62217930401867cfaaeef730613c5df984e0a6bab4135231b781021203b3ed9",
+      "semantic_path": "snapshot.time.length.network.revenue.pdao.share",
+      "old_value": "0",
+      "new_value": "1"
+    },
+    {
+      "call_index": 347,
+      "caller": "0x569f5b3024054ab4049a50df223a747afe18a891",
+      "op": "SetBytes32",
+      "raw_key": "0x551433d599ed7653f1b2a724b7c662d9455af52480fc1e4a0ff70ae14283f255",
+      "semantic_path": "network.revenue.pdao.share.checkpoint.0",
+      "old_value": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "new_value": "0x00000000699500ff000000000000000000000000000000000000000000000000"
+    },
+    {
+      "call_index": 348,
+      "caller": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "op": "SetString",
+      "raw_key": "0x7e9a8418e3cb3a35d39fd8f9eb7270d174a25d27a14e7c14cb1a96d475bb2bac",
+      "semantic_path": "protocol.version",
+      "old_value": "1.3.1",
+      "new_value": "1.4"
+    }
+  ],
+  "external_calls": [
+    {
+      "call_index": 271,
+      "from": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "to": "0xe4e2612ee8d7fdc8518faea85770a3b9c886e2f5",
+      "selector": "0x592e6f59",
+      "eth_value": "0",
+      "success": true
+    },
+    {
+      "call_index": 275,
+      "from": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "to": "0xd5bffeaa9f373b9c367132772faa0b88e3f0e38b",
+      "selector": "0x592e6f59",
+      "eth_value": "0",
+      "success": true
+    },
+    {
+      "call_index": 284,
+      "from": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "to": "0x40628faac22383327b9f7bbc86cd1857050a2dce",
+      "selector": "0x592e6f59",
+      "eth_value": "0",
+      "success": true
+    },
+    {
+      "call_index": 318,
+      "from": "0x5b3b5c76391662e56d0ff72f31b89c409316c8ba",
+      "to": "0x9d9708da8e0200dd8dd9ad09e0aaf184ad260842",
+      "selector": "0xa3e99958",
+      "eth_value": "0",
+      "success": true
+    }
+  ]
+}

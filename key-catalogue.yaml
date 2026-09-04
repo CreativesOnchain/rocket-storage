@@ -1,0 +1,111 @@
+# Rocket Pool RocketStorage Key Catalogue
+# Describes the semantic naming convention and key construction rules
+# for RocketStorage bytes32 keys: keccak256(abi.encodePacked(prefix, [name]))
+
+version: "1.0"
+description: "RocketStorage semantic key definitions for Rocket Pool protocol"
+
+construction:
+  method: "keccak256(abi.encodePacked(...))"
+  types:
+    - single_segment: "keccak256(abi.encodePacked(key_string))"
+    - two_segment: "keccak256(abi.encodePacked(prefix, name))"
+
+single_keys:
+  - path: "protocol.version"
+    type: "uint256"
+    description: "Rocket Pool protocol numeric version"
+  - path: "protocol.version.string"
+    type: "string"
+    description: "Human-readable protocol version string (e.g. 1.4.0)"
+  - path: "rocketpool.flag.one"
+    type: "bool"
+    description: "Internal protocol feature flag"
+  - path: "rocket.storage.version"
+    type: "uint256"
+    description: "RocketStorage contract storage layout version"
+
+prefixes:
+  contract.address:
+    description: "Maps registered contract name to its current deployed address"
+    type: "address"
+    contracts:
+      # Core Protocol
+      - rocketStorage
+      - rocketVault
+      - rocketTokenRETH
+      - rocketTokenRPL
+      - rocketTokenRPLFixedSupply
+      - rocketDepositPool
+      - rocketRewardsPool
+      - rocketSmoothingPool
+      - rocketClaimDAO
+      - rocketClaimNode
+      - rocketClaimTrustedNode
+      - rocketMerkleDistributorMainnet
+      # Node and Staking
+      - rocketNodeManager
+      - rocketNodeStaking
+      - rocketNodeDeposit
+      - rocketNodeDistributor
+      - rocketNodeDistributorDelegate
+      - rocketNodeDistributorFactory
+      # Minipools
+      - rocketMinipoolBase
+      - rocketMinipoolDelegate
+      - rocketMinipoolManager
+      - rocketMinipoolFactory
+      - rocketMinipoolQueue
+      - rocketMinipoolStatus
+      - rocketMinipoolPenalty
+      - rocketMinipoolBondReducer
+      # Saturn 1 / Megapools
+      - rocketMegapoolBase
+      - rocketMegapoolDelegate
+      - rocketMegapoolDelegateOld
+      - rocketMegapoolFactory
+      - rocketMegapoolManager
+      # DAO Protocol
+      - rocketDAOProtocol
+      - rocketDAOProtocolActions
+      - rocketDAOProtocolProposals
+      - rocketDAOProtocolProposal
+      - rocketDAOProtocolVerifier
+      - rocketDAOProtocolSettingsAuction
+      - rocketDAOProtocolSettingsDeposit
+      - rocketDAOProtocolSettingsInflation
+      - rocketDAOProtocolSettingsMinipool
+      - rocketDAOProtocolSettingsNetwork
+      - rocketDAOProtocolSettingsNode
+      - rocketDAOProtocolSettingsRewards
+      - rocketDAOProtocolSettingsSecurity
+      # DAO Node Trusted (Oracle DAO)
+      - rocketDAONodeTrusted
+      - rocketDAONodeTrustedActions
+      - rocketDAONodeTrustedProposals
+      - rocketDAONodeTrustedUpgrade
+      - rocketDAONodeTrustedSettingsMembers
+      - rocketDAONodeTrustedSettingsProposals
+      - rocketDAONodeTrustedSettingsRewards
+      # Network & Security
+      - rocketNetworkBalances
+      - rocketNetworkFees
+      - rocketNetworkPenalties
+      - rocketNetworkPrices
+      - rocketNetworkSnapshots
+      - rocketNetworkVoting
+      - rocketDAOSecurity
+      - rocketDAOSecurityActions
+      - rocketDAOSecurityProposals
+      # Upgrade contracts
+      - rocketUpgradeOneDotTwo
+      - rocketUpgradeOneDotThree
+      - rocketUpgradeOneDotFour
+
+  contract.exists:
+    description: "Boolean flag indicating whether a contract is active in RocketStorage"
+    type: "bool"
+
+  deploy.block:
+    description: "Records the deployment block number for newly registered contracts"
+    type: "uint256"

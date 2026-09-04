@@ -1,0 +1,24 @@
+[package]
+name = "rsg-cli"
+version.workspace = true
+edition.workspace = true
+description = "rocket-storage-gate — RocketStorage upgrade effects verification CLI"
+
+[[bin]]
+name = "rsg"
+path = "src/main.rs"
+
+[dependencies]
+rsg-types   = { workspace = true }
+rsg-decode  = { workspace = true }
+rsg-capture = { workspace = true }
+rsg-compare = { workspace = true }
+rsg-attest  = { workspace = true }
+
+serde_json = { workspace = true }
+serde_yaml = { workspace = true }
+clap       = { workspace = true }
+anyhow     = { workspace = true }
+tokio      = { workspace = true }
+
+[dev-dependencies]

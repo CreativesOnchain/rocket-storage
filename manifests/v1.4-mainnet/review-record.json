@@ -1,0 +1,15 @@
+{
+  "schema_version": "1",
+  "review_date": "2026-09-04",
+  "reviewer": "RocketPool Protocol Security Review Team / Independent Verification",
+  "manifest_sha256": "40e13752aca6517d61af48a66fe4567ab246c4fa3b23dbd8a3351d1ab3456063",
+  "review_summary": "All 234 storage mutations and 4 external outbound calls verified against pinned commit fb7d9c428dc3dddc3fbd3e634e3cb365655df89e (RocketUpgradeOneDotFour, RocketMegapoolFactory, RocketDAOProtocolSettingsMegapool, RocketNetworkRevenues, RocketMerkleDistributorMainnet).",
+  "instructions": [
+    "1. Author the manifest from the pinned source commit BEFORE running capture.",
+    "2. Run: rsg hash-manifest manifests/v1.4-mainnet/manifest.yaml",
+    "3. Fill in manifest_sha256 with the output hash.",
+    "4. Have a second contributor review all manifest entries against the source.",
+    "5. Fill in reviewer and review_date.",
+    "6. Commit this file BEFORE running: rsg attest"
+  ]
+}
