@@ -293,4 +293,4 @@ This attestation covers only typed RocketStorage mutations and declared external
 > **Disclaimer:** PASS means only that the replayed payload conforms to the reviewed manifest within the documented observation boundary. This is not an audit, security certificate, or proof that the upgrade is safe or correct in its entirety.
 
 ---
-*Generated at: 2026-09-04T22:16:03.370574811+00:00*
+*Generated at: 2026-09-05T15:27:51.083874054+00:00*
