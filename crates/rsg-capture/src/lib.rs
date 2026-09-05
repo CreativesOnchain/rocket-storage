@@ -22,7 +22,9 @@ use alloy::{
     primitives::B256,
     providers::{ext::DebugApi, Provider, ProviderBuilder},
     rpc::types::{
-        trace::geth::{CallConfig, GethDebugBuiltInTracerType, GethDebugTracingOptions, GethTrace},
+        trace::geth::{
+            CallConfig, CallFrame, GethDebugBuiltInTracerType, GethDebugTracingOptions, GethTrace,
+        },
         BlockId, BlockNumberOrTag,
     },
 };
@@ -36,13 +38,24 @@ use crate::walker::walk_calls;
 pub async fn capture_live(rpc_url: &str) -> Result<FrozenTrace> {
     let provider = ProviderBuilder::new().connect_http(rpc_url.parse()?);
 
-    // Validate chain ID
+    let chain_id = validate_chain_id(&provider).await?;
+    let pre_block_hash = fetch_pre_block_hash(&provider).await?;
+    let root_frame = fetch_call_trace(&provider).await?;
+    let (effects, external_calls) = extract_trace_effects(&provider, &root_frame).await?;
+    let pinned = build_pinned_fixture(chain_id, pre_block_hash);
+
+    Ok(FrozenTrace { pinned, effects, external_calls })
+}
+
+async fn validate_chain_id<P: Provider>(provider: &P) -> Result<u64> {
     let chain_id = provider.get_chain_id().await.context("failed to get chain ID")?;
     if chain_id != 1 {
-        anyhow::bail!("expected Ethereum mainnet (chain_id=1), got {chain_id}");
+        anyhow::bail!("expected Ethereum Mainnet (chain_id=1), got {chain_id}");
     }
+    Ok(chain_id)
+}
 
-    // Validate and fetch pre-upgrade block
+async fn fetch_pre_block_hash<P: Provider>(provider: &P) -> Result<String> {
     let pre_block_info = provider
         .get_block(BlockId::Number(BlockNumberOrTag::Number(PRE_BLOCK)))
         .await
@@ -51,9 +64,11 @@ pub async fn capture_live(rpc_url: &str) -> Result<FrozenTrace> {
 
     let pre_block_hash = format!("{:?}", pre_block_info.header.hash);
     eprintln!("[rsg] Pre-block {PRE_BLOCK} hash: {pre_block_hash}");
-    eprintln!("[rsg] Calling debug_traceTransaction…");
+    Ok(pre_block_hash)
+}
 
-    // Call debug_traceTransaction with CallTracer
+async fn fetch_call_trace<P: Provider + DebugApi>(provider: &P) -> Result<CallFrame> {
+    eprintln!("[rsg] Calling debug_traceTransaction…");
     let tx_hash = B256::from_str(UPGRADE_TX).context("invalid tx hash")?;
     let trace_opts = GethDebugTracingOptions::new_tracer(GethDebugBuiltInTracerType::CallTracer)
         .with_call_config(CallConfig { only_top_call: Some(false), with_log: Some(false) });
@@ -63,11 +78,16 @@ pub async fn capture_live(rpc_url: &str) -> Result<FrozenTrace> {
         .await
         .context("debug_traceTransaction failed")?;
 
-    let root_frame = match trace {
-        GethTrace::CallTracer(frame) => frame,
+    match trace {
+        GethTrace::CallTracer(frame) => Ok(frame),
         _ => anyhow::bail!("unexpected trace type: expected CallTracer"),
-    };
+    }
+}
 
+async fn extract_trace_effects<P: Provider>(
+    provider: &P,
+    root_frame: &CallFrame,
+) -> Result<(Vec<ObservedEffect>, Vec<ObservedExternalCall>)> {
     eprintln!("[rsg] Trace received. Walking call tree…");
 
     let catalogue = KeyCatalogue::build();
@@ -76,8 +96,8 @@ pub async fn capture_live(rpc_url: &str) -> Result<FrozenTrace> {
     let mut call_index = 0usize;
 
     walk_calls(
-        &root_frame,
-        &provider,
+        root_frame,
+        provider,
         &catalogue,
         &mut effects,
         &mut external_calls,
@@ -91,7 +111,11 @@ pub async fn capture_live(rpc_url: &str) -> Result<FrozenTrace> {
         external_calls.len()
     );
 
-    let pinned = PinnedFixture {
+    Ok((effects, external_calls))
+}
+
+fn build_pinned_fixture(chain_id: u64, pre_block_hash: String) -> PinnedFixture {
+    PinnedFixture {
         chain_id,
         pre_block: PRE_BLOCK,
         pre_block_hash,
@@ -101,7 +125,21 @@ pub async fn capture_live(rpc_url: &str) -> Result<FrozenTrace> {
         rocket_storage: format!("{ROCKET_STORAGE:?}"),
         source_commit: SOURCE_COMMIT.to_string(),
         replay_tool: format!("rsg-capture/{}", env!("CARGO_PKG_VERSION")),
-    };
+    }
+}
 
-    Ok(FrozenTrace { pinned, effects, external_calls })
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_build_pinned_fixture() {
+        let fixture = build_pinned_fixture(1, "0xhash".to_string());
+        assert_eq!(fixture.chain_id, 1);
+        assert_eq!(fixture.pre_block, PRE_BLOCK);
+        assert_eq!(fixture.pre_block_hash, "0xhash");
+        assert_eq!(fixture.upgrade_tx, UPGRADE_TX);
+        assert_eq!(fixture.exec_block, EXEC_BLOCK);
+        assert_eq!(fixture.source_commit, SOURCE_COMMIT);
+    }
 }
