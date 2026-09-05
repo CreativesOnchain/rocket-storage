@@ -10,6 +10,10 @@ pub mod registry;
 
 pub use catalogue::KeyCatalogue;
 pub use hasher::{keccak256_packed, parse_address_20, parse_bytes32};
+pub use registry::{
+    find_new_contract_address, find_old_contract_address, is_known_contract_name,
+    is_protocol_setting, is_security_allowed_setting,
+};
 
 #[cfg(test)]
 mod tests {

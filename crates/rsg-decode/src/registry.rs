@@ -210,3 +210,111 @@ pub const PROTOCOL_SETTINGS: &[(&str, &[&str])] = &[
         ],
     ),
 ];
+
+// ── Query Helpers ────────────────────────────────────────────────────────────
+
+/// Find the registered address for a new Saturn 1 contract by contract name.
+pub fn find_new_contract_address(name: &str) -> Option<&'static str> {
+    SATURN1_NEW_CONTRACTS.iter().find(|(n, _)| *n == name).map(|(_, addr)| *addr)
+}
+
+/// Find the replaced address for an old Saturn 1 contract by contract name.
+pub fn find_old_contract_address(name: &str) -> Option<&'static str> {
+    SATURN1_OLD_CONTRACTS.iter().find(|(n, _)| *n == name).map(|(_, addr)| *addr)
+}
+
+/// Check if a contract name is in the list of known Rocket Pool contracts.
+pub fn is_known_contract_name(name: &str) -> bool {
+    ALL_CONTRACT_NAMES.contains(&name)
+}
+
+/// Check if a namespace and setting pair is permitted under DAO security rules.
+pub fn is_security_allowed_setting(namespace: &str, setting: &str) -> bool {
+    SECURITY_ALLOWED_SETTINGS.iter().any(|(ns, s)| *ns == namespace && *s == setting)
+}
+
+/// Check if a setting is registered under a given protocol setting namespace.
+pub fn is_protocol_setting(namespace: &str, setting: &str) -> bool {
+    PROTOCOL_SETTINGS.iter().any(|(ns, settings)| *ns == namespace && settings.contains(&setting))
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::hasher::parse_address_20;
+    use std::collections::HashSet;
+
+    #[test]
+    fn test_saturn1_new_contracts_have_valid_20_byte_addresses() {
+        for (name, addr_str) in SATURN1_NEW_CONTRACTS {
+            let parsed = parse_address_20(addr_str);
+            assert!(parsed.is_ok(), "invalid address for new contract {name}: {addr_str}");
+        }
+    }
+
+    #[test]
+    fn test_saturn1_old_contracts_have_valid_20_byte_addresses() {
+        for (name, addr_str) in SATURN1_OLD_CONTRACTS {
+            let parsed = parse_address_20(addr_str);
+            assert!(parsed.is_ok(), "invalid address for old contract {name}: {addr_str}");
+        }
+    }
+
+    #[test]
+    fn test_no_duplicate_contract_names_in_registries() {
+        let mut new_names = HashSet::new();
+        for (name, _) in SATURN1_NEW_CONTRACTS {
+            assert!(new_names.insert(*name), "duplicate in SATURN1_NEW_CONTRACTS: {name}");
+        }
+
+        let mut old_names = HashSet::new();
+        for (name, _) in SATURN1_OLD_CONTRACTS {
+            assert!(old_names.insert(*name), "duplicate in SATURN1_OLD_CONTRACTS: {name}");
+        }
+
+        let mut all_names = HashSet::new();
+        for name in ALL_CONTRACT_NAMES {
+            assert!(all_names.insert(*name), "duplicate in ALL_CONTRACT_NAMES: {name}");
+        }
+    }
+
+    #[test]
+    fn test_all_upgraded_contracts_are_in_all_contract_names() {
+        for (name, _) in SATURN1_NEW_CONTRACTS {
+            assert!(
+                is_known_contract_name(name),
+                "{name} from SATURN1_NEW_CONTRACTS missing from ALL_CONTRACT_NAMES"
+            );
+        }
+        for (name, _) in SATURN1_OLD_CONTRACTS {
+            assert!(
+                is_known_contract_name(name),
+                "{name} from SATURN1_OLD_CONTRACTS missing from ALL_CONTRACT_NAMES"
+            );
+        }
+    }
+
+    #[test]
+    fn test_registry_lookup_helpers() {
+        assert_eq!(
+            find_new_contract_address("rocketMegapoolFactory"),
+            Some("0xd5bffeaa9f373b9c367132772faa0b88e3f0e38b")
+        );
+        assert_eq!(find_new_contract_address("nonExistentContract"), None);
+
+        assert_eq!(
+            find_old_contract_address("rocketNodeManager"),
+            Some("0x2b52479f6ea009907e46fc43e91064d1b92fdc86")
+        );
+        assert_eq!(find_old_contract_address("nonExistentContract"), None);
+
+        assert!(is_known_contract_name("rocketStorage"));
+        assert!(!is_known_contract_name("fakeContract"));
+
+        assert!(is_security_allowed_setting("network", "network.submit.rewards.enabled"));
+        assert!(!is_security_allowed_setting("network", "unknown.setting"));
+
+        assert!(is_protocol_setting("deposit", "express.queue.rate"));
+        assert!(!is_protocol_setting("deposit", "nonexistent.setting"));
+    }
+}
