@@ -50,7 +50,16 @@ async fn load_or_capture_trace(
             eprintln!("[rsg] Capturing live trace…");
             capture_live(url).await
         }
-        _ => anyhow::bail!("must specify either --fixture or --rpc-url"),
+        _ => {
+            if let Ok(env_url) = std::env::var("ETH_RPC_URL") {
+                let trimmed = env_url.trim();
+                if !trimmed.is_empty() {
+                    eprintln!("[rsg] Capturing live trace from ETH_RPC_URL…");
+                    return capture_live(trimmed).await;
+                }
+            }
+            anyhow::bail!("must specify either --fixture or --rpc-url (or set ETH_RPC_URL)");
+        }
     }
 }
 

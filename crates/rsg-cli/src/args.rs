@@ -37,7 +37,7 @@ pub enum Commands {
         fixture: Option<PathBuf>,
 
         /// Archive RPC URL (live mode — capture + attest in one step).
-        #[arg(long, env = "ETH_RPC_URL", conflicts_with = "fixture")]
+        #[arg(long, conflicts_with = "fixture")]
         rpc_url: Option<String>,
 
         /// Path to manifest YAML.
