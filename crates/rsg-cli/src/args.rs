@@ -71,3 +71,84 @@ pub enum Commands {
         key: String,
     },
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_parse_attest_with_fixture() {
+        let cli =
+            Cli::try_parse_from(["rsg", "attest", "--fixture", "fixtures/test.json"]).unwrap();
+
+        match cli.command {
+            Commands::Attest { fixture, rpc_url, manifest, review_record, output_dir } => {
+                assert_eq!(fixture, Some(PathBuf::from("fixtures/test.json")));
+                assert_eq!(rpc_url, None);
+                assert_eq!(manifest, PathBuf::from("manifests/v1.4-mainnet/manifest.yaml"));
+                assert_eq!(review_record, None);
+                assert_eq!(output_dir, PathBuf::from("attestations/v1.4-mainnet"));
+            }
+            _ => panic!("expected Commands::Attest"),
+        }
+    }
+
+    #[test]
+    fn test_parse_attest_conflicts() {
+        let err = Cli::try_parse_from([
+            "rsg",
+            "attest",
+            "--fixture",
+            "fixtures/test.json",
+            "--rpc-url",
+            "http://127.0.0.1:8545",
+        ]);
+        assert!(err.is_err());
+    }
+
+    #[test]
+    fn test_parse_hash_manifest() {
+        let cli = Cli::try_parse_from(["rsg", "hash-manifest", "manifest.yaml"]).unwrap();
+        match cli.command {
+            Commands::HashManifest { path } => {
+                assert_eq!(path, PathBuf::from("manifest.yaml"));
+            }
+            _ => panic!("expected Commands::HashManifest"),
+        }
+    }
+
+    #[test]
+    fn test_parse_validate_fixture() {
+        let cli = Cli::try_parse_from(["rsg", "validate-fixture", "trace.json"]).unwrap();
+        match cli.command {
+            Commands::ValidateFixture { path } => {
+                assert_eq!(path, PathBuf::from("trace.json"));
+            }
+            _ => panic!("expected Commands::ValidateFixture"),
+        }
+    }
+
+    #[test]
+    fn test_parse_decode_key() {
+        let cli = Cli::try_parse_from(["rsg", "decode-key", "0x123456"]).unwrap();
+        match cli.command {
+            Commands::DecodeKey { key } => {
+                assert_eq!(key, "0x123456");
+            }
+            _ => panic!("expected Commands::DecodeKey"),
+        }
+    }
+
+    #[test]
+    fn test_parse_capture() {
+        let cli =
+            Cli::try_parse_from(["rsg", "capture", "--rpc-url", "http://127.0.0.1:8545"]).unwrap();
+        match cli.command {
+            Commands::Capture { rpc_url, output } => {
+                assert_eq!(rpc_url, "http://127.0.0.1:8545");
+                assert_eq!(output, PathBuf::from("fixtures/v1.4-mainnet/frozen-trace.json"));
+            }
+            _ => panic!("expected Commands::Capture"),
+        }
+    }
+}
