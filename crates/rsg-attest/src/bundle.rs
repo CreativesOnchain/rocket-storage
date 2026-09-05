@@ -62,7 +62,7 @@ pub fn write_bundle(
     Ok(())
 }
 
-fn compute_bundle_hashes(
+pub(crate) fn compute_bundle_hashes(
     trace: &FrozenTrace,
     trace_json: &str,
     manifest_raw: &str,
@@ -96,7 +96,7 @@ fn compute_bundle_hashes(
     Ok((hashes, review_record_content))
 }
 
-fn count_effects_by_op(trace: &FrozenTrace) -> IndexMap<String, usize> {
+pub(crate) fn count_effects_by_op(trace: &FrozenTrace) -> IndexMap<String, usize> {
     let mut effect_counts: IndexMap<String, usize> = IndexMap::new();
     for eff in &trace.effects {
         let key = format!("{:?}", eff.op);
@@ -105,7 +105,7 @@ fn count_effects_by_op(trace: &FrozenTrace) -> IndexMap<String, usize> {
     effect_counts
 }
 
-fn collect_verdict_reasons(verdict: &Verdict) -> Vec<serde_json::Value> {
+pub(crate) fn collect_verdict_reasons(verdict: &Verdict) -> Vec<serde_json::Value> {
     match verdict {
         Verdict::Pass => vec![],
         Verdict::Fail { reasons } => {
@@ -117,7 +117,7 @@ fn collect_verdict_reasons(verdict: &Verdict) -> Vec<serde_json::Value> {
     }
 }
 
-fn write_bundle_files(
+pub(crate) fn write_bundle_files(
     output_dir: &Path,
     bundle: &AttestationBundle,
     trace: &FrozenTrace,
@@ -144,4 +144,118 @@ fn write_bundle_files(
     write(output_dir.join("review-record.json"), review_record_content)?;
 
     Ok(())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use rsg_types::{FailReason, ObservedEffect, PinnedFixture, StorageOp, UnknownReason};
+
+    fn make_mock_trace() -> FrozenTrace {
+        FrozenTrace {
+            pinned: PinnedFixture::default(),
+            effects: vec![
+                ObservedEffect {
+                    call_index: 0,
+                    caller: "0xcaller".to_string(),
+                    op: StorageOp::SetUint,
+                    raw_key: "0x1".to_string(),
+                    semantic_path: Some("path.a".to_string()),
+                    old_value: "0".to_string(),
+                    new_value: "1".to_string(),
+                },
+                ObservedEffect {
+                    call_index: 1,
+                    caller: "0xcaller".to_string(),
+                    op: StorageOp::SetUint,
+                    raw_key: "0x2".to_string(),
+                    semantic_path: Some("path.b".to_string()),
+                    old_value: "1".to_string(),
+                    new_value: "2".to_string(),
+                },
+                ObservedEffect {
+                    call_index: 2,
+                    caller: "0xcaller".to_string(),
+                    op: StorageOp::SetAddress,
+                    raw_key: "0x3".to_string(),
+                    semantic_path: Some("path.c".to_string()),
+                    old_value: "0x0".to_string(),
+                    new_value: "0x1111".to_string(),
+                },
+            ],
+            external_calls: vec![],
+        }
+    }
+
+    #[test]
+    fn test_count_effects_by_op() {
+        let trace = make_mock_trace();
+        let counts = count_effects_by_op(&trace);
+
+        assert_eq!(counts.get("SetUint"), Some(&2));
+        assert_eq!(counts.get("SetAddress"), Some(&1));
+        assert_eq!(counts.get("DeleteAddress"), None);
+    }
+
+    #[test]
+    fn test_collect_verdict_reasons() {
+        let pass_reasons = collect_verdict_reasons(&Verdict::Pass);
+        assert!(pass_reasons.is_empty());
+
+        let fail_verdict = Verdict::Fail {
+            reasons: vec![FailReason::MissingRequiredEffect {
+                semantic_path: "test.missing".to_string(),
+            }],
+        };
+        let fail_reasons = collect_verdict_reasons(&fail_verdict);
+        assert_eq!(fail_reasons.len(), 1);
+        assert_eq!(fail_reasons[0]["kind"], "missing_required_effect");
+
+        let unknown_verdict = Verdict::Unknown {
+            reasons: vec![UnknownReason::UndecodeableKey {
+                raw_key: "0xdead".to_string(),
+                op: "SetUint".to_string(),
+            }],
+        };
+        let unknown_reasons = collect_verdict_reasons(&unknown_verdict);
+        assert_eq!(unknown_reasons.len(), 1);
+        assert_eq!(unknown_reasons[0]["kind"], "undecodeable_key");
+    }
+
+    #[test]
+    fn test_write_bundle_end_to_end() {
+        let trace = make_mock_trace();
+        let manifest = Manifest {
+            version: "1".to_string(),
+            fixture: PinnedFixture::default(),
+            effects: vec![],
+            external_calls: vec![],
+        };
+        let manifest_raw = "version: '1'\nfixture: {}\neffects: []\nexternal_calls: []\n";
+        let verdict = Verdict::Pass;
+
+        let temp_dir = std::env::temp_dir().join(format!(
+            "rsg_bundle_test_{}_{}",
+            std::process::id(),
+            chrono::Utc::now().timestamp_nanos_opt().unwrap_or(0)
+        ));
+
+        let res = write_bundle(&trace, &manifest, manifest_raw, None, &verdict, &temp_dir);
+        assert!(res.is_ok());
+
+        assert!(temp_dir.join("attestation.json").exists());
+        assert!(temp_dir.join("attestation.md").exists());
+        assert!(temp_dir.join("observed-trace.json").exists());
+        assert!(temp_dir.join("manifest.lock").exists());
+        assert!(temp_dir.join("review-record.json").exists());
+
+        // Validate attestation.json deserialization
+        let attest_raw = std::fs::read_to_string(temp_dir.join("attestation.json")).unwrap();
+        let bundle: AttestationBundle = serde_json::from_str(&attest_raw).unwrap();
+        assert_eq!(bundle.verdict, Verdict::Pass);
+        assert_eq!(bundle.effect_counts.get("SetUint"), Some(&2));
+
+        // Cleanup
+        let _ = std::fs::remove_dir_all(&temp_dir);
+    }
 }
