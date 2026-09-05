@@ -101,3 +101,82 @@ impl StorageOp {
         }
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    const ALL_OPS: &[StorageOp] = &[
+        StorageOp::SetAddress,
+        StorageOp::SetBool,
+        StorageOp::SetBytes,
+        StorageOp::SetBytes32,
+        StorageOp::SetInt,
+        StorageOp::SetString,
+        StorageOp::SetUint,
+        StorageOp::DeleteAddress,
+        StorageOp::DeleteBool,
+        StorageOp::DeleteBytes,
+        StorageOp::DeleteBytes32,
+        StorageOp::DeleteInt,
+        StorageOp::DeleteString,
+        StorageOp::DeleteUint,
+        StorageOp::AddUint,
+        StorageOp::SubUint,
+    ];
+
+    #[test]
+    fn test_selector_roundtrip_all_variants() {
+        for op in ALL_OPS {
+            let hex = op.selector_hex();
+            assert_eq!(
+                StorageOp::from_selector(hex),
+                Some(*op),
+                "failed roundtrip for {op:?} with selector {hex}"
+            );
+
+            // Test with 0x prefix
+            let prefixed = format!("0x{hex}");
+            assert_eq!(
+                StorageOp::from_selector(&prefixed),
+                Some(*op),
+                "failed prefixed roundtrip for {op:?}"
+            );
+
+            // Test case insensitivity
+            let uppercase = hex.to_uppercase();
+            assert_eq!(
+                StorageOp::from_selector(&uppercase),
+                Some(*op),
+                "failed uppercase roundtrip for {op:?}"
+            );
+        }
+    }
+
+    #[test]
+    fn test_is_delete_classification() {
+        for op in ALL_OPS {
+            let name = format!("{op:?}");
+            let should_delete = name.starts_with("Delete");
+            assert_eq!(op.is_delete(), should_delete, "is_delete mismatch for {op:?}");
+        }
+    }
+
+    #[test]
+    fn test_unknown_selector_returns_none() {
+        assert_eq!(StorageOp::from_selector("ffffffff"), None);
+        assert_eq!(StorageOp::from_selector("0x00000000"), None);
+        assert_eq!(StorageOp::from_selector(""), None);
+    }
+
+    #[test]
+    fn test_serde_serialization_and_alias() {
+        let op = StorageOp::SetAddress;
+        let json = serde_json::to_string(&op).unwrap();
+        assert_eq!(json, "\"SetAddress\"");
+
+        // Test alias deserialization (camelCase)
+        let deserialized: StorageOp = serde_json::from_str("\"setAddress\"").unwrap();
+        assert_eq!(deserialized, StorageOp::SetAddress);
+    }
+}

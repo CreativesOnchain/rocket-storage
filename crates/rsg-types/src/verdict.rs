@@ -64,3 +64,35 @@ impl Verdict {
         }
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_verdict_exit_codes_and_labels() {
+        assert_eq!(Verdict::Pass.exit_code(), 0);
+        assert_eq!(Verdict::Pass.label(), "PASS");
+
+        let fail = Verdict::Fail { reasons: vec![] };
+        assert_eq!(fail.exit_code(), 1);
+        assert_eq!(fail.label(), "FAIL");
+
+        let unknown = Verdict::Unknown { reasons: vec![] };
+        assert_eq!(unknown.exit_code(), 2);
+        assert_eq!(unknown.label(), "UNKNOWN");
+    }
+
+    #[test]
+    fn test_verdict_serialization() {
+        let pass_json = serde_json::to_string(&Verdict::Pass).unwrap();
+        assert_eq!(pass_json, "{\"verdict\":\"PASS\"}");
+
+        let fail = Verdict::Fail {
+            reasons: vec![FailReason::MissingRequiredEffect { semantic_path: "test".to_string() }],
+        };
+        let fail_json = serde_json::to_string(&fail).unwrap();
+        assert!(fail_json.contains("\"verdict\":\"FAIL\""));
+        assert!(fail_json.contains("\"missing_required_effect\""));
+    }
+}

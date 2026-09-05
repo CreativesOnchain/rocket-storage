@@ -41,3 +41,21 @@ impl Default for PinnedFixture {
         }
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_pinned_fixture_default_invariants() {
+        let fixture = PinnedFixture::default();
+        assert_eq!(fixture.chain_id, 1);
+        assert_eq!(fixture.pre_block, 24_479_993);
+        assert_eq!(fixture.exec_block, 24_479_994);
+        assert_eq!(
+            fixture.upgrade_tx,
+            "0x2fc10aad3c1b00bdfa9b6fddab79e0f2688609848f8f7a1a6449ab42da38530c"
+        );
+        assert_eq!(fixture.rocket_storage, "0x1d8f8f00cfa6758d7be78336684788fb0ee0fa46");
+    }
+}
