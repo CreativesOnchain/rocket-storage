@@ -19,14 +19,23 @@ fn make_trace(
     effects: Vec<ObservedEffect>,
     external_calls: Vec<rsg_types::ObservedExternalCall>,
 ) -> FrozenTrace {
-    FrozenTrace { pinned: base_pinned(), effects, external_calls }
+    FrozenTrace {
+        pinned: base_pinned(),
+        effects,
+        external_calls,
+    }
 }
 
 fn make_manifest(
     effects: Vec<ManifestEffect>,
     external_calls: Vec<ManifestExternalCall>,
 ) -> Manifest {
-    Manifest { version: "1".into(), fixture: base_pinned(), effects, external_calls }
+    Manifest {
+        version: "1".into(),
+        fixture: base_pinned(),
+        effects,
+        external_calls,
+    }
 }
 
 fn addr_effect(path: &str, old: &str, new: &str) -> ObservedEffect {
@@ -107,7 +116,11 @@ fn pass_on_exact_match() {
 #[test]
 fn fail_undeclared_write() {
     let trace = make_trace(
-        vec![addr_effect("contract.addressrocketMegapoolDelegate", "0x0", "0xaabbcc")],
+        vec![addr_effect(
+            "contract.addressrocketMegapoolDelegate",
+            "0x0",
+            "0xaabbcc",
+        )],
         vec![],
     );
     // Manifest has no entries → any write is undeclared
@@ -144,7 +157,11 @@ fn fail_wrong_new_value() {
 fn fail_missing_required_effect() {
     let trace = make_trace(vec![], vec![]); // empty trace
     let manifest = make_manifest(
-        vec![addr_entry("contract.addressrocketMegapoolDelegate", "any", "any")],
+        vec![addr_entry(
+            "contract.addressrocketMegapoolDelegate",
+            "any",
+            "any",
+        )],
         vec![],
     );
     let verdict = compare(&trace, &manifest);
@@ -179,7 +196,10 @@ fn fail_swapped_addresses() {
         vec![],
     );
     let verdict = compare(&trace, &manifest);
-    assert!(matches!(verdict, Verdict::Fail { .. }), "should detect swap");
+    assert!(
+        matches!(verdict, Verdict::Fail { .. }),
+        "should detect swap"
+    );
 }
 
 // ─── Test 5: Type drift → FAIL ────────────────────────────────────────────────
@@ -200,7 +220,11 @@ fn fail_type_drift() {
         vec![],
     );
     let manifest = make_manifest(
-        vec![addr_entry("contract.addressrocketMegapoolDelegate", "any", "any")],
+        vec![addr_entry(
+            "contract.addressrocketMegapoolDelegate",
+            "any",
+            "any",
+        )],
         vec![],
     );
     assert!(matches!(compare(&trace, &manifest), Verdict::Fail { .. }));
@@ -216,7 +240,11 @@ fn fail_duplicate_mutation() {
     let trace = make_trace(vec![e1, e2], vec![]);
     // Manifest expects multiplicity = 1
     let manifest = make_manifest(
-        vec![bool_entry("contract.existsrocketMegapoolDelegate", "false", "true")],
+        vec![bool_entry(
+            "contract.existsrocketMegapoolDelegate",
+            "false",
+            "true",
+        )],
         vec![],
     );
     assert!(matches!(compare(&trace, &manifest), Verdict::Fail { .. }));
@@ -259,7 +287,10 @@ fn unknown_undecodeable_key() {
         vec![],
     );
     let manifest = make_manifest(vec![], vec![]);
-    assert!(matches!(compare(&trace, &manifest), Verdict::Unknown { .. }));
+    assert!(matches!(
+        compare(&trace, &manifest),
+        Verdict::Unknown { .. }
+    ));
 }
 
 // ─── Test 9: Wrong chain ID → FAIL ────────────────────────────────────────────
@@ -345,7 +376,11 @@ fn test_all_adversarial_fixtures_deserialize() {
             let content = std::fs::read_to_string(&path)
                 .unwrap_or_else(|e| panic!("failed to read {path:?}: {e}"));
             let trace: Result<FrozenTrace, _> = serde_json::from_str(&content);
-            assert!(trace.is_ok(), "failed to parse fixture {path:?}: {:?}", trace.err());
+            assert!(
+                trace.is_ok(),
+                "failed to parse fixture {path:?}: {:?}",
+                trace.err()
+            );
             count += 1;
         }
     }

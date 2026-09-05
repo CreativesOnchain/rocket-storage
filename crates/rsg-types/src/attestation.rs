@@ -48,15 +48,13 @@ pub struct AttestationBundle {
 
 impl AttestationBundle {
     /// Standard observation boundary disclosure.
-    pub const OBSERVATION_BOUNDARY: &'static str =
-        "This attestation covers only typed RocketStorage mutations and declared \
+    pub const OBSERVATION_BOUNDARY: &'static str = "This attestation covers only typed RocketStorage mutations and declared \
          external calls captured from the upgrade transaction replay. It does not \
          cover state changes inside externally called contracts, events, or any \
          other protocol invariants.";
 
     /// Standard non-audit disclaimer.
-    pub const DISCLAIMER: &'static str =
-        "PASS means only that the replayed payload conforms to the reviewed manifest \
+    pub const DISCLAIMER: &'static str = "PASS means only that the replayed payload conforms to the reviewed manifest \
          within the documented observation boundary. This is not an audit, security \
          certificate, or proof that the upgrade is safe or correct in its entirety.";
 }

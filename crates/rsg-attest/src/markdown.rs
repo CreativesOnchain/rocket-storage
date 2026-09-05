@@ -18,9 +18,15 @@ pub fn render_markdown(
     md.push_str(&render_verdict_callout(&bundle.verdict));
     md.push_str(&render_pinned_parameters(&bundle.pinned));
     md.push_str(&render_input_hashes(&bundle.hashes));
-    md.push_str(&render_observed_effects(&trace.effects, &bundle.effect_counts));
+    md.push_str(&render_observed_effects(
+        &trace.effects,
+        &bundle.effect_counts,
+    ));
     md.push_str(&render_external_calls(&trace.external_calls));
-    md.push_str(&render_trust_model(&bundle.observation_boundary, &bundle.disclaimer));
+    md.push_str(&render_trust_model(
+        &bundle.observation_boundary,
+        &bundle.disclaimer,
+    ));
     md.push_str(&render_footer(bundle.generated_at.as_deref()));
 
     md
@@ -47,7 +53,10 @@ fn render_verdict_callout(verdict: &Verdict) -> String {
         Verdict::Fail { reasons } => {
             out.push_str("> **❌ FAIL** — One or more required conditions are violated:\n\n");
             for r in reasons {
-                out.push_str(&format!("> - `{}`\n", serde_json::to_string(r).unwrap_or_default()));
+                out.push_str(&format!(
+                    "> - `{}`\n",
+                    serde_json::to_string(r).unwrap_or_default()
+                ));
             }
             out.push('\n');
         }
@@ -56,7 +65,10 @@ fn render_verdict_callout(verdict: &Verdict) -> String {
                 "> **⚠️ UNKNOWN** — The tool encountered a condition it cannot safely interpret:\n\n",
             );
             for r in reasons {
-                out.push_str(&format!("> - `{}`\n", serde_json::to_string(r).unwrap_or_default()));
+                out.push_str(&format!(
+                    "> - `{}`\n",
+                    serde_json::to_string(r).unwrap_or_default()
+                ));
             }
             out.push('\n');
         }
@@ -70,11 +82,23 @@ fn render_pinned_parameters(pinned: &PinnedFixture) -> String {
     out.push_str("| Field | Value |\n|---|---|\n");
     out.push_str(&format!("| Chain ID | `{}` |\n", pinned.chain_id));
     out.push_str(&format!("| Pre-upgrade block | `{}` |\n", pinned.pre_block));
-    out.push_str(&format!("| Pre-block hash | `{}` |\n", pinned.pre_block_hash));
-    out.push_str(&format!("| Upgrade transaction | `{}` |\n", pinned.upgrade_tx));
+    out.push_str(&format!(
+        "| Pre-block hash | `{}` |\n",
+        pinned.pre_block_hash
+    ));
+    out.push_str(&format!(
+        "| Upgrade transaction | `{}` |\n",
+        pinned.upgrade_tx
+    ));
     out.push_str(&format!("| Exec block | `{}` |\n", pinned.exec_block));
-    out.push_str(&format!("| Upgrade contract | `{}` |\n", pinned.upgrade_contract));
-    out.push_str(&format!("| RocketStorage | `{}` |\n", pinned.rocket_storage));
+    out.push_str(&format!(
+        "| Upgrade contract | `{}` |\n",
+        pinned.upgrade_contract
+    ));
+    out.push_str(&format!(
+        "| RocketStorage | `{}` |\n",
+        pinned.rocket_storage
+    ));
     out.push_str(&format!("| Source commit | `{}` |\n", pinned.source_commit));
     out.push('\n');
     out
@@ -84,9 +108,15 @@ fn render_input_hashes(hashes: &AttestationHashes) -> String {
     let mut out = String::new();
     out.push_str("## Input Hashes\n\n");
     out.push_str("| Artifact | SHA-256 |\n|---|---|\n");
-    out.push_str(&format!("| Observed trace | `{}` |\n", hashes.observed_trace_sha256));
+    out.push_str(&format!(
+        "| Observed trace | `{}` |\n",
+        hashes.observed_trace_sha256
+    ));
     out.push_str(&format!("| Manifest | `{}` |\n", hashes.manifest_sha256));
-    out.push_str(&format!("| Review record | `{}` |\n", hashes.review_record_sha256));
+    out.push_str(&format!(
+        "| Review record | `{}` |\n",
+        hashes.review_record_sha256
+    ));
     out.push_str(&format!("| Tool version | `{}` |\n", hashes.tool_version));
     out.push('\n');
     out

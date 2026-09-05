@@ -26,7 +26,10 @@ impl Default for KeyCatalogue {
 impl KeyCatalogue {
     /// Build the catalogue pre-populated with all well-known Rocket Pool protocol keys.
     pub fn build() -> Self {
-        let mut cat = Self { table: HashMap::new(), typed_table: HashMap::new() };
+        let mut cat = Self {
+            table: HashMap::new(),
+            typed_table: HashMap::new(),
+        };
 
         cat.register_singles();
         cat.register_contract_names();
@@ -185,9 +188,11 @@ impl KeyCatalogue {
 
         const SATURN1_BLOCK_TIMESTAMP: u128 = 1_771_372_799;
 
-        for (share_name, key_bytes) in
-            [("node", &node_share_key), ("voter", &voter_share_key), ("pdao", &pdao_share_key)]
-        {
+        for (share_name, key_bytes) in [
+            ("node", &node_share_key),
+            ("voter", &voter_share_key),
+            ("pdao", &pdao_share_key),
+        ] {
             self.register_uars_share_keys(share_name, key_bytes, SATURN1_BLOCK_TIMESTAMP);
         }
     }
@@ -198,10 +203,16 @@ impl KeyCatalogue {
         key_bytes: &[u8; 32],
         timestamp: u128,
     ) {
-        self.insert(*key_bytes, format!("network.revenue.{share_name}.share.checkpoint.0"));
+        self.insert(
+            *key_bytes,
+            format!("network.revenue.{share_name}.share.checkpoint.0"),
+        );
 
         let length_key = keccak256_packed(&[b"snapshot.time.length", key_bytes]);
-        self.insert(length_key, format!("snapshot.time.length.network.revenue.{share_name}.share"));
+        self.insert(
+            length_key,
+            format!("snapshot.time.length.network.revenue.{share_name}.share"),
+        );
 
         // Timestamped initial value: bytes32(uint256(key) + block.timestamp) at block 24,479,994
         let timestamped_key = add_u128_to_bytes32(key_bytes, timestamp);
@@ -247,7 +258,10 @@ mod tests {
 
     #[test]
     fn test_insert_and_lookup_typed() {
-        let mut cat = KeyCatalogue { table: HashMap::new(), typed_table: HashMap::new() };
+        let mut cat = KeyCatalogue {
+            table: HashMap::new(),
+            typed_table: HashMap::new(),
+        };
         let key = [0x42u8; 32];
 
         cat.insert(key, "generic.path".to_string());
@@ -255,26 +269,47 @@ mod tests {
         cat.insert_typed(key, StorageOp::SetUint, "typed.uint.path".to_string());
 
         assert_eq!(cat.lookup(&key), Some("generic.path"));
-        assert_eq!(cat.lookup_typed(&key, &StorageOp::SetAddress), Some("typed.address.path"));
-        assert_eq!(cat.lookup_typed(&key, &StorageOp::SetUint), Some("typed.uint.path"));
+        assert_eq!(
+            cat.lookup_typed(&key, &StorageOp::SetAddress),
+            Some("typed.address.path")
+        );
+        assert_eq!(
+            cat.lookup_typed(&key, &StorageOp::SetUint),
+            Some("typed.uint.path")
+        );
         // Fallback to generic when type is not registered
-        assert_eq!(cat.lookup_typed(&key, &StorageOp::SetBool), Some("generic.path"));
+        assert_eq!(
+            cat.lookup_typed(&key, &StorageOp::SetBool),
+            Some("generic.path")
+        );
     }
 
     #[test]
     fn test_lookup_typed_hex() {
-        let mut cat = KeyCatalogue { table: HashMap::new(), typed_table: HashMap::new() };
+        let mut cat = KeyCatalogue {
+            table: HashMap::new(),
+            typed_table: HashMap::new(),
+        };
         let key = [0xabu8; 32];
         cat.insert_typed(key, StorageOp::SetBytes, "typed.bytes".to_string());
 
         let hex_str = format!("0x{}", hex::encode(key));
-        assert_eq!(cat.lookup_typed_hex(&hex_str, &StorageOp::SetBytes), Some("typed.bytes"));
-        assert_eq!(cat.lookup_typed_hex("invalid_hex", &StorageOp::SetBytes), None);
+        assert_eq!(
+            cat.lookup_typed_hex(&hex_str, &StorageOp::SetBytes),
+            Some("typed.bytes")
+        );
+        assert_eq!(
+            cat.lookup_typed_hex("invalid_hex", &StorageOp::SetBytes),
+            None
+        );
     }
 
     #[test]
     fn test_len_and_is_empty() {
-        let mut cat = KeyCatalogue { table: HashMap::new(), typed_table: HashMap::new() };
+        let mut cat = KeyCatalogue {
+            table: HashMap::new(),
+            typed_table: HashMap::new(),
+        };
         assert!(cat.is_empty());
         assert_eq!(cat.len(), 0);
 

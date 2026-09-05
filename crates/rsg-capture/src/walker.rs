@@ -33,8 +33,15 @@ where
     *call_index += 1;
 
     for child in &frame.calls {
-        Box::pin(walk_calls(child, provider, catalogue, effects, external_calls, call_index))
-            .await?;
+        Box::pin(walk_calls(
+            child,
+            provider,
+            catalogue,
+            effects,
+            external_calls,
+            call_index,
+        ))
+        .await?;
     }
 
     Ok(())
@@ -69,7 +76,9 @@ async fn try_capture_storage_effect<P: Provider>(
 
     match decode_mutator_call(provider, &op, input).await {
         Ok((raw_key, old_val, new_val)) => {
-            let semantic = catalogue.lookup_typed_hex(&raw_key, &op).map(|s| s.to_string());
+            let semantic = catalogue
+                .lookup_typed_hex(&raw_key, &op)
+                .map(|s| s.to_string());
             Some(ObservedEffect {
                 call_index,
                 caller: format!("{from_addr:?}"),
@@ -101,7 +110,10 @@ pub fn try_capture_external_call(
     }
 
     let selector = format!("0x{}", hex::encode(&input[0..4]));
-    let eth_value = frame.value.map(|v| v.to_string()).unwrap_or_else(|| "0".into());
+    let eth_value = frame
+        .value
+        .map(|v| v.to_string())
+        .unwrap_or_else(|| "0".into());
 
     Some(ObservedExternalCall {
         call_index,
@@ -116,7 +128,7 @@ pub fn try_capture_external_call(
 #[cfg(test)]
 mod tests {
     use super::*;
-    use alloy::primitives::{address, Bytes};
+    use alloy::primitives::{Bytes, address};
 
     #[test]
     fn test_is_rocket_storage_mutation() {
@@ -124,17 +136,26 @@ mod tests {
         let mut calldata = set_uint_sel;
         calldata.extend_from_slice(&[0u8; 32]);
 
-        assert_eq!(is_rocket_storage_mutation(ROCKET_STORAGE, &calldata), Some(StorageOp::SetUint));
+        assert_eq!(
+            is_rocket_storage_mutation(ROCKET_STORAGE, &calldata),
+            Some(StorageOp::SetUint)
+        );
 
         // Wrong address
         let other_addr = address!("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
         assert_eq!(is_rocket_storage_mutation(other_addr, &calldata), None);
 
         // Unknown selector
-        assert_eq!(is_rocket_storage_mutation(ROCKET_STORAGE, &[0xde, 0xad, 0xbe, 0xef]), None);
+        assert_eq!(
+            is_rocket_storage_mutation(ROCKET_STORAGE, &[0xde, 0xad, 0xbe, 0xef]),
+            None
+        );
 
         // Too short
-        assert_eq!(is_rocket_storage_mutation(ROCKET_STORAGE, &[0xe2, 0xa4]), None);
+        assert_eq!(
+            is_rocket_storage_mutation(ROCKET_STORAGE, &[0xe2, 0xa4]),
+            None
+        );
     }
 
     #[test]
@@ -145,10 +166,18 @@ mod tests {
         assert!(is_upgrade_external_call(UPGRADE_CONTRACT, vault, &calldata));
 
         // Call to RocketStorage should NOT be considered an external call
-        assert!(!is_upgrade_external_call(UPGRADE_CONTRACT, ROCKET_STORAGE, &calldata));
+        assert!(!is_upgrade_external_call(
+            UPGRADE_CONTRACT,
+            ROCKET_STORAGE,
+            &calldata
+        ));
 
         // Call to zero address should NOT be considered an external call
-        assert!(!is_upgrade_external_call(UPGRADE_CONTRACT, Address::ZERO, &calldata));
+        assert!(!is_upgrade_external_call(
+            UPGRADE_CONTRACT,
+            Address::ZERO,
+            &calldata
+        ));
 
         // Call from different caller should NOT be considered
         assert!(!is_upgrade_external_call(vault, vault, &calldata));

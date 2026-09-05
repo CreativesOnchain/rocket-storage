@@ -22,7 +22,10 @@ mod tests {
     #[test]
     fn catalogue_builds_without_panic() {
         let cat = KeyCatalogue::build();
-        assert!(cat.len() >= 232, "catalogue should have at least 232 entries");
+        assert!(
+            cat.len() >= 232,
+            "catalogue should have at least 232 entries"
+        );
     }
 
     #[test]

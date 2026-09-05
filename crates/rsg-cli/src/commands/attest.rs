@@ -22,7 +22,14 @@ pub async fn execute(
     eprintln!("[rsg] Running comparator…");
     let verdict = compare(&trace, &manifest);
 
-    write_bundle(&trace, &manifest, &manifest_raw, review_record, &verdict, output_dir)?;
+    write_bundle(
+        &trace,
+        &manifest,
+        &manifest_raw,
+        review_record,
+        &verdict,
+        output_dir,
+    )?;
 
     let code = verdict.exit_code();
     print_verdict_summary(&verdict, trace.effects.len(), output_dir, code);

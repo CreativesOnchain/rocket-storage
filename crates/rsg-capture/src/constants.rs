@@ -1,6 +1,6 @@
 //! Saturn 1 upgrade deployment constants.
 
-use alloy::primitives::{address, Address};
+use alloy::primitives::{Address, address};
 
 /// RocketStorage contract address on Ethereum mainnet.
 pub const ROCKET_STORAGE: Address = address!("1d8f8f00cfa6758d7be78336684788fb0ee0fa46");

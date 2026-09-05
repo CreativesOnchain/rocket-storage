@@ -43,7 +43,11 @@ pub fn extract_observed_address_map(trace: &FrozenTrace) -> HashMap<&str, &str> 
         .effects
         .iter()
         .filter(|e| e.op == StorageOp::SetAddress)
-        .filter_map(|e| e.semantic_path.as_deref().map(|p| (p, e.new_value.as_str())))
+        .filter_map(|e| {
+            e.semantic_path
+                .as_deref()
+                .map(|p| (p, e.new_value.as_str()))
+        })
         .collect()
 }
 
@@ -129,7 +133,10 @@ mod tests {
 
         let swapped = find_swapped_address_pairs(&expected, &observed);
         assert_eq!(swapped.len(), 1);
-        assert_eq!(swapped[0], ("contract.address[token]", "contract.address[vault]"));
+        assert_eq!(
+            swapped[0],
+            ("contract.address[token]", "contract.address[vault]")
+        );
     }
 
     #[test]

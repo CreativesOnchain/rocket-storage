@@ -82,8 +82,11 @@ pub fn check_undeclared_writes(
     observed_counts: &HashMap<String, Vec<&ObservedEffect>>,
     fail_reasons: &mut Vec<FailReason>,
 ) {
-    let manifest_paths: HashMap<&str, &ManifestEffect> =
-        manifest.effects.iter().map(|e| (e.semantic_path.as_str(), e)).collect();
+    let manifest_paths: HashMap<&str, &ManifestEffect> = manifest
+        .effects
+        .iter()
+        .map(|e| (e.semantic_path.as_str(), e))
+        .collect();
 
     for (path, effects) in observed_counts {
         if !manifest_paths.contains_key(path.as_str()) {
@@ -176,7 +179,9 @@ pub fn validate_deletion_target(
     entry: &ManifestEffect,
 ) -> Result<(), FailReason> {
     if entry.op.is_delete() && !is_valid_deletion_target(&obs.new_value) {
-        Err(FailReason::OmittedDeletion { semantic_path: entry.semantic_path.clone() })
+        Err(FailReason::OmittedDeletion {
+            semantic_path: entry.semantic_path.clone(),
+        })
     } else {
         Ok(())
     }
@@ -223,7 +228,12 @@ mod tests {
     #[test]
     fn test_scan_observed_effects_grouping_and_unknown() {
         let effects = vec![
-            make_obs(Some("contract.address[test]"), StorageOp::SetAddress, "0x0", "0x1"),
+            make_obs(
+                Some("contract.address[test]"),
+                StorageOp::SetAddress,
+                "0x0",
+                "0x1",
+            ),
             make_obs(None, StorageOp::SetUint, "0", "1"),
         ];
 
@@ -232,7 +242,10 @@ mod tests {
 
         assert_eq!(unknowns.len(), 1);
         assert!(matches!(unknowns[0], UnknownReason::UndecodeableKey { .. }));
-        assert_eq!(grouped.get("contract.address[test]").map(|v| v.len()), Some(1));
+        assert_eq!(
+            grouped.get("contract.address[test]").map(|v| v.len()),
+            Some(1)
+        );
     }
 
     #[test]
@@ -249,7 +262,14 @@ mod tests {
 
         validate_effect_multiplicity(&entry, 2, &mut fails);
         assert_eq!(fails.len(), 1);
-        assert!(matches!(fails[0], FailReason::DuplicateMutation { expected: 1, observed: 2, .. }));
+        assert!(matches!(
+            fails[0],
+            FailReason::DuplicateMutation {
+                expected: 1,
+                observed: 2,
+                ..
+            }
+        ));
 
         fails.clear();
         validate_effect_multiplicity(&entry, 1, &mut fails);
@@ -333,7 +353,12 @@ mod tests {
         );
         assert!(validate_deletion_target(&obs_valid, &entry_del).is_ok());
 
-        let obs_invalid = make_obs(Some("test.path"), StorageOp::DeleteAddress, "0x1234", "0x9999");
+        let obs_invalid = make_obs(
+            Some("test.path"),
+            StorageOp::DeleteAddress,
+            "0x1234",
+            "0x9999",
+        );
         assert!(matches!(
             validate_deletion_target(&obs_invalid, &entry_del),
             Err(FailReason::OmittedDeletion { .. })

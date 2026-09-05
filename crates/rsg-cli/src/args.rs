@@ -82,10 +82,19 @@ mod tests {
             Cli::try_parse_from(["rsg", "attest", "--fixture", "fixtures/test.json"]).unwrap();
 
         match cli.command {
-            Commands::Attest { fixture, rpc_url, manifest, review_record, output_dir } => {
+            Commands::Attest {
+                fixture,
+                rpc_url,
+                manifest,
+                review_record,
+                output_dir,
+            } => {
                 assert_eq!(fixture, Some(PathBuf::from("fixtures/test.json")));
                 assert_eq!(rpc_url, None);
-                assert_eq!(manifest, PathBuf::from("manifests/v1.4-mainnet/manifest.yaml"));
+                assert_eq!(
+                    manifest,
+                    PathBuf::from("manifests/v1.4-mainnet/manifest.yaml")
+                );
                 assert_eq!(review_record, None);
                 assert_eq!(output_dir, PathBuf::from("attestations/v1.4-mainnet"));
             }
@@ -146,7 +155,10 @@ mod tests {
         match cli.command {
             Commands::Capture { rpc_url, output } => {
                 assert_eq!(rpc_url, "http://127.0.0.1:8545");
-                assert_eq!(output, PathBuf::from("fixtures/v1.4-mainnet/frozen-trace.json"));
+                assert_eq!(
+                    output,
+                    PathBuf::from("fixtures/v1.4-mainnet/frozen-trace.json")
+                );
             }
             _ => panic!("expected Commands::Capture"),
         }

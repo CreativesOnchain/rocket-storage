@@ -50,8 +50,10 @@ pub fn detect_unauthorized_calls(
     expected_calls: &[ManifestExternalCall],
     fails: &mut Vec<FailReason>,
 ) {
-    let manifest_call_keys: HashSet<(String, String)> =
-        expected_calls.iter().map(|e| call_key(&e.target, &e.selector)).collect();
+    let manifest_call_keys: HashSet<(String, String)> = expected_calls
+        .iter()
+        .map(|e| call_key(&e.target, &e.selector))
+        .collect();
 
     for call in observed_calls {
         let key = call_key(&call.to, &call.selector);
@@ -105,8 +107,14 @@ mod tests {
         ];
 
         let counts = count_observed_calls(&calls);
-        assert_eq!(counts.get(&("0xabcd".to_string(), "0x1234".to_string())), Some(&2));
-        assert_eq!(counts.get(&("0xbeef".to_string(), "0x5678".to_string())), Some(&1));
+        assert_eq!(
+            counts.get(&("0xabcd".to_string(), "0x1234".to_string())),
+            Some(&2)
+        );
+        assert_eq!(
+            counts.get(&("0xbeef".to_string(), "0x5678".to_string())),
+            Some(&1)
+        );
     }
 
     #[test]
@@ -118,7 +126,10 @@ mod tests {
         let mut fails = Vec::new();
         verify_manifest_calls(&expected, &observed, &mut fails);
         assert_eq!(fails.len(), 1);
-        assert!(matches!(fails[0], FailReason::UnexpectedExternalCall { .. }));
+        assert!(matches!(
+            fails[0],
+            FailReason::UnexpectedExternalCall { .. }
+        ));
     }
 
     #[test]

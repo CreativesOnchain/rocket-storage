@@ -9,19 +9,40 @@ pub enum FailReason {
     /// A required manifest entry was never observed.
     MissingRequiredEffect { semantic_path: String },
     /// An observed mutation is not in the manifest.
-    UndeclaredWrite { raw_key: String, op: String, new_value: String },
+    UndeclaredWrite {
+        raw_key: String,
+        op: String,
+        new_value: String,
+    },
     /// Observed old or new value does not match manifest expectation.
-    WrongValue { semantic_path: String, field: String, expected: String, observed: String },
+    WrongValue {
+        semantic_path: String,
+        field: String,
+        expected: String,
+        observed: String,
+    },
     /// The op (storage type) does not match.
-    TypeDrift { raw_key: String, expected_op: String, observed_op: String },
+    TypeDrift {
+        raw_key: String,
+        expected_op: String,
+        observed_op: String,
+    },
     /// A key appeared more times than declared.
-    DuplicateMutation { semantic_path: String, expected: usize, observed: usize },
+    DuplicateMutation {
+        semantic_path: String,
+        expected: usize,
+        observed: usize,
+    },
     /// An expected deletion was not observed.
     OmittedDeletion { semantic_path: String },
     /// Two contract addresses appear to be swapped.
     SwappedAddress { path_a: String, path_b: String },
     /// An external call target, selector, value, or multiplicity is wrong.
-    UnexpectedExternalCall { to: String, selector: String, reason: String },
+    UnexpectedExternalCall {
+        to: String,
+        selector: String,
+        reason: String,
+    },
 }
 
 /// A specific reason for an UNKNOWN verdict.
@@ -89,7 +110,9 @@ mod tests {
         assert_eq!(pass_json, "{\"verdict\":\"PASS\"}");
 
         let fail = Verdict::Fail {
-            reasons: vec![FailReason::MissingRequiredEffect { semantic_path: "test".to_string() }],
+            reasons: vec![FailReason::MissingRequiredEffect {
+                semantic_path: "test".to_string(),
+            }],
         };
         let fail_json = serde_json::to_string(&fail).unwrap();
         assert!(fail_json.contains("\"verdict\":\"FAIL\""));

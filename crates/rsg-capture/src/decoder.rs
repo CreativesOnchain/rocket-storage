@@ -51,7 +51,11 @@ async fn query_storage_view<P: Provider, C: SolCall>(provider: &P, call: C) -> B
     let block_id = BlockId::Number(BlockNumberOrTag::Number(PRE_BLOCK));
 
     provider
-        .call(TransactionRequest::default().to(ROCKET_STORAGE).input(calldata.into()))
+        .call(
+            TransactionRequest::default()
+                .to(ROCKET_STORAGE)
+                .input(calldata.into()),
+        )
         .block(block_id)
         .await
         .unwrap_or_default()
@@ -78,7 +82,9 @@ async fn read_pre_block_storage_value<P: Provider>(
         StorageOp::SetBool | StorageOp::DeleteBool => {
             let raw =
                 query_storage_view(provider, IRocketStorageRead::getBoolCall { _key: key }).await;
-            raw.last().map(|&b| (b != 0).to_string()).unwrap_or_else(|| "false".into())
+            raw.last()
+                .map(|&b| (b != 0).to_string())
+                .unwrap_or_else(|| "false".into())
         }
         StorageOp::SetBytes32 => {
             let raw =
@@ -119,9 +125,10 @@ pub fn decode_new_value(op: &StorageOp, args: &[u8]) -> String {
             .get(32..64)
             .map(|b| U256::from_be_slice(b).to_string())
             .unwrap_or_else(|| "0".into()),
-        StorageOp::SetBool => {
-            args.get(63).map(|&b| (b != 0).to_string()).unwrap_or_else(|| "false".into())
-        }
+        StorageOp::SetBool => args
+            .get(63)
+            .map(|&b| (b != 0).to_string())
+            .unwrap_or_else(|| "false".into()),
         StorageOp::SetBytes32 => args
             .get(32..64)
             .map(|b| format!("0x{}", hex::encode(b)))

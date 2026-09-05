@@ -20,12 +20,12 @@ use std::str::FromStr;
 
 use alloy::{
     primitives::B256,
-    providers::{ext::DebugApi, Provider, ProviderBuilder},
+    providers::{Provider, ProviderBuilder, ext::DebugApi},
     rpc::types::{
+        BlockId, BlockNumberOrTag,
         trace::geth::{
             CallConfig, CallFrame, GethDebugBuiltInTracerType, GethDebugTracingOptions, GethTrace,
         },
-        BlockId, BlockNumberOrTag,
     },
 };
 use anyhow::{Context, Result};
@@ -44,11 +44,18 @@ pub async fn capture_live(rpc_url: &str) -> Result<FrozenTrace> {
     let (effects, external_calls) = extract_trace_effects(&provider, &root_frame).await?;
     let pinned = build_pinned_fixture(chain_id, pre_block_hash);
 
-    Ok(FrozenTrace { pinned, effects, external_calls })
+    Ok(FrozenTrace {
+        pinned,
+        effects,
+        external_calls,
+    })
 }
 
 async fn validate_chain_id<P: Provider>(provider: &P) -> Result<u64> {
-    let chain_id = provider.get_chain_id().await.context("failed to get chain ID")?;
+    let chain_id = provider
+        .get_chain_id()
+        .await
+        .context("failed to get chain ID")?;
     if chain_id != 1 {
         anyhow::bail!("expected Ethereum Mainnet (chain_id=1), got {chain_id}");
     }
@@ -71,7 +78,10 @@ async fn fetch_call_trace<P: Provider + DebugApi>(provider: &P) -> Result<CallFr
     eprintln!("[rsg] Calling debug_traceTransaction…");
     let tx_hash = B256::from_str(UPGRADE_TX).context("invalid tx hash")?;
     let trace_opts = GethDebugTracingOptions::new_tracer(GethDebugBuiltInTracerType::CallTracer)
-        .with_call_config(CallConfig { only_top_call: Some(false), with_log: Some(false) });
+        .with_call_config(CallConfig {
+            only_top_call: Some(false),
+            with_log: Some(false),
+        });
 
     let trace = provider
         .debug_trace_transaction(tx_hash, trace_opts)

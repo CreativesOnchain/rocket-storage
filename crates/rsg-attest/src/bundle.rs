@@ -56,7 +56,10 @@ pub fn write_bundle(
     )?;
 
     eprintln!("[rsg] Proof bundle written to {}", output_dir.display());
-    eprintln!("[rsg] Observed-trace SHA-256: {}", hashes.observed_trace_sha256);
+    eprintln!(
+        "[rsg] Observed-trace SHA-256: {}",
+        hashes.observed_trace_sha256
+    );
     eprintln!("[rsg] Manifest SHA-256: {}", hashes.manifest_sha256);
 
     Ok(())
@@ -108,12 +111,14 @@ pub(crate) fn count_effects_by_op(trace: &FrozenTrace) -> IndexMap<String, usize
 pub(crate) fn collect_verdict_reasons(verdict: &Verdict) -> Vec<serde_json::Value> {
     match verdict {
         Verdict::Pass => vec![],
-        Verdict::Fail { reasons } => {
-            reasons.iter().map(|r| serde_json::to_value(r).unwrap()).collect()
-        }
-        Verdict::Unknown { reasons } => {
-            reasons.iter().map(|r| serde_json::to_value(r).unwrap()).collect()
-        }
+        Verdict::Fail { reasons } => reasons
+            .iter()
+            .map(|r| serde_json::to_value(r).unwrap())
+            .collect(),
+        Verdict::Unknown { reasons } => reasons
+            .iter()
+            .map(|r| serde_json::to_value(r).unwrap())
+            .collect(),
     }
 }
 

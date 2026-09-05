@@ -42,7 +42,13 @@ async fn run(cli: Cli) -> Result<i32> {
         Commands::Capture { rpc_url, output } => {
             commands::capture::execute(&rpc_url, &output).await
         }
-        Commands::Attest { fixture, rpc_url, manifest, review_record, output_dir } => {
+        Commands::Attest {
+            fixture,
+            rpc_url,
+            manifest,
+            review_record,
+            output_dir,
+        } => {
             commands::attest::execute(
                 fixture.as_deref(),
                 rpc_url.as_deref(),

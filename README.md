@@ -1,4 +1,4 @@
-# rocket-storage-gate (`rsg`)
+# Rocket Storage Gate (`rsg`)
 
 > **Deterministic Rocket Pool RocketStorage Upgrade Verification Gate**
 

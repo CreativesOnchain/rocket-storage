@@ -158,7 +158,11 @@ mod tests {
         for op in ALL_OPS {
             let name = format!("{op:?}");
             let should_delete = name.starts_with("Delete");
-            assert_eq!(op.is_delete(), should_delete, "is_delete mismatch for {op:?}");
+            assert_eq!(
+                op.is_delete(),
+                should_delete,
+                "is_delete mismatch for {op:?}"
+            );
         }
     }
 

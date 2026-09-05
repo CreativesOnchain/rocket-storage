@@ -56,6 +56,9 @@ mod tests {
             fixture.upgrade_tx,
             "0x2fc10aad3c1b00bdfa9b6fddab79e0f2688609848f8f7a1a6449ab42da38530c"
         );
-        assert_eq!(fixture.rocket_storage, "0x1d8f8f00cfa6758d7be78336684788fb0ee0fa46");
+        assert_eq!(
+            fixture.rocket_storage,
+            "0x1d8f8f00cfa6758d7be78336684788fb0ee0fa46"
+        );
     }
 }
