@@ -2,6 +2,7 @@
 
 use anyhow::Result;
 use rsg_types::FrozenTrace;
+use serde_json::Value;
 
 /// Serialize to canonical JSON: recursively sorted keys, no timestamps.
 ///
@@ -13,9 +14,9 @@ pub fn canonical_json(trace: &FrozenTrace) -> Result<String> {
 }
 
 /// Recursively sort JSON object keys into lexicographical order.
-pub fn sort_json_value(v: serde_json::Value) -> serde_json::Value {
+pub fn sort_json_value(v: Value) -> Value {
     match v {
-        serde_json::Value::Object(map) => {
+        Value::Object(map) => {
             let mut sorted = serde_json::Map::new();
             let mut keys: Vec<String> = map.keys().cloned().collect();
             keys.sort();
@@ -23,11 +24,9 @@ pub fn sort_json_value(v: serde_json::Value) -> serde_json::Value {
                 let val = map[&k].clone();
                 sorted.insert(k, sort_json_value(val));
             }
-            serde_json::Value::Object(sorted)
+            Value::Object(sorted)
         }
-        serde_json::Value::Array(arr) => {
-            serde_json::Value::Array(arr.into_iter().map(sort_json_value).collect())
-        }
+        Value::Array(arr) => Value::Array(arr.into_iter().map(sort_json_value).collect()),
         other => other,
     }
 }

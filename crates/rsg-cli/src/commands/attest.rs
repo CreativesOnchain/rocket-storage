@@ -1,5 +1,6 @@
 //! Handler for `rsg attest`.
 
+use std::fs::read_to_string;
 use std::path::Path;
 
 use anyhow::{Context, Result};
@@ -7,6 +8,7 @@ use rsg_attest::write_bundle;
 use rsg_capture::{capture_live, load_frozen_trace};
 use rsg_compare::compare;
 use rsg_types::{FrozenTrace, Manifest, Verdict};
+use serde_json::to_string;
 
 /// Execute attestation comparison against manifest and write out proof bundle.
 pub async fn execute(
@@ -65,7 +67,7 @@ async fn load_or_capture_trace(
 
 fn load_manifest(manifest_path: &Path) -> Result<(Manifest, String)> {
     eprintln!("[rsg] Loading manifest from {}…", manifest_path.display());
-    let manifest_raw = std::fs::read_to_string(manifest_path)
+    let manifest_raw = read_to_string(manifest_path)
         .with_context(|| format!("cannot read manifest: {}", manifest_path.display()))?;
     let manifest: Manifest = serde_yaml::from_str(&manifest_raw).context("manifest parse error")?;
     Ok((manifest, manifest_raw))
@@ -86,13 +88,13 @@ fn print_verdict_summary(
         Verdict::Fail { reasons } => {
             println!("❌  FAIL ({} reason(s))", reasons.len());
             for r in reasons {
-                println!("    • {}", serde_json::to_string(r).unwrap_or_default());
+                println!("    • {}", to_string(r).unwrap_or_default());
             }
         }
         Verdict::Unknown { reasons } => {
             println!("⚠️  UNKNOWN ({} reason(s))", reasons.len());
             for r in reasons {
-                println!("    • {}", serde_json::to_string(r).unwrap_or_default());
+                println!("    • {}", to_string(r).unwrap_or_default());
             }
         }
     }

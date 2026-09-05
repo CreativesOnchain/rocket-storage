@@ -3,6 +3,7 @@
 use std::{fs::write, path::Path};
 
 use anyhow::Result;
+use chrono::Utc;
 use indexmap::IndexMap;
 use rsg_types::{AttestationBundle, AttestationHashes, FrozenTrace, Manifest, Verdict};
 
@@ -35,7 +36,7 @@ pub fn write_bundle(
 
     let bundle = AttestationBundle {
         version: "1".to_string(),
-        generated_at: Some(chrono::Utc::now().to_rfc3339()),
+        generated_at: Some(Utc::now().to_rfc3339()),
         hashes: hashes.clone(),
         pinned: trace.pinned.clone(),
         verdict: verdict.clone(),
