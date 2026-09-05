@@ -54,7 +54,10 @@ jobs:
         run: cargo build --release -p rsg-cli
 
       - name: Smoke-test binary
-        run: ./target/release/rsg --version
+        run: |
+          ./target/release/rsg --version
+          ./target/release/rsg validate-fixture fixtures/v1.4-mainnet/frozen-trace.json
+          ./target/release/rsg attest --fixture fixtures/v1.4-mainnet/frozen-trace.json --manifest manifests/v1.4-mainnet/manifest.yaml --review-record manifests/v1.4-mainnet/review-record.json
 
       - name: Upload binary artifact
         uses: actions/upload-artifact@v4
